@@ -1,0 +1,29 @@
+<form class="form linear-bg p10" method="POST" action="/api/form">
+    <h1 class="no-margin">Feedback Form</h1>
+    <div class="form-group">
+        <label for="title">Reason</label>
+        <select id="title" name="title" class="form-control">
+            <option>General Feedback</option>
+            <option>Feature Request</option>
+            <option>Bug Report</option>
+            <option>Partnership</option>
+            <option>Business Inquiry</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="from">Mail</label>
+        <input type="email" id="from" name="from" class="form-control" placeholder="Your Mail Address" required
+               value="{{_auth.email}}">
+    </div>
+    <div class="form-group">
+        <label for="form_body">Text</label>
+        <textarea id="form_body" name="form_body" class="form-control" style="resize:vertical;min-height:100px;"
+                  required></textarea>
+    </div>
+    <p>
+        <small>Please be as specific as possible.</small>
+    </p>
+    <div class="form-group top10">
+        <button type="submit" class="btn btn-dark">Submit</button>
+    </div>
+</form>

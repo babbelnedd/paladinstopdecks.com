@@ -1,0 +1,71 @@
+.navbar-paladins {
+    @listItemHeight: 32px;
+    background-color: darken(@gray-darker, 3);
+    border-bottom: 2px solid @col-highlight;
+
+    .navbar-nav {
+        > li {
+            &.border-left {
+                border-left: 1px solid rgba(255, 255, 255, 0.25);
+                box-shadow: inset 2px 0 rgba(0, 0, 0, 1);
+            }
+            &.border-right {
+                border-right: 1px solid rgba(255, 255, 255, 0.25);
+                box-shadow: inset -1px 0 rgba(0, 0, 0, 1);
+            }
+            &.dropdown:hover .dropdown-menu {
+                display: block;
+                margin-top: 0; // remove the gap so it doesn't close
+            }
+            > ul.dropdown-menu {
+                // top: calc(100% + 3px);
+                margin: 0; padding: 0;
+                background: @gray-darkest;
+                li {
+                    margin: 0; padding: 0;
+                    height: @listItemHeight;
+                    border-top: 1px solid @gray-dark;
+                    &:nth-child(1) {
+                        border-top: none;
+                    }
+                    &:hover {
+                        transition: background-color 0.2s ease-in-out;
+                        background-color: @col-blue;
+                    }
+                    .logo {
+                        line-height: @listItemHeight;
+                        float: left;
+                    }
+                    a {
+                        height: @listItemHeight;
+                        line-height: @listItemHeight;
+                        margin: 0; padding: 0;
+                        padding-left: 10px;
+                        &:hover {
+                            color: inherit;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .nav {
+        .open {
+            > a {
+                background-color: transparent;
+            }
+        }
+    }
+
+    li {
+        a {
+            font-weight: 400;
+            color: @white;
+            &:hover {
+                color: inherit;
+                background: transparent;
+            }
+        }
+    }
+}

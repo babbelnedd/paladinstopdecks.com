@@ -1,0 +1,90 @@
+<div class="container-fluid">
+    <ul class="pull-left">
+        <li class="brand">
+            <a href="/" data-prerender="/">
+                <strong class="main">Paladins</strong>
+                <span class="second">TopDecks</span>
+            </a>
+        </li>
+    </ul>
+    <ul class="pull-right bordered">
+        <li>
+            <a href="/feedback" data-prerender="/feedback">
+                Feedback
+            </a>
+        </li>
+        {{#ifEqual _auth.authenticated true}}
+            {{#ifEqual _auth.activated false}}
+                <li>
+                    <a href="/auth/resend-activation">Resend Activation Mail</a>
+                </li>
+            {{/ifEqual}}
+        {{/ifEqual}}
+        {{#ifEqual _auth.authenticated false}}
+            <li><a href="/auth/login" data-prerender="/auth/login">Log in</a></li>
+            <li><a href="/auth/register" data-prerender="/auth/register">Register</a></li>
+        {{else}}
+            <li class="dropdown pointer">
+                <span class="dropdown-toggle" data-toggle="dropdown">
+                    <strong id="notifications_icon" class="fa fa-inbox"></strong>
+                </span>
+                <div class="dropdown-menu-notifications">
+                    <div class="title"><strong>Notifications</strong></div>
+                    <div id="notifications" class="notifications">
+                        <div class="notification">
+                            <strong style="height:100px;">No Notifications yet..</strong>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="dropdown pointer">
+                <span class="dropdown-toggle col-light" data-toggle="dropdown">
+                    {{_auth.username}}
+                    <i class="left5 fa fa-caret-down col-light"></i>
+                </span>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="/account/{{_auth.username}}/decks" data-prerender="/account/{{_auth.username}}/decks">
+                            <i class="fa fa-book right5  col-light"></i> Decks
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/account/{{_auth.username}}/activity"
+                           data-prerender="/account/{{_auth.username}}/activity">
+                            <i class="fa fa-list right5  col-light"></i> Activity
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/account/{{_auth.username}}/favorites"
+                           data-prerender="/account/{{_auth.username}}/favorites">
+                            <i class="fa fa-heart right5  col-light"></i> Favorites
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/account/{{_auth.username}}/team" data-prerender="/account/{{_auth.username}}/team">
+                            <i class="fa fa-group right5 col-light"></i> Team
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/account/{{_auth.username}}/edit" data-prerender="/account/{{_auth.username}}/edit">
+                            <i class="fa fa-gear right5  col-light"></i> Settings
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/auth/logout">
+                            <i class="fa fa-sign-out right5  col-light"></i> Log Out
+                        </a>
+                    </li>
+                </ul>
+
+            </li>
+
+        {{/ifEqual}}
+    </ul>
+</div>

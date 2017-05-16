@@ -1,0 +1,72 @@
+.font-size(@sizeValue) {
+    @remValue: @sizeValue;
+    @pxValue: (@sizeValue * 10);
+    font-size: ~"@{pxValue}px";
+    font-size: ~"@{remValue}rem";
+}
+
+.line-height(@size) {
+    @pxSize: (@size * 10);
+    line-height: ~"@{pxSize}px";
+    line-height: ~"@{size}rem";
+}
+
+.setSelection(@background, @color) {
+    &::selection {
+        background-color: @background;
+        color: @color
+    }
+}
+
+.calc(@prop, @val) {
+        @{prop}: calc(~'@{val}');
+        @{prop}: -moz-calc(~'@{val}');
+        @{prop}: -webkit-calc(~'@{val}');
+        @{prop}: -o-calc(~'@{val}');
+}
+
+.hoverTrans() {
+    transition: all .2s ease-in-out;
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.rgba(@prop, @col, @alpha) {
+        @{prop}: rgba(red(@col), green(@col), blue(@col), @alpha);
+}
+
+.placeholder(@prop, @value) {
+    &::-webkit-input-placeholder {
+            @{prop}: @value;
+    }
+
+    &:-moz-placeholder { /* Firefox 18- */
+            @{prop}: @value;
+    }
+
+    &::-moz-placeholder { /* Firefox 19+ */
+            @{prop}: @value;
+    }
+
+    &:-ms-input-placeholder {
+            @{prop}: @value;
+    }
+}
+
+
+// ............................................................
+// .for
+
+.for(@i, @n) {.-each(@i)}
+.for(@n)     when (isnumber(@n)) {.for(1, @n)}
+.for(@i, @n) when not (@i = @n)  {
+    .for((@i + (@n - @i) / abs(@n - @i)), @n);
+}
+
+// ............................................................
+// .for-each
+
+.for(@array)   when (default()) {.for-impl_(length(@array))}
+.for-impl_(@i) when (@i > 1)    {.for-impl_((@i - 1))}
+.for-impl_(@i) when (@i > 0)    {.-each(extract(@array, @i))}

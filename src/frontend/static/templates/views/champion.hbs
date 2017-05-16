@@ -1,0 +1,29 @@
+<section id="champion" class="box">
+    <div class="champion-banner {{champion.normalizedName}}">
+        <div class="overlay">
+            <div class="champion-container left20 ptop20">
+                {{>champion/about static=static champion=champion}}
+            </div>
+        </div>
+    </div>
+
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#tab_abilities" data-toggle="tab">Abilities</a></li>
+        <li><a href="#tab_cards" data-toggle="tab">Cards</a></li>
+        <li><a href="#tab_stats" data-toggle="tab">Stats</a></li>
+        <li><a href="/decks/{{champion.normalizedName}}">Decks</a></li>
+    </ul>
+    <div class="box-body linear-bg ">
+        <div class="tab-content">
+            <div class="tab-pane active" id="tab_abilities">
+                {{>champion/abilities static=static champion=champion}}
+            </div>
+            <div class="tab-pane" id="tab_cards">
+                {{>champion/cards static=static champion=champion}}
+            </div>
+            <div class="tab-pane" id="tab_stats">
+                {{>champion/stats static=static champion=champion}}
+            </div>
+        </div>
+    </div>
+</section>

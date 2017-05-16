@@ -1,0 +1,66 @@
+ol.levels {
+    @dim: 48px;
+    margin: 0; padding: 0;
+    list-style-type: none;
+
+    &.interactive {
+        li.lvl.picked {
+            &:hover {
+                background: @red;
+            }
+        }
+    }
+
+    li {
+        padding: 0;
+        margin-left: 2px; margin-bottom: 2px;
+        border: 1px solid @gray-darkest;
+        &.clearfix { border: none; }
+        &.lvl {
+            float: left;
+            height: @dim; width: @dim;
+            text-align: center; line-height: @dim;
+            background: darken(@gray-darker, 5);
+            color: @gray-light;
+            .setSelection(transparent, @gray-light);
+            &.picked {
+                // background: rgba(red(@col-highlight), green(@col-highlight), blue(@col-highlight), 0.5);
+                @c: darken(@light-blue, 25);
+                @cl: @light-blue;
+                @ct: rgba(red(@cl), green(@cl), blue(@cl), 0.75);
+                background: linear-gradient(to bottom, @ct, darken(@c, 5) 5%, @c 15%, lighten(@c, 5) 55%, @c 95%, darken(@c, 5) 100%);
+                color: @gray-lightest;
+                .setSelection(transparent, @gray-lightest);
+            }
+            cursor: default;
+            &.pickable {
+                cursor: pointer;
+            }
+        }
+        &.image {
+            float: left;
+            margin-right: 8px;
+            img {
+                .setSelection(transparent, transparent);
+                height: @dim - 2px; width: @dim - 2px;
+            }
+        }
+    }
+
+    @media (max-width: @screen-md-max) {
+        &.responsive {
+            li.lvl {
+                display: none;
+
+                &.picked {
+                    display: block;
+                    width: 25%;
+
+                    &:before {
+                        content: 'lvl ';
+                    }
+                }
+            }
+        }
+    }
+}

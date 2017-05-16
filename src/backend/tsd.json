@@ -1,0 +1,108 @@
+{
+  "version": "v4",
+  "repo": "borisyankov/DefinitelyTyped",
+  "ref": "master",
+  "path": "typings",
+  "bundle": "typings/tsd.d.ts",
+  "installed": {
+    "mime/mime.d.ts": {
+      "commit": "95433230a9913054c57c715e6b91a9ae738d0b97"
+    },
+    "express/express.d.ts": {
+      "commit": "95433230a9913054c57c715e6b91a9ae738d0b97"
+    },
+    "serve-static/serve-static.d.ts": {
+      "commit": "95433230a9913054c57c715e6b91a9ae738d0b97"
+    },
+    "morgan/morgan.d.ts": {
+      "commit": "16134c168d021351acb1673ee9659644fc58c424"
+    },
+    "moment/moment.d.ts": {
+      "commit": "16134c168d021351acb1673ee9659644fc58c424"
+    },
+    "node/node.d.ts": {
+      "commit": "32345ecb1a86750733eea0ea16356963ec4a2f61"
+    },
+    "mongoose/mongoose.d.ts": {
+      "commit": "ba424f7ee39717d51c17699a09ac8df312a7e9a1"
+    },
+    "moment/moment-node.d.ts": {
+      "commit": "16134c168d021351acb1673ee9659644fc58c424"
+    },
+    "express-handlebars/express-handlebars.d.ts": {
+      "commit": "16134c168d021351acb1673ee9659644fc58c424"
+    },
+    "body-parser/body-parser.d.ts": {
+      "commit": "16134c168d021351acb1673ee9659644fc58c424"
+    },
+    "bluebird/bluebird.d.ts": {
+      "commit": "f7164a47ffe5e9a7ea2f4bec8fc4009347c64f6d"
+    },
+    "es6-promise/es6-promise.d.ts": {
+      "commit": "16134c168d021351acb1673ee9659644fc58c424"
+    },
+    "passport/passport.d.ts": {
+      "commit": "98b4177d24ed2b5679d395c832ef337bd0b17c1c"
+    },
+    "passport-twitter/passport-twitter.d.ts": {
+      "commit": "ba424f7ee39717d51c17699a09ac8df312a7e9a1"
+    },
+    "express-session/express-session.d.ts": {
+      "commit": "ba424f7ee39717d51c17699a09ac8df312a7e9a1"
+    },
+    "connect-mongo/connect-mongo.d.ts": {
+      "commit": "ba424f7ee39717d51c17699a09ac8df312a7e9a1"
+    },
+    "mongodb/mongodb.d.ts": {
+      "commit": "ba424f7ee39717d51c17699a09ac8df312a7e9a1"
+    },
+    "cookie-parser/cookie-parser.d.ts": {
+      "commit": "ba424f7ee39717d51c17699a09ac8df312a7e9a1"
+    },
+    "winston/winston.d.ts": {
+      "commit": "b2d17b5dad042e293e77d09f2a30d281325cb606"
+    },
+    "serve-favicon/serve-favicon.d.ts": {
+      "commit": "526e6208cd4fdd89774ec42cc929502149384fd8"
+    },
+    "passport-local/passport-local.d.ts": {
+      "commit": "98b4177d24ed2b5679d395c832ef337bd0b17c1c"
+    },
+    "nodemailer/nodemailer.d.ts": {
+      "commit": "fb2b3b1e068c9ff7d8f9b0851c08d37d96c95c38"
+    },
+    "nodemailer-direct-transport/nodemailer-direct-transport.d.ts": {
+      "commit": "fb2b3b1e068c9ff7d8f9b0851c08d37d96c95c38"
+    },
+    "nodemailer-smtp-transport/nodemailer-smtp-transport.d.ts": {
+      "commit": "fb2b3b1e068c9ff7d8f9b0851c08d37d96c95c38"
+    },
+    "nodemailer/nodemailer-types.d.ts": {
+      "commit": "fb2b3b1e068c9ff7d8f9b0851c08d37d96c95c38"
+    },
+    "yamljs/yamljs.d.ts": {
+      "commit": "fb2b3b1e068c9ff7d8f9b0851c08d37d96c95c38"
+    },
+    "request/request.d.ts": {
+      "commit": "f7164a47ffe5e9a7ea2f4bec8fc4009347c64f6d"
+    },
+    "request-promise/request-promise.d.ts": {
+      "commit": "f7164a47ffe5e9a7ea2f4bec8fc4009347c64f6d"
+    },
+    "form-data/form-data.d.ts": {
+      "commit": "f7164a47ffe5e9a7ea2f4bec8fc4009347c64f6d"
+    },
+    "cheerio/cheerio.d.ts": {
+      "commit": "bcd5761826eb567876c197ccc6a87c4d05731054"
+    },
+    "rss/rss.d.ts": {
+      "commit": "b90aadb50d3b76f62f613760957c474d0ea70d94"
+    },
+    "multer/multer.d.ts": {
+      "commit": "95433230a9913054c57c715e6b91a9ae738d0b97"
+    },
+    "gm/gm.d.ts": {
+      "commit": "32345ecb1a86750733eea0ea16356963ec4a2f61"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>PTD ADMIN</title>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="/static/img/i.ico"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="robots" content="noindex">
+    <base href="/admin/">
+    <link rel="stylesheet" type="text/css" href="{{static.cdn}}/static/css/index.css?v={{static.version}}"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/headjs/1.0.3/head.min.js"></script>
+    <script>head.load(['{{static.cdn}}/static/js/bundle/common.min.js?v={{static.version}}','{{static.cdn}}/static/js/bundle/app.min.js?v={{static.version}}'], function () {head.load([{{#each dependencies.js}}'{{../static.cdn}}/static/js/bundle/{{this}}.min.js?v={{../static.version}}'{{#ifNotEqual @last true}},{{/ifNotEqual}}{{/each}}]);});</script>
+</head>
+<body>
+{{{body}}}
+</body>
+</html>

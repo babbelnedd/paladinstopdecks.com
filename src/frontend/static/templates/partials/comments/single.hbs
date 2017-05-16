@@ -1,0 +1,21 @@
+<li class="comment" id="{{comment._id}}">
+    {{!--todo important: fix avatar--}}
+    <img class="gravatar" src="data:image/png;base64,{{comment.author.avatar}}">
+    <div class="content">
+        <span class="head">
+            <a href="/account/{{comment.author.name}}">{{comment.author.name}}</a> - {{relativeMoment comment.created 'x'}}
+        </span>
+        <p class="text">{{{comment.text}}}</p>
+        <ul class="bottom">
+            {{!--<li><i class="fa fa-caret-up"></i></li>--}}
+            {{!--<li><i class="fa fa-caret-down"></i></li>--}}
+            <li class="reply" data-reply="{{comment._id}}">Reply</li>
+        </ul>
+    </div>
+    <ul class="replies">
+        {{#each comment.replies}}
+            {{>comments/single comment=this}}
+        {{/each}}
+    </ul>
+    <i class="clearfix"></i>
+</li>

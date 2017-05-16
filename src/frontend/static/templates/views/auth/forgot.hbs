@@ -1,0 +1,22 @@
+<div class="inner">
+    <h1>{{data.pageTitle}}</h1>
+    {{#if data.mail}}
+        <span>Check your emails at {{data.mail}}</span>
+    {{else}}
+        <form action="/auth/forgot" method="post" enctype="application/x-www-form-urlencoded">
+            <div class="form-group">
+                <input type="text" class="onclick-input" name="mail" id="mail">
+                <label for="mail">Email</label>
+            </div>
+            <button type="submit" class="btn btn-dark btn-block">Send Reset Mail</button>
+        </form>
+    {{/if}}
+</div>
+
+<div class="bottom">
+    {{#ifEqual _auth.authenticated true}}
+        <a id="a_auth_backhome" href="/">Back Home</a>
+    {{else}}
+        <a id="a_auth_backtologin" href="/auth/login">Back to Login</a>
+    {{/ifEqual}}
+</div>

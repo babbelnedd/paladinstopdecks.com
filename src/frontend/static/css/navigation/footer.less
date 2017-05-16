@@ -1,0 +1,28 @@
+body > footer {
+    background: darken(@gray-darker, 5);
+    // background: linear-gradient(to bottom, @gray-darker, @gray-darkest);
+    border-top: 4px solid @col-highlight;
+    padding-bottom: 20px;
+    min-height: @footerHeight;
+
+    label {
+        margin-top: 20px;
+    }
+
+    ul {
+        li {
+            color: @col-highlight;
+            height: 28px;
+            line-height: 28px;
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+    .popular-decks {
+        @media (max-width: @screen-xs-max) {
+            margin-bottom: 100px;
+        }
+    }
+}

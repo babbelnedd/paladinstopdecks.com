@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" class="auth">
+<head>
+    <title>{{static.title}} - {{data.pageTitle}}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css?v={{static.version}}"/>
+    {{#each dependencies.css}}
+        <link rel="stylesheet" type="text/css" href="/static/css/{{this}}.min.css?v={{../static.version}}"/>
+    {{/each}}
+    <script src="/static/js/bundle/common.min.js?v={{static.version}}"></script>
+</head>
+<body>
+
+<div class="video-overlay"></div>
+<div class="container">
+    <div class="box">{{{body}}}</div>
+</div>
+
+{{#each dependencies.js}}
+    <script src="/static/js/bundle/{{this}}.min.js?v={{../static.version}}"></script>
+{{/each}}
+{{>googleAnalytics}}
+
+</body>
+</html>

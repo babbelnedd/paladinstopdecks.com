@@ -1,0 +1,135 @@
+{{!--<script>
+    $(function () {
+        var $twitch = $('#account_twitch'),
+                $noTwitch = $('#no_twitch');
+        $.get('/api/auth/twitch').then(function (res) {
+            if (res === false || !res.hasOwnProperty('channel')) {
+                $twitch.html('').html($noTwitch.html());
+                var url = 'https://api.twitch.tv/kraken/oauth2/authorize?response_type=code' +
+                        '&client_id=kza7jkb90h6fu09m51zfk3a1s6ix8ev' +
+                        '&redirect_uri=http://win-f0ve38moql6:3000/auth/twitch' +
+                        '&scope=chat_login' +
+                        '&state=eyJfaWQiOiIxNjA4MDk4MjMiLCJfdXVpZCI6IjVjNzYwNTNlLTA0MWEtNGRmMi04YjIyLTFmNWYxMWQxYzczNCJ9';
+                $('.twitch-connect').click(function () {
+                    window.location.href = url;
+                });
+            } else {
+                var html = '<p><strong>Awesome</strong>, your Channel <a target="_blank" href="http://www.twitch.tv/' + res.channel + '">' + res.channel + '</a> is already connected.</p>';
+                $twitch.html('').html(html);
+            }
+        });
+    });
+</script>
+<script type="text/x-handlebars-template" id="no_twitch">
+    <a class="btn btn-dark twitch-connect">
+        <i class="fa fa-twitch"></i>&nbsp;Connect to Twitch
+    </a>
+</script>--}}
+<section class="box linear-bg">
+    <div class="box-body">
+
+        <h1>Update Profile</h1>
+        <p>Update your Profile with a new Avatar, set your Social Media Links and a Biography</p>
+
+        {{#if data.error}}
+            <div class="alert alert-danger">
+                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                <strong>Woopsie!</strong> {{data.error}}
+            </div>
+        {{else}}
+            {{#ifEqual data.updated true}}
+                <div class="alert alert-success">
+                    <a href="#" class="close" data-dismiss="alert">&times;</a>
+                    <strong>Success</strong> Your profile was updated successfully.
+                </div>
+            {{/ifEqual}}
+        {{/if}}
+
+        <div class="row">
+            <form method="post">
+                <div class="col-xs-12 col-md-6">
+                    <h3>Avatar</h3>
+                    <div>
+                        <img class="gravatar">
+                        <i class="clearfix"></i>
+                        <input type="file" id="avatar" accept="image/*" style="visibility: hidden;">
+                        <span class="btn btn-dark" onclick="$('#avatar').click()">Upload Avatar</span>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <h3>Settings</h3>
+                    <div class="checkbox checkbox-info">
+                        <input type="hidden" name="email_notifications" id="h_email_notifications">
+                        <input type="checkbox" id="email_notifications"
+                               {{#ifEqual data.emailNotifications true}}checked{{/ifEqual}}>
+                        <label for="email_notifications">Receive Email Notifications</label>
+                    </div>
+                    {{!--
+                    <h3>Twitch Bot (beta)</h3>
+                      <p>Connect your Account to Twitch to enable our <a href="#">Twitch Bot</a>.</p>
+                      <div id="account_twitch">{{>spinner}}</div>
+                     --}}
+                </div>
+                <i class="clearfix"></i>
+                <input type="hidden" name="avatar" id="h_avatar">
+                <div class="col-xs-12 col-md-6">
+                    <h3>General</h3>
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" class="form-control" value="{{data.username}}" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text" id="email" class="form-control" value="{{lowercase data.mail}}" disabled>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <h3>Change Password</h3>
+                    <div class="form-group">
+                        <label for="current_password">Current Password</label>
+                        <input type="password" id="current_password" name="current_password" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="new_password">New Password</label>
+                        <input type="password" id="new_password" name="new_password" class="form-control">
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-6">
+                    <h3>About You</h3>
+                    <div class="form-group has-feedback has-feedback-left has-feedback-left">
+                        <label for="twitter">Twitter</label>
+                        <i class="fa fa-twitter col-twitter form-control-feedback"></i>
+                        <input type="text" id="twitter" name="twitter" class="form-control" value="{{data.bio.twitter}}"
+                               placeholder="https://twitter.com/yourname">
+                    </div>
+                    <div class="form-group has-feedback has-feedback-left has-feedback-left">
+                        <label for="youtube">YouTube</label>
+                        <i class="fa fa-youtube col-youtube form-control-feedback"></i>
+                        <input type="text" id="youtube" name="youtube" class="form-control" value="{{data.bio.youtube}}"
+                               placeholder="https://www.youtube.com/channel/...">
+                    </div>
+                    <div class="form-group has-feedback has-feedback-left has-feedback-left">
+                        <label for="twitch">Twitch</label>
+                        <i class="fa fa-twitch col-twitch form-control-feedback"></i>
+                        <input type="text" id="twitch" name="twitch" class="form-control" value="{{data.bio.twitch}}"
+                               placeholder="http://www.twitch.com/yourname">
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <h3>&nbsp;</h3>
+                    <div class="form-group">
+                        <label for="biography">Biography</label>
+                    <textarea id="biography" name="biography" class="form-control"
+                              style="resize:none;height:190px;">{{data.bio.biography}}</textarea>
+                    </div>
+                </div>
+                <i class="clearfix"></i>
+                <div class="form-group col-xs-12">
+                    <input type="submit" id="submit" class="btn btn-dark" value="Update Profile" disabled>
+                </div>
+                <i class="clearfix"></i>
+            </form>
+        </div>
+    </div>
+</section>

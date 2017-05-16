@@ -1,0 +1,86 @@
+{
+  "version": "0.6",
+  "date": "19.11.2015",
+  "changes": [
+    {
+      "type": "ability",
+      "change": "Reduced damage from 34 to 31",
+      "champion": "Fernando",
+      "ability": "Lance"
+    },
+    {
+      "type": "card",
+      "change": "Reduced damage from 700 to 500",
+      "champion": "Fernando",
+      "card": "Evolve"
+    },
+    {
+      "type": "ability",
+      "change": "Reduced damage from 38 to 35",
+      "champion": "Grokh",
+      "ability": "Lightning Staff"
+    },
+    {
+      "type": "ability",
+      "change": "Increased clip size from 25 to 30",
+      "champion": "Skye",
+      "ability": "Crossbow"
+    },
+    {
+      "type": "ability",
+      "change": "Reduced damage from 130 to 120",
+      "champion": "Skye",
+      "ability": "Crossbow"
+    },
+    {
+      "type": "card",
+      "change": "Reduced damage from 700 to 500",
+      "champion": "Pip",
+      "card": "Rupture"
+    },
+    {
+      "type": "general",
+      "change": "Account leveling has been enabled and you will now start gaining XP as you play matches. Each time you reach a new account level, you will be granted a Radiant Chest."
+    },
+    {
+      "type": "general",
+      "change": "Account leveling has been enabled and you will now start gaining XP as you play matches. Each time you reach a new account level, you will be granted a Radiant Chest."
+    },
+    {
+      "type": "general",
+      "change": "Some match-making improvements have been made."
+    },
+    {
+      "type": "general",
+      "change": "Adjusted the algorithm for card selection inside of a match."
+    },
+    {
+      "type": "general",
+      "change": "The Damage and Health bonuses tied to each card no longer scale per in-match level. They provide a fixed benefit regardless of your in-match level."
+    },
+    {
+      "type": "general",
+      "change": "Card Cooldowns have been adjusted based on their rarity. Common cards have a 10s Cooldown. Rare cards have a 20s Cooldown. Epic cards have a 30s Cooldown. Legendary cards have a 60s Cooldown."
+    },
+    {
+      "type": "general",
+      "change": "Fixed an issue where the match ready sound was playing repeatedly. (Praise the gods!)."
+    },
+    {
+      "type": "general",
+      "change": "Fixed an issue where player death animations were not playing if the player died while mounted."
+    },
+    {
+      "type": "general",
+      "change": "Fixed an issue with Grand Slam applying during Prey (on Cassie)."
+    },
+    {
+      "type": "general",
+      "change": "Fixed an issue in which a players current health was incorrectly being adjusted when their Max Health was increased."
+    },
+    {
+      "type": "general",
+      "change": "Fixed extraneous timer bars for certain abilities."
+    }
+  ]
+}

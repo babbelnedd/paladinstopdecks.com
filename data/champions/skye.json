@@ -1,0 +1,61 @@
+{
+  "name": "Skye",
+  "normalizedName": "skye",
+  "abilities": [
+    {
+      "name": "Smoke Screen",
+      "description": "Create a cloud of darkness, blocking all enemy vision.",
+      "type": "Ability",
+      "properties": {
+        "key": "e"
+      }
+    },
+    {
+      "name": "Toxic Time Bomb",
+      "description": "Place a bomb that deals 1200 damage after a short delay.",
+      "type": "Ultimate",
+      "properties": {
+        "duration": "2.5s to detonate",
+        "damage": "1200/3s",
+        "key": "q"
+      }
+    },
+    {
+      "name": "Poison Bolts",
+      "description": "Bolts deal poison damage for 4 seconds.",
+      "type": "AltFire",
+      "properties": {
+        "cooldown": "15s",
+        "duration": "3s",
+        "damage": "190",
+        "key": "alt"
+      }
+    },
+    {
+      "name": "Hidden",
+      "description": "Enter stealth for 5s. Removes all debuffs on use.",
+      "type": "Ability",
+      "properties": {
+        "cooldown": "12s",
+        "duration": "3.5s",
+        "key": "f"
+      }
+    },
+    {
+      "name": "Wrist Crossbow",
+      "type": "Basic Attack",
+      "description": "A wrist-mounted energy crossbow with high rate",
+      "damage": "115 damage",
+      "properties": {
+        "key": "basic",
+        "damage": "115"
+      }
+    }
+  ],
+  "movementSpeed": 395,
+  "clipSize": 15,
+  "title": "The Twilight Assassin",
+  "class": "Elf Assassin",
+  "releaseDate": 1445032800000,
+  "health": 1800
+}

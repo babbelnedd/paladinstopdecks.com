@@ -1,0 +1,23 @@
+{{#ifGreater streams.length 0}}
+    <!--noindex-->
+    <section id="streams" class="linear-bg">
+        <div class="p10">
+            <h2 class="no-margin no-padding">Streams</h2>
+        </div>
+        <ul class="streams">
+            {{#each streams}}
+                <li class="stream">
+                    <a target="_blank" rel="nofollow" href="{{this.channel.url}}">
+                        <div class="img-container">
+                            <img data-lazy="{{replace this.preview.medium 'http:' ''}}">
+                            <span class="streamer">{{channel.display_name}}</span>
+                            <span class="status">{{channel.status}}</span>
+                            <span class="counter"><i class="fa fa-circle right5"></i>{{this.viewers}}</span>
+                        </div>
+                    </a>
+                </li>
+            {{/each}}
+        </ul>
+    </section>
+    <!--/noindex-->
+{{/ifGreater}}

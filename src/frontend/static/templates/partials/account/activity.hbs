@@ -1,0 +1,24 @@
+<div class="table-responsive">
+    <table class="decks tablesorter">
+        <thead>
+        <tr>
+            <th>Date</th>
+            <th>Activity</th>
+            <th class="full">Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each activities}}
+            <tr data-href="{{this.url}}">
+                <td>{{relativeMoment this.created 'x'}}</td>
+                <td>{{this.type}}</td>
+                <td class="full">
+                    {{#each this.info}}
+                        {{this}}<br>
+                    {{/each}}
+                </td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</div>

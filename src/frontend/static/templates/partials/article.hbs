@@ -1,0 +1,47 @@
+{{#ifEqual this.preview true}}
+    <article class="blog-article preview">
+        <header>
+            <div class="title">
+                <a href="/news/{{article.slug}}" data-prerender="/news/{{article.slug}}">
+                    <div class="image" style="background-image:url({{static.cdn}}{{article.logo}})">
+                        <div class="dark-overlay"></div>
+                    </div>
+                    <h3 class="colorbox">{{{article.title}}}</h3>
+                </a>
+            </div>
+            <div class="clearfix"></div>
+        </header>
+    </article>
+{{else}}
+    <article class="blog-article">
+        <header>
+            <div class="title">
+                <div class="image zoom" style="background-image:url({{static.cdn}}{{article.logo}})">
+                    <div class="dark-overlay"></div>
+                </div>
+                <h2 class="background">{{{article.title}}}</h2>
+                <span class="subtitle background">
+                    {{moment article.date 'X' 'LL'}}
+                    {{#if article.author}}
+                        &nbsp;-&nbsp;{{article.author}}
+                    {{/if}}
+                </span>
+            </div>
+        </header>
+
+        <div class="content">
+            {{{article.content}}}
+        </div>
+    </article>
+    {{#if article.author}}
+        <hr>
+        <h4>Author</h4>
+        {{>profile user=author}}
+    {{/if}}
+    {{#ifEqual article.comments true}}
+        <hr>
+        <section id="comment_container">
+            <div id="comments">{{>spinner}}</div>
+        </section>
+    {{/ifEqual}}
+{{/ifEqual}}

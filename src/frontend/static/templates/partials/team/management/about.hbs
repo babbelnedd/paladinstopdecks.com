@@ -1,0 +1,81 @@
+{{#if data.error}}
+    <div class="alert alert-danger">
+        <a href="#" class="close" data-dismiss="alert">&times;</a>
+        <strong>Woopsie!</strong> {{data.error}}
+    </div>
+{{else}}
+    {{#ifEqual data.updated true}}
+        <div class="alert alert-success">
+            <a href="#" class="close" data-dismiss="alert">&times;</a>
+            <strong>Success</strong> Your profile was updated successfully.
+        </div>
+    {{/ifEqual}}
+{{/if}}
+<div class="row">
+    <form method="post" action="/api/teams/update">
+        <div class="col-xs-12 col-md-6">
+            <h3>General</h3>
+            <div class="row">
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="name">Team Name</label>
+                    <input type="text" id="name" name="name" class="form-control" value="{{team.name}}">
+                </div>
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="tag">Team Tag</label>
+                    <input type="text" id="tag" name="tag" class="form-control" value="{{team.tag}}">
+                </div>
+                <div class="form-group col-xs-12">
+                    <label for="region">Region</label>
+                    <select id="region" name="region" class="form-control">
+                        <option value="na" {{#ifEqual team.region 'na'}}selected{{/ifEqual}}>North America</option>
+                        <option value="eu" {{#ifEqual team.region 'eu'}}selected{{/ifEqual}}>Europe</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="biography">Biography</label>
+                    <textarea id="biography" name="biography" class="form-control"
+                              style="resize:none;height:165px;">{{team.biography}}</textarea>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+            <h3>Social Media</h3>
+            <p>Only Team related channels. When you want to promote your own channel use you
+                <a href="/account/{{_auth.username}}/edit">Profile</a>
+            </p>
+            <div class="form-group has-feedback has-feedback-left">
+                <label for="twitter">Website</label>
+                <i class="fa fa-home form-control-feedback"></i>
+                <input type="text" id="website" name="website" class="form-control" value="{{team.social.website}}"
+                       placeholder="https://twitter.com/yourname">
+            </div>
+            <div class="form-group has-feedback has-feedback-left">
+                <label for="twitter">Twitter</label>
+                <i class="fa fa-twitter col-twitter form-control-feedback"></i>
+                <input type="text" id="twitter" name="twitter" class="form-control" value="{{team.social.twitter}}"
+                       placeholder="https://twitter.com/yourname">
+            </div>
+            <div class="form-group has-feedback has-feedback-left">
+                <label for="youtube">YouTube</label>
+                <i class="fa fa-youtube col-youtube form-control-feedback"></i>
+                <input type="text" id="youtube" name="youtube" class="form-control" value="{{team.social.youtube}}"
+                       placeholder="https://www.youtube.com/channel/...">
+            </div>
+            <div class="form-group has-feedback has-feedback-left">
+                <label for="twitch">Twitch</label>
+                <i class="fa fa-twitch col-twitch form-control-feedback"></i>
+                <input type="text" id="twitch" name="twitch" class="form-control" value="{{team.social.twitch}}"
+                       placeholder="http://www.twitch.com/yourname">
+            </div>
+        </div>
+        <i class="clearfix"></i>
+        <div class="col-xs-12 col-md-6">
+            <h3>Logo</h3>
+            <p>Coming soon..</p>
+        </div>
+        <div class="form-group col-xs-12">
+            <input type="submit" id="submit" class="btn btn-dark" value="Update Team">
+        </div>
+        <i class="clearfix"></i>
+    </form>
+</div>

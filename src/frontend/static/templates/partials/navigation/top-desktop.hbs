@@ -1,0 +1,67 @@
+<nav class="nav-top hidden-xs hidden-sm top30">
+
+    <div class="bottom20">
+        <a href="/" class="page-logo"></a>
+        <form class="pull-right">
+            <span class="glass">
+                <i class="fa fa-search"></i>
+            </span>
+            <input type="text" class="site-search" placeholder="Search Database ..">
+            <ul class="site-search-result"></ul>
+        </form>
+        <i class="clearfix"></i>
+    </div>
+    <nav class="navbar navbar-paladins" itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <ul class="nav navbar-nav">
+            <li class="border-right"><a href="/" data-prerender="/">Home</a></li>
+            <li class="border-right"><a href="/news" data-prerender="/news">News</a></li>
+            <li class="dropdown border-right">
+                <a class="dropdown-toggle" data-toggle="dropdown" role="button">
+                    Champions <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    {{#each static.champions}}
+                        <li itemprop="name">
+                            <a itemprop="url" href="/champion/{{this.normalizedName}}"
+                               data-prerender="/champion/{{this.normalizedName}}">{{this.name}}</a>
+                        </li>
+                    {{/each}}
+                </ul>
+            </li>
+            <li class="dropdown border-right">
+                <a class="dropdown-toggle" data-toggle="dropdown" role="button">
+                    Decks <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    {{#each static.champions}}
+                        <li itemprop="name">
+                            <a itemprop="url" href="/decks/{{this.normalizedName}}"
+                               data-prerender="/decks/{{this.normalizedName}}">{{this.name}}</a>
+                        </li>
+                    {{/each}}
+                </ul>
+            </li>
+            <li class="border-right"><a href="/deckbuilder">Deckbuilder</a></li>
+            <li class="dropdown border-right" itemprop="name">
+                <a class="dropdown-toggle" data-toggle="dropdown" role="button">
+                    Social <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li itemprop="name">
+                        <a itemprop="url" href="/social/twitter" target="_blank">Twitter</a>
+                    </li>
+                    <li itemprop="name">
+                        <a itemprop="url" href="/social/twitch" target="_blank">Twitch</a>
+                    </li>
+                    <li itemprop="name">
+                        <a itemprop="url" href="/social/youtube" target="_blank">YouTube</a>
+                    </li>
+                    <li itemprop="name" class="border-right">
+                        <a itemprop="url" href="/contact">Contact</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+</nav>

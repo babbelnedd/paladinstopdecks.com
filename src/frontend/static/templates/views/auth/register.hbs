@@ -1,0 +1,45 @@
+<div class="inner">
+    <h1>{{data.pageTitle}}</h1>
+
+    {{>auth/error error=data.error}}
+
+    <form class="register-form"
+          action="/auth/register" method="post" enctype="application/x-www-form-urlencoded"
+          autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+        <div class="form-group">
+            <input type="text" class="onclick-input" id="paladins_username" name="paladins_username"
+                   data-field="username"
+                   data-minlength="3"
+                   data-remote="/auth/available/username"
+                   data-regex="^[a-zA-Z0-9]+$"
+                   data-required>
+            <label for="paladins_username">Username</label>
+        </div>
+
+        <div class="form-group">
+            <input type="email" class="onclick-input" id="paladins_email" name="paladins_email"
+                   data-field="email"
+                   data-remote="/auth/available/email"
+                   data-regex="[a-zA-Z0-9\+\-\_\.]+@[a-zA-Z0-9\-\_\+\.]+\.[a-zA-Z]{2,9}"
+                   data-required>
+            <label for="paladins_email">Email</label>
+        </div>
+
+        <div class="form-group">
+            <input type="password" class="onclick-input" id="paladins_password" name="paladins_password"
+                   data-minlength="6"
+                   data-maxlength="100"
+                   data-field="password"
+                   data-required>
+            <label for="paladins_password">Password</label>
+        </div>
+        <button type="submit" id="submit_registration" class="btn btn-blue btn-block disabled" disabled>
+            Register
+        </button>
+    </form>
+
+</div>
+
+<div class="bottom">
+    <a id="a_auth_alreadyacc" href="/auth/login">Already have an account? Sign In</a>
+</div>

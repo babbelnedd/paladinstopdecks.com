@@ -1,0 +1,138 @@
+<section class="box">
+    <div class="box-body">
+        <input id="upload" type="file"/>
+
+        <canvas id="myChart" width="900" height="600"></canvas>
+
+    </div>
+</section>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+<script>
+
+    window.onload = function () {
+        var fileInput = document.getElementById('upload');
+
+        fileInput.addEventListener('change', function () {
+            var file = fileInput.files[0];
+            var reader = new FileReader();
+
+            reader.onload = function () {
+                var parsed = parse(reader.result.match(/[^\r\n]+/g));
+                createChart(parsed);
+            };
+
+            reader.readAsText(file);
+        });
+    };
+
+    function parse(lines) {
+        function isCombatMessage(line) {
+            return /^combatmsg\|.*/.test(line);
+        }
+
+        function isDamage(line) {
+            return /type=DIT\_Damage/.test(line);
+        }
+
+        function getTarget(line) {
+            return /\|target=([^\|]*)\|/.exec(line)[1];
+        }
+
+        function getSource(line) {
+            return /\|source=([^\|]*)\|/.exec(line)[1];
+        }
+
+        function getValue1(line) {
+            return parseInt(/\|value1=([0-9]{1,9})\|/.exec(line)[1]);
+        }
+
+        function getValue2(line) {
+            return parseInt(/\|value2=([0-9]{1,9})\|/.exec(line)[1]);
+        }
+
+        function getItemname(line) {
+            return /\|itemname=([^\|]*)\|/.exec(line)[1];
+        }
+
+        function validateFirstLine(line) {
+            return /start\|matchID=[0-9]{5,15}\|logMode=player\|version=2\.1/.test(line);
+        }
+
+        if (validateFirstLine(lines[0]) === false) {
+            console.info('Invalid log file');
+            return;
+        }
+
+        var parsed = {
+            dmg: {}
+        };
+        for (var i = 1; i < lines.length; i++) {
+            var line = lines[i];
+            if (isCombatMessage(line)) {
+                if (isDamage(line)) {
+                    var source = getSource(line),
+                            target = getTarget(line),
+                            value1 = getValue1(line),
+                            ability = getItemname(line),
+                            value2 = getValue2(line);
+
+                    if (parsed.dmg[source] === undefined) {
+                        parsed.dmg[source] = {};
+                    }
+                    if (!parsed.dmg[source].hasOwnProperty(target)) {
+                        parsed.dmg[source][target] = {};
+                    }
+                    if (!parsed.dmg[source][target].hasOwnProperty(ability)) {
+                        parsed.dmg[source][target][ability] = 0;
+                    }
+                    parsed.dmg[source][target][ability] += value1;
+                }
+            }
+        }
+
+        return parsed;
+
+    }
+
+    function createChart(parsed) {
+        var ctx = $("#myChart").get(0).getContext("2d");
+        var data = {
+            labels: [],
+            datasets: []
+        };
+
+        var abilities = [];
+
+        var dmg = parsed.dmg['schadstoff'];
+
+        for (var target in dmg) {
+            if (dmg.hasOwnProperty(target)) {
+                data.labels.push(target);
+
+                for (var ability in dmg[target]) {
+                    if (dmg[target].hasOwnProperty(ability)) {
+                        if (abilities.indexOf(ability) === -1) {
+                            abilities.push(ability);
+                            data.datasets.push({
+                                label: ability,
+                                fillColor: "red",
+                                highlightFill: "green",
+                                data: []
+                            });
+                        }
+                        var index = abilities.indexOf(ability);
+                        console.info(dmg[target][ability]);
+                        data.datasets[index].data.push(dmg[target][ability]);
+                    }
+                }
+
+            }
+        }
+
+        console.info(data);
+        var chart = new Chart(ctx).Bar(data);
+    }
+
+</script>

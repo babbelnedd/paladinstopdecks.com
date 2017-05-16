@@ -1,0 +1,72 @@
+.create(@size) {
+    .champion-@{size} {
+        height: @size *1px; width: @size *1px;
+        background: url('@{cdn}/static/img/champions/sprite@{size}.jpg?v=@{patch}');
+
+        &.barik { background-position: 0*@size *1px 0; }
+        &.buck { background-position: 1*(@size * -1px) 0; }
+        &.cassie { background-position: 2*-@size *1px 0; }
+        &.evie { background-position: 3*-@size *1px 0; }
+        &.fernando { background-position: 4*-@size *1px 0; }
+        &.grohk { background-position: 5*-@size *1px 0; }
+        &.pip { background-position: 6*-@size *1px 0; }
+        &.ruckus { background-position: 7*-@size *1px 0; }
+        &.skye { background-position: 8*-@size *1px 0; }
+        &.grover { background-position: 9*-@size *1px 0; }
+        &.kinessa { background-position: 10*-@size *1px 0; }
+        &.androxus { background-position: 11*-@size *1px 0; }
+
+        &.round {
+            border-radius: 90em;
+        }
+
+        &.filter {
+            // filter: grayscale(20%);
+            opacity: 0.75;
+            border: 2px solid @gray-darker;
+            box-shadow: 0 0 20px 10px @black;
+        }
+
+        &.picked {
+            filter: grayscale(100%);
+        }
+    }
+}
+.create(16);
+.create(32);
+.create(50);
+.create(64);
+.create(128);
+.create(256);
+
+.promo {
+    height: 100px; width: 350px;
+    background: url('@{cdn}/static/img/champions/promosprite350.png?v=@{patch}');
+    &.barik { background-position: 0*350px 0; }
+    &.buck { background-position: -1*350px 0; }
+    &.cassie { background-position: -2*350px  0; }
+    &.evie { background-position: -3*350px  0; }
+    &.fernando { background-position: -4*350px 0; }
+    &.grohk { background-position: -5*350px 0; }
+    &.pip { background-position: 6*-350px 0; }
+    &.ruckus { background-position: 7*-350px 0; }
+    &.skye { background-position: 8*-350px 0; }
+    &.grover { background-position: 9*-350px 0; }
+    &.kinessa { background-position: 10*-350px 0; }
+    &.androxus { background-position: 11*-350px 0; }
+}
+.ability {
+    height: 120px;
+    width: 120px;
+    .for(@paladins-champions);
+    .-each(@champ) {
+        &.@{champ} {
+            background: url('@{cdn}/static/img/champions/@{champ}/abilities/sprite.png?v=@{patch}');
+        }
+    }
+    &.basic { background-position: 0 0; }
+    &.alt { background-position: -120px 0; }
+    &.q { background-position: -240px 0; }
+    &.e { background-position: -360px 0; }
+    &.f { background-position: -480px 0; }
+}

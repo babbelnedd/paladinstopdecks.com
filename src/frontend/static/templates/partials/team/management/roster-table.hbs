@@ -1,0 +1,72 @@
+ayy=={{isCaptain}}
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Role</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#each team.roster}}
+        <tr>
+            <td>
+                <img class="gravatar small" src="data:image/png;base64,{{this.avatar}}">
+                    <span class="left5">
+                        <a href="/account/{{this.name}}">{{this.name}}</a>
+                    </span>
+            </td>
+            <td>
+                <select class="form-control" {{#ifEqual this.team.role 'captain'}}disabled{{/ifEqual}}
+                        data-role="{{this._id}}" data-name="{{this.name}}">
+                    <option value="captain" {{#ifEqual this.team.role 'captain'}}selected{{/ifEqual}} disabled>
+                        Captain
+                    </option>
+                    <option value="member" {{#ifEqual this.team.role 'member'}}selected{{/ifEqual}}>
+                        Member
+                    </option>
+                    <option value="sub" {{#ifEqual this.team.role 'sub'}}selected{{/ifEqual}}>
+                        Sub
+                    </option>
+                    <option value="management" {{#ifEqual this.team.role 'management'}}selected{{/ifEqual}}>
+                        Coach / Management
+                    </option>
+                </select>
+            </td>
+            <td>
+                {{#ifNotEqual this.team.role 'captain'}}
+                    <span data-kick="{{this._id}}" data-name="{{this.name}}" class="btn btn-dark btn-sm">
+                        <i class="fa fa-remove col-light right5"></i> Kick
+                    </span>
+
+                    {{#ifEqual ../../isCaptain true}}
+                        <span data-uid="{{this._id}}" data-name="{{this.name}}" class="btn btn-dark btn-sm"
+                              data-toggle="modal" data-target="#promotion_modal">
+                        <i class="fa fa-exclamation-circle col-light right5"></i> Promote to Captain
+                    </span>
+                    {{/ifEqual}}
+                {{else}}
+                    &ndash;
+                {{/ifNotEqual}}
+            </td>
+        </tr>
+    {{/each}}
+    {{#each team.invited}}
+        <tr>
+            <td>
+                <img class="gravatar small" src="data:image/png;base64,{{this.avatar}}">
+                    <span class="left5">
+                        <a href="/account/{{this.name}}">{{this.name}}</a>
+                    </span>
+            </td>
+            <td>Pending Invite</td>
+            <td>
+                <span class="btn btn-dark btn-sm" data-cancel="{{this._id}}" data-name="{{this.name}}">
+                    <i class="fa fa-remove col-light right5"></i> Cancel Invite
+                </span>
+            </td>
+        </tr>
+    {{/each}}
+    </tbody>
+</table>

@@ -1,0 +1,115 @@
+<div class="col-md-9">
+    <div id="alert_vote" class="alert alert-warning top10" style="display:none;">
+        <strong>Thanks for your Feedback!</strong>
+        <p>
+            This site is free and open to everyone,
+            but you need to be <a href="/auth/register">authenticated</a> to vote.
+        </p>
+    </div>
+    <div id="alert_favorite" class="alert alert-warning top10" style="display:none;">
+        <p>You need to be <a href="/auth/register">authenticated</a> to favorite a deck.</p>
+    </div>
+
+    <div class="top20 bottom5 relative">
+        {{#each deck.cards}}
+            <a href="/card/{{#ifEqual this.normalizedChampion null}}neutral{{else}}{{this.normalizedChampion}}{{/ifEqual}}/{{this.normalizedName}}"
+               data-prerender="/card/{{#ifEqual this.normalizedChampion null}}neutral{{else}}{{this.normalizedChampion}}{{/ifEqual}}/{{this.normalizedName}}">
+                {{>rectangleCard class='responsive cardtip' card=this static=../static showTitle=true}}
+            </a>
+        {{/each}}
+    </div>
+
+    {{>ads/responsive class='top10 bottom10'}}
+
+    <div id="description" class="deck-desc-container top10">{{{deck.description}}}</div>
+
+    {{#ifGreater deck.levels.0.length 0}}
+        <label class="h6">Leveling Guide</label>
+        {{#each deck.cards}}
+            <ol class="levels responsive">
+                <p class="no-margin ptop10 pbottom5">
+                    <label class="no-margin no-padding strong col-{{this.tier}}">{{this.name}}</label>
+                </p>
+                <li class="image cardtip" data-id="{{this._id}}">
+                    <img src="{{this.imagePath}}">
+                </li>
+                {{#times 15}}
+                    <li class="lvl {{#ifIn2d ../../deck.levels @index this}}picked{{/ifIn2d}}">
+                        {{addition this 1}}
+                    </li>
+                {{/times}}
+                <li class="clearfix"></li>
+            </ol>
+        {{/each}}
+    {{/ifGreater}}
+
+    {{#ifGreater deck.substitutions.length 0}}
+        <div id="substitutions" class="top10">
+            <label class="h6">Substitutions</label>
+            <div class="row">
+                {{#each deck.substitutions}}
+                    <div class="top20 col-xs-12 col-md-6">
+                        <a href="/card/{{#ifEqual this.orig.normalizedChampion null}}neutral{{else}}{{this.orig.normalizedChampion}}{{/ifEqual}}/{{this.orig.normalizedName}}"
+                           data-prerender="/card/{{#ifEqual this.orig.normalizedChampion null}}neutral{{else}}{{this.orig.normalizedChampion}}{{/ifEqual}}/{{this.orig.normalizedName}}">
+                            {{>rectangleCard card=this.orig class='large cardtip' showTitle=true}}
+                        </a>
+                        <a href="/card/{{#ifEqual this.sub.normalizedChampion null}}neutral{{else}}{{this.sub.normalizedChampion}}{{/ifEqual}}/{{this.sub.normalizedName}}"
+                           data-prerender="/card/{{#ifEqual this.sub.normalizedChampion null}}neutral{{else}}{{this.sub.normalizedChampion}}{{/ifEqual}}/{{this.sub.normalizedName}}">
+                            {{>rectangleCard card=this.sub class='large cardtip' showTitle=true}}
+                        </a>
+                        <div class="top5">
+                            <p>
+                                Replace <a
+                                    href="/card/{{#ifEqual this.orig.normalizedChampion null}}neutral{{else}}{{this.orig.normalizedChampion}}{{/ifEqual}}/{{this.orig.normalizedName}}"
+                                    class="col-{{this.orig.tier}}">{{this.orig.name}}</a>
+                                with <a
+                                    href="/card/{{#ifEqual this.sub.normalizedChampion null}}neutral{{else}}{{this.sub.normalizedChampion}}{{/ifEqual}}/{{this.sub.normalizedName}}"
+                                    class="col-{{this.sub.tier}}">{{this.sub.name}}</a>
+                            </p>
+                            <p class="break-word">{{this.text}}</p>
+                        </div>
+                    </div>
+                    {{#isOdd @index}}
+                        <i class="clearfix"></i>
+                    {{/isOdd}}
+                {{/each}}
+            </div>
+        </div>
+    {{/ifGreater}}
+
+    <div class="top10 visible-xs">
+        {{#ifEqualObjId _auth.uid deck._author}}
+            <span class="btn btn-dark btn-sm btn-block bottom5" data-href="{{deck.editPath}}">Edit Deck</span>
+        {{else}}
+            {{#ifEqual _auth.admin true}}
+                <span class="btn btn-dark btn-sm btn-block bottom5" data-href="{{deck.editPath}}">Edit Deck</span>
+            {{/ifEqual}}
+        {{/ifEqualObjId}}
+
+        <div class="row bottom5">
+            <div class="col-xs-6" style="padding-right:2px;">
+                <span class="btn btn-dark btn-sm btn-block upvote">
+                    <i class="upvote fa fa-plus-square right5"></i>Upvote
+                </span>
+            </div>
+            <div class="col-xs-6" style="padding-left:2px;">
+                <span class="btn btn-dark btn-sm btn-block upvote">
+                    <i class="downvote fa fa-minus-square right5"></i>Downvote
+                </span>
+            </div>
+        </div>
+
+        <span class="btn btn-dark btn-sm btn-block favorite">
+            <i class="favorite fa fa-heart right5"></i>
+            Favorite
+        </span>
+        <a class="btn btn-twitter btn-sm btn-block"
+           href="https://twitter.com/intent/tweet?text={{deck.name}}&url=https://paladinstopdecks.com{{deck.fullPath}}&via=paladinstopdeck"></a>
+        <a class="btn btn-facebook btn-sm btn-block"
+           href="https://www.facebook.com/sharer/sharer.php?u=https://paladinstopdecks.com{{deck.fullPath}}"
+           target="_blank"></a>
+        <a href="//www.reddit.com/r/paladins/submit?url=https://paladinstopdecks.com{{deck.fullPath}}&title={{deck.name}}"
+           target="_blank" class="btn btn-reddit btn-block"></a>
+    </div>
+
+</div>

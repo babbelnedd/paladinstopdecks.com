@@ -1,0 +1,14 @@
+<div class="rectangle-avatar">
+    <a href="/champion/{{champion}}">
+        <img class="{{champion}}"
+             src="/static/img/champions/{{champion}}/240.png?v={{static.patch}}">
+    <span class="title">
+        {{#if overlayTitle}}
+            {{overlayTitle}}
+        {{else}}
+            {{champion}}
+        {{/if}}
+    </span>
+        <div class="overlay"></div>
+    </a>
+</div>

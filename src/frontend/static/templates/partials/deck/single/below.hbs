@@ -1,0 +1,29 @@
+<section id="user_bio" class="col-md-9 top20">
+    <label class="h6">Author</label>
+    {{>profile user=author}}
+</section>
+<i class="clearfix"></i>
+
+<section id="share" class="col-xs-12 hidden-xs top20">
+    <label class="h6">Share</label>
+    <ul class="no-margin no-padding inline-list">
+        <li>
+            <a href="https://twitter.com/intent/tweet?text={{deck.name}}&url=https://paladinstopdecks.com{{deck.fullPath}}&via=paladinstopdeck"
+               target="_blank" class="btn btn-twitter"></a>
+        </li>
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://paladinstopdecks.com{{deck.fullPath}}"
+               target="_blank" class="btn btn-facebook"></a>
+        </li>
+        <li>
+            <a href="//www.reddit.com/r/paladins/submit?url=https://paladinstopdecks.com{{deck.fullPath}}&title={{deck.name}}"
+               target="_blank" class="btn btn-reddit"></a>
+        </li>
+    </ul>
+</section>
+<i class="clearfix"></i>
+
+<section id="comment_container" class="col-xs-12 col-md-9 top20">
+    <div id="comments">{{>spinner}}</div>
+</section>
+<i class="clearfix"></i>

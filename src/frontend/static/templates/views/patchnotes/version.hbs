@@ -1,0 +1,9 @@
+<div class="box bordered">
+    {{#each versions}}
+
+        <a href="/patchnotes/version/{{normalize version}}">
+            {{version}} from {{dateFormat date 'x' 'DD.MM.YYYY'}}<br/>
+        </a>
+
+    {{/each}}
+</div>

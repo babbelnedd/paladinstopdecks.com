@@ -1,0 +1,46 @@
+.spinner-paladins {
+
+    z-index: 999;
+
+    .createSpinner(@size) {
+        .spinner-body, .spinner-frame {
+            height: ~"@{size}px";
+            width: ~"@{size}px";
+            background-size: 100%;
+        }
+
+        .spinner-body {
+            background: url('/static/img/spinner/paladins_body@{size}.png') no-repeat;
+        }
+
+        .spinner-frame {
+            background: url('/static/img/spinner/paladins_frame@{size}.png') no-repeat;
+            animation: spinner-frame 2000ms infinite linear;
+        }
+    }
+
+    &.spinner-default, &.spinner-75 {
+        .createSpinner(75);
+    }
+
+    &.spinner-50 {
+        .createSpinner(50);
+    }
+
+    &.spinner-100 {
+        .createSpinner(100);
+    }
+
+    &.spinner-152 {
+        .createSpinner(152);
+    }
+
+    @keyframes spinner-frame {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+}

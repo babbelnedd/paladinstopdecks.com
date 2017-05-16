@@ -1,0 +1,22 @@
+<p>
+    Sign up for the upcoming Tournaments
+</p>
+
+
+<form class="form-horizontal" action="/api/teams/signup" method="POST">
+
+    <strong>Top Deck League - Season I</strong>
+    {{#ifLess team.roster.length 5}}
+        <div class="alert alert-warning top10">
+            You need at least 5 Members in your Roster to sign up
+        </div>
+    {{else}}
+        {{#ifNotIn team.signedUp 'season_one'}}
+            <input type="hidden" name="tournament" value="season_one">
+            <button type="submit" class="left50 btn btn-dark">Sign up</button>
+        {{else}}
+            <span>Signed up</span>
+        {{/ifNotIn}}
+    {{/ifLess}}
+
+</form>

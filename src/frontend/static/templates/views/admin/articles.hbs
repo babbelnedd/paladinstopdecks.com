@@ -1,0 +1,140 @@
+<script>
+    head.ready('app.min.js', function () {
+        $(function () {
+            $('select#articles').on('change', function () {
+                $('a[href="#' + $(this).val() + '"]').tab('show');
+            });
+
+            $('a[href="#{{articles.0._id}}"]').tab('show');
+        });
+    });
+</script>
+
+<div class="p10">
+    <p class="h1">Articles - I know that is some disgusting layout - enjoy</p>
+    <p>
+        Okay Listen; if an info text says don't fucking touch it or similar then <b>DON'T FUCKING MESS AROUND</b>.
+        Otherwise I'll revoke all your changes and will fucking detract your permissions.
+        <br>
+        Okay? Awesome, have fun!
+    </p>
+    <p>
+        Something before you start: Changes will only be saved if you actually press the big fat red
+        <button class="btn btn-xs btn-danger">update</button>
+        button. If you leave the page without saving your changes will be lost. foreverever.<br>
+        If you press the
+        <button class="btn btn-xs btn-danger">update</button>
+        button your changes will go live. immediately. So act responsible. If you fuck things up and I'm not around I
+        have to kill you.
+    </p>
+    <p>How to HTML:</p>
+    <pre>
+Paragraphs
+Put each of your paragraphs between &lt;p&gt;..&lt;/p&gt;
+
+Example:
+-----------
+&lt;p&gt;Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.&lt;/p&gt;
+&lt;p&gt;Paragraph 2&lt;/p&gt;
+&lt;p&gt;Paragraph 3&lt;/p&gt;
+
+Headings
+Use h1 to h6. h1 is the largest heading; h6 the opposite &lt;h1&gt;..&lt;/h1&gt;;&lt;h2&gt;..&lt;/h2&gt;; and so on..
+Well.. DO NOT USE HEADING 1; DON'T FUCKING DO IT. You should **only** use h2. If you want to use something else ask me.
+
+If you don't like the size of h2 I can help you. You can emulate the size of different headings
+
+&lt;h2 class="h4"&gt;my heading&lt;/h2&gt;
+
+General:
+
+ - Closing tags have always to match the opening tag
+ - If you are not sure about something ask me; don't fuck things up
+    </pre>
+
+
+    <label for="articles" class="top50">Select your Article</label>
+    <select class="form-control" id="articles">
+        {{#each articles}}
+            <option value="{{this._id}}">{{this.title}}</option>
+        {{/each}}
+    </select>
+    <ul class="nav nav-tabs hidden" id="the-tab">
+        {{#each articles}}
+            <li><a href="#{{this._id}}" data-toggle="tab">&nbsp;</a></li>
+        {{/each}}
+    </ul>
+    <div class="tab-content">
+        {{#each articles}}
+            <div class="tab-pane ptop50" id="{{this._id}}">
+                <form method="POST" action="/admin/articles" class="form">
+
+                    <input type="hidden" value="{{this._id}}" name="_id">
+
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <p class="info-text">Title how it appears on the frontpage and the actual article</p>
+                        <input type="text" value="{{this.title}}" name="title" id="title" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="preview">Preview</label>
+                        <p class="info-text">Should be a bit longer than Meta Description. Around ~250characters or so.
+                            Will be used on the frontpage</p>
+                        <input type="text" value="{{this.preview}}" name="preview" id="preview" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="slug">Slug</label>
+                        <p class="info-text">
+                            The relative path. https://paladinstopdecks.com/news/<b>slug</b><br>
+                            Separate words with a dash (-) and drop <a href="https://en.wikipedia.org/wiki/Stop_words">stop
+                            words</a>
+                        </p>
+                        <input type="text" value="{{this.slug}}" name="slug" id="slug" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="logo">Logo</label>
+                        <p class="info-text">You better don't touch this</p>
+                        <input type="text" value="{{this.logo}}" name="logo" id="logo" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="meta_description">Meta Description</label>
+                        <p class="info-text">Text for Search Machines. Keep it around 160 characters, not more</p>
+                        <input type="text" value="{{this.meta.description}}" name="meta_description"
+                               id="meta_description"
+                               class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="meta_title">Meta Title</label>
+                        <p class="info-text">Title for Search Machines. Max 70 Characters</p>
+                        <input type="text" value="{{this.meta.title}}" name="meta_title" id="meta_title"
+                               class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <p class="info-text">This is a unix timestamp. Don't fucking mess with it</p>
+                        <input type="number" value="{{this.date}}" name="date" id="date" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="_content">Content</label>
+                        <p class="info-text">Your actual article. Use HTML here!</p>
+                <textarea class="form-control" rows="5" id="_content" name="content"
+                          style="resize:vertical">{{this.content}}</textarea>
+                    </div>
+                    <div class="form-group checkbox checkbox-primary">
+                        <input type="checkbox" {{#ifEqual this.comments true}}checked{{/ifEqual}} name="comments"
+                               id="comments">
+                        <label for="comments">Comments enabled</label>
+                    </div>
+                    <div class="form-group checkbox checkbox-primary">
+                        <input type="checkbox" {{#ifEqual this.visible true}}checked{{/ifEqual}} name="visible"
+                               id="visible">
+                        <label for="visible">Visible</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-danger btn-block">Update</button>
+
+                </form>
+            </div>
+        {{/each}}
+    </div>
+</div>

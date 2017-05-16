@@ -1,0 +1,32 @@
+<h2 class="no-margin">Abilities</h2>
+<div class="row" id="abilities">
+    <div class="col-md-6">
+        <div class="row">
+            {{#each champion.abilities}}
+                {{#ifEqual this.type 'Ultimate'}}
+                    <div class="col-xs-12">{{>champion/ability champion=../../this.champion ability=this static=static}}</div>
+                {{/ifEqual}}
+            {{/each}}
+            {{#each champion.abilities}}
+                {{#ifEqual this.type 'Ability'}}
+                    <div class="col-xs-12">{{>champion/ability champion=../../this.champion ability=this static=static}}</div>
+                {{/ifEqual}}
+            {{/each}}
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="row">
+            {{#each champion.abilities}}
+                {{#ifEqual this.type 'Basic Attack'}}
+                    <div class="col-xs-12">{{>champion/ability champion=../../this.champion ability=this static=static}}</div>
+                {{/ifEqual}}
+            {{/each}}
+            {{#each champion.abilities}}
+                {{#ifEqual this.type 'AltFire'}}
+                    <div class="col-xs-12">{{>champion/ability champion=../../this.champion ability=this static=static}}</div>
+                {{/ifEqual}}
+            {{/each}}
+        </div>
+    </div>
+</div>
+<i class="clearfix"></i>

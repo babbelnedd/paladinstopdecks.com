@@ -1,0 +1,16 @@
+.champion-banner {
+    position: relative;
+    background-size: cover;
+    width: 100%;
+
+    .overlay {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.25));
+    }
+
+    .for(@paladins-champions);
+    .-each(@champ) {
+        &.@{champ} {
+            background-image: url('@{cdn}/static/img/champions/@{champ}/banner.jpg');
+        }
+    }
+}

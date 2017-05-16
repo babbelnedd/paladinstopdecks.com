@@ -1,0 +1,57 @@
+{
+  "name": "Kinessa",
+  "normalizedName": "kinessa",
+  "abilities": [
+    {
+      "name": "Sniper Mode",
+      "description": "Aim through your sniper scope and fire long range attacks. While scoped in, the damage of your next shot steadily increases.",
+      "type": "AltFire",
+      "properties": {
+        "key": "alt"
+      }
+    },
+    {
+      "name": "Headhunter",
+      "description": "For 5 seconds successful shots made to the upper half of an enemy character will deal 100% increased damage",
+      "type": "Ultimate",
+      "properties": {
+        "duration": "5s",
+        "key": "q"
+      }
+    },
+    {
+      "name": "Oppressor mine",
+      "description": "Kinessa throws out up to 2 mines that activate once they land. While active the Oppressor Mine will slow a single enemy player within 40ft",
+      "type": "Ability",
+      "properties": {
+        "cooldown": "10s",
+        "key": "e"
+      }
+    },
+    {
+      "name": "Transporter",
+      "description": "Hold F to deploy a Transporter. Tapping F while a Transporter is deployed will teleport you to the Transporter",
+      "type": "Ability",
+      "properties": {
+        "cooldown": "20s",
+        "key": "f"
+      }
+    },
+    {
+      "name": "Sniper Rifle",
+      "type": "Basic Attack",
+      "description": "A combination weapon that fires as an energy cabine or a powerful laser rifle",
+      "damage": "340 damage",
+      "properties": {
+        "key": "basic",
+        "damage": "340"
+      }
+    }
+  ],
+  "movementSpeed": 400,
+  "clipSize": 20,
+  "title": "",
+  "class": "",
+  "releaseDate": 1456963200000,
+  "health": 1750
+}

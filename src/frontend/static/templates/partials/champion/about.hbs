@@ -1,0 +1,20 @@
+<div class="champion-header">
+    <div class="champion-128 {{champion.normalizedName}} round filter float-left"></div>
+    <div class="title">
+        <h2>{{champion.name}} <span>{{champion.title}}</span></h2>
+    </div>
+    <div class="info">
+        {{#if champion.class}}
+            <p>Class <span class="stat">{{champion.class}}</span></p>
+        {{/if}}
+        <p>Health <span class="stat">{{champion.health}}</span></p>
+        {{#if champion.movementSpeed}}
+            <p>Movement Speed <span class="stat">{{champion.movementSpeed}}</span></p>
+        {{/if}}
+        {{#if champion.attackRange}}
+            <p>Attack Range <span class="stat">{{champion.attackRange}}</span></p>
+        {{/if}}
+        <p>Released <span class="stat">{{moment champion.releaseDate 'x' 'LL'}}</span></p>
+    </div>
+    <i class="clearfix"></i>
+</div>

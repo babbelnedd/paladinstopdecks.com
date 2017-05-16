@@ -1,0 +1,36 @@
+@import 'variables';
+.box {
+    position: relative;
+    margin-bottom: 30px;
+    background-color: @gray-darker;
+
+    .box-body {
+        padding: 30px;
+        @media (max-width: @screen-phone) {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+
+    .box-header, .box-footer {
+        margin: 0 15px;
+        padding: 10px 30px;
+        min-height: 50px;
+        overflow: visible;
+    }
+
+    .box-header {
+        border-bottom: 1px solid @gray-lighter;
+    }
+
+    .box-footer {
+        position: absolute;
+        width: 100%;
+        border-top: 1px solid @gray-lighter;
+        bottom: 0;
+    }
+
+    &.bordered {
+        border: 1px solid @gray-lightest;
+    }
+}

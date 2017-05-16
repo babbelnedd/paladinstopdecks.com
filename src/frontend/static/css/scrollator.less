@@ -1,0 +1,81 @@
+@scrollatorPaddingTopDown: 4px;
+@scrollatorMarginTopDown: 40px;
+
+#scrollator_holder {
+    position: absolute;
+    top: 0;
+    left: 4px;
+    width: 0;
+    height: 0;
+
+    @media (max-width: @screen-desktop) {
+        display: none;
+    }
+
+}
+
+.scrollator {
+    overflow: hidden !important;
+}
+
+.scrollator_lane_holder {
+    position: absolute;
+    top: 0;
+    right: 4px;
+    bottom: 0;
+    box-sizing: border-box;
+    width: 20px;
+    background-color: transparent;
+    //opacity: 0;
+    transition: width 200ms;
+}
+
+.scrollator_lane {
+    position: absolute;
+    margin: @scrollatorPaddingTopDown 0;
+    top: @navbarHeight + @netbarHeight + @scrollatorMarginTopDown;
+    right: 3px;
+    bottom: @scrollatorMarginTopDown;
+    left: 3px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: @blue; //rgba(64, 64, 64, 0);
+    box-shadow: inset 0 0 10px @gray-darker;
+    transition: background 200ms;
+    &.shrink {
+        top: @shrinkedNavbarHeight + @scrollatorMarginTopDown;
+    }
+
+    &.bottom {
+        bottom: @footer-height + @scrollatorMarginTopDown;
+        .scrollator_handle_holder {
+            margin: -@scrollatorPaddingTopDown 0;
+        }
+    }
+}
+
+.scrollator_lane_holder.scrollator_on_body {
+    position: fixed;
+}
+
+.scrollator_handle_holder {
+    position: absolute;
+    box-sizing: border-box;
+    margin: @scrollatorPaddingTopDown 0;
+    width: 14px;
+    background-color: transparent;
+    transition: width 200ms;
+}
+
+.scrollator_handle {
+    position: absolute;
+    top: 0;
+    right: 3px;
+    bottom: 0;
+    left: 3px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: @light-blue;
+    opacity: 0.75;
+
+}

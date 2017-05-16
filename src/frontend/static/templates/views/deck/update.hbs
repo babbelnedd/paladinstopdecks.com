@@ -1,0 +1,177 @@
+{{#ifNotEqual deck.patch static.patch}}
+    <div class="alert alert-warning top20">
+        <p>
+            <strong>Outdated Deck</strong>
+        </p>
+        <p>
+            Sorry, updating decks for outdated patches isn't possible at the moment.
+        </p>
+        <p>
+            Since Hi-Rez keeps changing the card system regularly it's hard to ensure that updating old decks will work
+            as expected. We recommend to <a href="/deckbuilder/{{deck.normalizedChampion}}">create a
+            new {{capitalize deck.normalizedChampion}} Deck</a>.
+        </p>
+        <p>
+            Thank you for your understanding.
+        </p>
+    </div>
+{{/ifNotEqual}}
+<input type="hidden" id="champion" value="{{this.champion}}">
+<div class="alert alert-warning" id="alert" style="display:none;">
+    <strong>Woopsie! Something went wrong</strong>
+    <p></p>
+</div>
+
+<div class="deck-update">
+    <div class="box">
+        <div class="deck-info update">
+            <form class="form">
+                <input type="hidden" id="_id" name="_id" value="{{deck.id}}">
+
+                <div class="form-group">
+                    <input type="text" value="{{deck.name}}" id="title" name="title"
+                           class="form-control title no-margin"
+                           placeholder="Enter Deck Title .. (5-100 characters)">
+                </div>
+
+                <div class="form-group">
+                    <label>Cards</label>
+                    <p class="info-text">Click to replace a card</p>
+                    <div class="deck-container">
+                        <ul id="new_deck" class="deck no-margin no-padding">
+                            <li class="inline-block" rv-each-card="deck.cards" rv-rectanglecard="card"
+                                rv-data-card-name="card.name"
+                                rv-data-deck-card="card._id" rv-data-tier="card.tier">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <i class="clearfix"></i>
+                <div class="form-group top20 no-padding no-margin">
+                    <label>Substitutions</label>
+                    <p class="info-text">
+                        Add substitutions to highlight cards which could be replaced with other cards
+                    </p>
+                    <ul class="no-margin no-padding">
+                        <li class="inline-block" rv-each-card="deck.cards" rv-rectanglecard="card"
+                            rv-data-add-sub="card.id" rv-data-tier="card.tier">
+                        </li>
+                    </ul>
+                    <i class="clearfix"></i>
+                </div>
+            </form>
+        </div>
+        <div class="alert alert-warning no-margin">
+            <strong>Common Cards</strong>
+            <p>
+                We are currently in the process of updating the Deckbuilder.
+                We aren't exactly sure yet how we want to implement the new system of common cards.
+                Thus this feature is missing at the moment. <br>
+                If you have any ideas you want to share
+                <a href="/feedback" data-prerender="/feedback">send us your feedback</a>
+            </p>
+        </div>
+        <div class="linear-bg ptop10">
+            <p rv-show="substitutions | gt 0" class="info-text">
+                Click to remove a substitution
+            </p>
+            <ul class="no-padding">
+                <li rv-each-sub="substitutions" class="relative no-padding bottom10">
+                    <div class="inline-block sub-overlay">
+                        <div class="sub-overlay-inner" data-remove-sub rv-data-orig="sub.orig.id"
+                             rv-data-sub="sub.sub.id">
+                            <p class="text-center top10">Remove Sub</p>
+                        </div>
+                        <div rv-rectanglecard="sub.orig" data-size="large" data-show-title="true"
+                             class="inline-block"></div>
+                        <div rv-rectanglecard="sub.sub" data-size="large" data-show-title="true"
+                             class="inline-block"></div>
+                    </div>
+                    <div class="inline-block">
+                            <textarea class="substitution" rv-value="sub.text" placeholder="Description .."
+                                      maxlength="250">
+                                </textarea>
+                        <p>
+                            <strong rv-text="sub.text | length"></strong>
+                            <small>/250 Characters</small>
+                        </p>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="form-group top10">
+                <label>Card Leveling</label>
+                <p class="info-text">Click to level you cards</p>
+                <ol class="levels interactive" rv-each-card="deck.cards">
+                    <p class="no-margin ptop10 pbottom5">
+                        <label rv-text="card.name" class="no-margin no-padding strong"
+                               rv-add-tier-class="card.tier"></label>
+                    </p>
+                    <li class="image cardtip" rv-data-id="card._id">
+                        <img rv-src="card.imagePath">
+                    </li>
+                    {{#times 15}}
+                        <li rv-data-row="index" data-col="{{this}}" rv-picked>{{addition this 1}}</li>
+                    {{/times}}
+                    <li class="clearfix"></li>
+                </ol>
+            </div>
+
+            <div class="form-group ptop10">
+                <label for="description">Guide</label>
+                <p class="info-text">Describe your Deck</p>
+
+                <textarea id="description" name="description" maxlength="50000">{{deck.description}}</textarea>
+            </div>
+            {{#ifEqual deck.patch static.patch}}
+                <button type="button" class="btn btn-block btn-blue" id="save_deck">Save Deck</button>
+            {{/ifEqual}}
+        </div>
+    </div>
+
+    <div id="card_modal" class="modal modal-wide fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body table-responsive no-padding">
+                    <table class="row decks no-margin no-padding">
+                        <thead>
+                        <tr>
+                            <th class="full">Name</th>
+                            <th>Tier</th>
+                            <th>Rank</th>
+                            <th>Health</th>
+                            <th><abbr title="Damage">DMG</abbr></th>
+                            <th><abbr title="Cooldown">CD</abbr></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr rv-each-card="championCards" rv-data-add-card="card.id" rv-data-tier="card.tier">
+                            <td class="full">
+                                <div rv-rectanglecard="card"
+                                     data-size="small top10 right10 float-left"></div>
+                                <span rv-add-tier-class="card.tier">{card.name}<i class="hidden">|</i></span><br>
+                                <small rv-text="card.description"></small>
+                            </td>
+                            <td rv-text="card.tier"></td>
+                            <td rv-text="card.rankText"></td>
+                            <td rv-text="card.hp"></td>
+                            <td rv-text="card.damage"></td>
+                            <td rv-text="card.cooldown"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="spinner" class="saving-deck">
+    <p class="h1" rv-text="text">Loading Deck ..</p>
+    {{>spinner}}
+</div>
+
+<form id="image_form" enctype="multipart/form-data" action="/api/upload" method="post" class="hidden">
+    <input type="submit" value="Upload Image" name="submit">
+    <input type="file" id="image_input" name="img" accept="image/*"/>
+</form>

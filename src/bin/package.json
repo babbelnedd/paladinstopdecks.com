@@ -1,0 +1,17 @@
+{
+  "name": "bin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "www.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.0.6",
+    "npid": "^0.4.0",
+    "socket.io": "^1.4.4",
+    "twitter": "^1.2.5"
+  }
+}

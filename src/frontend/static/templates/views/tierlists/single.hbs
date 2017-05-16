@@ -1,0 +1,47 @@
+<h1>{{tierlist.title}}</h1>
+<ul class="no-padding">
+    <li>Date: {{relativeMoment tierlist.created 'x'}}</li>
+    <li>Patch: {{tierlist.patch}}</li>
+</ul>
+
+<div>
+    {{{tierlist.description}}}
+</div>
+
+<ul class="tierlist">
+    <li class="tier SS top5">
+        <div class="letter">SS</div>
+        <ul class="content">{{#each tierlist.SS}}
+            <li>
+                <div class="champion-50 {{this}}"></div>
+            </li>{{/each}}</ul>
+    </li>
+    <li class="tier S top5">
+        <div class="letter">S</div>
+        <ul class="content">{{#each tierlist.S}}
+            <li>
+                <div class="champion-50 {{this}}"></div>
+            </li>{{/each}}</ul>
+    </li>
+    <li class="tier A top5">
+        <div class="letter">A</div>
+        <ul class="content">{{#each tierlist.A}}
+            <li>
+                <div class="champion-50 {{this}}"></div>
+            </li>{{/each}}</ul>
+    </li>
+    <li class="tier B top5">
+        <div class="letter">B</div>
+        <ul class="content">{{#each tierlist.B}}
+            <li>
+                <div class="champion-50 {{this}}"></div>
+            </li>{{/each}}</ul>
+    </li>
+    <li class="tier C top5">
+        <div class="letter">C</div>
+        <ul class="content">{{#each tierlist.C}}
+            <li>
+                <div class="champion-50 {{this}}"></div>
+            </li>{{/each}}</ul>
+    </li>
+</ul>

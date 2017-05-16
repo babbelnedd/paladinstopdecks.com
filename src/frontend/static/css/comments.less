@@ -1,0 +1,71 @@
+@commentInputMaxHeight: 200px;
+
+.comments {
+    position: relative;
+    header {
+        .textarea-wrapper {
+            margin-left: 70px;
+            border: 1px solid @gray-lighter;
+            border-radius: 4px;
+            word-wrap: break-word;
+
+            .textarea {
+                padding: 8px;
+                min-height: @accountAvatarHeight;
+                max-height: @commentInputMaxHeight;
+                color: @gray-dark;
+                font-weight: 500;
+                outline: 0;
+                overflow: auto;
+                // background: rgba(255, 0, 0, 0.25);
+                background: @gray-lightest;
+                // todo: border-bottom only when bot is displayed..
+                border-bottom: 1px solid @gray-lighter;
+            }
+
+            .bot {
+                display: none;
+                height: 34px;
+
+                .btn {
+                    border-bottom-right-radius: 4px;
+                }
+            }
+        }
+    }
+
+    ul.commentlist {
+        margin: 0;
+        padding: 0;
+        li { margin-top: 20px; }
+        li.comment {
+            margin-top: 20px;
+
+            .content {
+                margin-left: 80px;
+                margin-top: 0;
+                .head { .font-size(1.4); }
+                .text { .font-size(1.6); }
+                ul.bottom {
+                    list-style-type: none;
+                    .font-size(1.4);
+                    margin: 0; padding: 0;
+                    li {
+                        display: inline;
+                        font-weight: bold;
+                        color: @col-highlight;
+                        // padding: 0 8px;
+                        border-left: 1px solid @gray-lighter;
+                        &:nth-child(1) { border: none; }
+                    }
+                }
+            }
+        }
+    }
+
+    li.reply {
+        padding: 0;
+        cursor: pointer;
+        font-weight: 500;
+    }
+}

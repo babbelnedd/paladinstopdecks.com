@@ -1,0 +1,67 @@
+<footer>
+    <div class="container">
+
+        <div class="col-xs-12 col-md-4">
+            <div class="row">
+                <div class="col-xs-6 col-md-12">
+                    <label>Social</label>
+                    <ul class="no-margin no-padding">
+                        <li>
+                            <a href="/social/twitter" target="_blank">
+                                <i class="fa fa-twitter col-twitter right5"></i>
+                                Twitter
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/social/youtube" target="_blank">
+                                <i class="fa fa-youtube-play col-youtube right5"></i>
+                                YouTube
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/social/twitch" target="_blank">
+                                <i class="fa fa-twitch col-twitch right5"></i>
+                                Twitch
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-xs-6 col-md-12">
+                    <label>More</label>
+                    <ul class="no-margin no-padding">
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="/legal/disclaimer">Disclaimer</a></li>
+                        <li><a href="/legal/privacy">Privacy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-4">
+            <label>Recent Decks</label>
+            <ul class="no-margin no-padding">
+                {{#each static.decks.recent}}
+                    <li data-prerender="{{this.fullPath}}">
+                        <a href="{{this.fullPath}}">
+                            <div class="champion-16 round {{this.normalizedChampion}} inline-block right5"></div>
+                            {{this.name}}
+                        </a>
+                    </li>
+                {{/each}}
+            </ul>
+        </div>
+        <div class="col-xs-12 col-md-4 popular-decks">
+            <label>Popular Decks</label>
+            <ul class="no-margin no-padding">
+                {{#each static.decks.top}}
+                    <li data-prerender="{{this.fullPath}}">
+                        <a href="{{this.fullPath}}">
+                            <div class="champion-16 round {{this.normalizedChampion}} inline-block right5"></div>
+                            {{this.name}}
+                        </a>
+                    </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,44 @@
+<div>
+    {{#if user.avatar}}
+        <img src="data:image/png;base64,{{user.avatar}}" class="gravatar right10 hidden-xs">
+    {{/if}}
+    <div>
+        <strong class="text-uppercase"><a href="/account/{{user.name}}/activity">{{user.name}}</a></strong>
+        {{#if user.team.name}}
+            <span>- plays for <a href="/team/{{user.team.name}}">{{user.team.name}}</a></span>
+        {{/if}}
+        {{#ifAny user.bio}}
+            <ul class="inline-list">
+                {{#if user.bio.twitter}}
+                    <li>
+                        <a href="{{user.bio.twitter}}" target="_blank" rel="nofollow" class="col-twitter">
+                            <i class="fa fa-twitter right5"></i> Twitter
+                        </a>
+                    </li>
+                {{/if}}
+                {{#if user.bio.youtube}}
+                    <li>
+                        <a href="{{user.bio.youtube}}" target="_blank" rel="nofollow" class="col-youtube">
+                            <i class="fa fa-youtube-play right5"></i> YouTube
+                        </a>
+                    </li>
+                {{/if}}
+                {{#if user.bio.twitch}}
+                    <li>
+                        <a href="{{user.bio.twitch}}" target="_blank" rel="nofollow" class="col-twitch">
+                            <i class="fa fa-twitch right5"></i> Twitch
+                        </a>
+                    </li>
+                {{/if}}
+            </ul>
+            <i class="clearfix"></i>
+        {{/ifAny}}
+    </div>
+    <i class="clearfix"></i>
+    {{#ifNotEqual short true}}
+        {{#if user.bio.biography}}
+            <p class="top10 bottom10">{{user.bio.biography}}</p>
+        {{/if}}
+    {{/ifNotEqual}}
+
+</div>

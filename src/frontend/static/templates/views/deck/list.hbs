@@ -1,0 +1,39 @@
+<div class="box">
+
+    <form method="GET" class="form deck-filter">
+        <div class="filter bottom20">
+            <h2 class="no-margin col-light">{{champion}} Decks</h2>
+            <input type="hidden" id="page" name="page" value="1">
+            <div class="row">
+                <div class="form-group col-xs-12 col-md-3">
+                    <label for="name" class="col-light">Name</label>
+                    <input type="text" id="name" name="name" class="form-control">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-xs-12 col-md-3">
+                    <label for="author" class="col-light">Author</label>
+                    <input type="text" id="author" name="author" class="form-control">
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-danger">Apply Filter</button>
+            <a href="/deckbuilder/{{champion}}" data-prerender="/deckbuilder/{{champion}}" class="btn btn-dark">Create Deck</a>
+        </div>
+        <div class="info-bar">
+            <span class="col-light">{{pagination.max}} {{capitalize champion}} decks found</span>
+            <div class="pull-right">
+                {{#ifGreater pagination.page 1}}
+                    <a href="javascript:;" class="col-highlight right5 prev-page">‹ Previous</a>
+                {{/ifGreater}}
+                <span class="col-light">{{pagination.from}} - {{pagination.to}} of {{pagination.max}}</span>
+                {{#ifLess pagination.to pagination.max}}
+                    <a href="javascript:;" class="left5 col-highlight next-page">Next ›</a>
+                {{/ifLess}}
+            </div>
+        </div>
+    </form>
+
+    {{>deck/table decks=decks static=static hide=hide}}
+
+</div>

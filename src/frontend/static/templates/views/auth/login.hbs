@@ -1,0 +1,22 @@
+<div class="inner">
+    <h1>{{data.pageTitle}}</h1>
+
+    {{>auth/error error=data.error}}
+
+    <form action="/auth/login" method="post" enctype="application/x-www-form-urlencoded">
+        <div class="form-group">
+            <input type="text" class="onclick-input" name="name" id="email">
+            <label for="email">Email or Username</label>
+        </div>
+        <div class="form-group">
+            <input type="password" class="onclick-input" name="password" id="password">
+            <label for="password">Password</label>
+        </div>
+        <button type="submit" class="btn btn-blue btn-block">Login</button>
+    </form>
+</div>
+
+<div class="bottom">
+    <a id="a_auth_register" class="pull-left" href="/auth/register">Need an Account?</a>
+    <a id="a_auth_forgotpw" class="pull-right inline" href="/auth/forgot">Forgot Password?</a>
+</div>

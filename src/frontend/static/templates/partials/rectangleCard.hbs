@@ -1,0 +1,12 @@
+<div class="rectangle-card {{card.tier}} {{class}}"
+     data-rectangle-card="true" data-card="true" data-id="{{card._id}}"
+     data-name="{{card.name}}"
+     data-normalized-name="{{card.normalizedName}}"
+     data-normalized-champion="{{card.normalizedChampion}}"
+     data-hp="{{card.hp}}" data-dmg="{{card.damage}}" data-tier="{{card.tier}}"
+     data-ability="{{card.ability}}">
+    <img src="{{static.cdn}}{{card.imagePath}}?v={{static.patch}}" class="float-left">
+    {{#ifEqual showTitle true}}
+        <span class="title">{{card.name}}</span>
+    {{/ifEqual}}
+</div>

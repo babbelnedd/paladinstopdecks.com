@@ -1,0 +1,37 @@
+<div class="alert bottom10" id="roster_notification" style="display:none;"></div>
+
+<div class="table-responsive" id="roster">
+    {{>team/management/roster-table team=team isCaptain=isCaptain static=static}}
+</div>
+
+<div>
+    <label for="invite_member">Invite new member</label>
+    <select id="invite_member" class="form-control"></select>
+    <p id="invite_member_help"></p>
+    <span id="invite_member_btn" class="btn btn-dark disabled">Invite</span>
+</div>
+
+<div id="promotion_modal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Attention!</h4>
+            </div>
+            <div class="modal-body">
+                <p>Do you really want to promote <span class="name"></span> to your team captain?</p>
+                <p>You will lose the permission to manage your team!</p>
+            </div>
+            <div class="modal-footer">
+                <form method="POST" action="/api/teams/promote-to-captain">
+                    <input type="hidden" id="promote_id" name="uid">
+                    <button type="submit" class="btn btn-danger promote">Promote</button>
+                    <button type="button" class="btn btn-dark" data-dismiss="modal" id="promote">Close</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>

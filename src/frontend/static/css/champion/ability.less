@@ -1,0 +1,37 @@
+.ability-container {
+    position: relative;
+    height: 120px;
+    margin-bottom: 10px;
+
+    .icon {
+        position: absolute;
+        top: 0; left: 0;
+        height: 120px;
+        width: 120px;
+        border-radius: 2px;
+    }
+
+    .title {
+        position: absolute;
+        left: 130px;
+        top: 0;
+    }
+    .desc {
+        position: absolute;
+        left: 130px;
+        top: 20px;
+        .font-size(1.4);
+        color: @gray-lighter;
+    }
+    ul.properties {
+        position: absolute;
+        bottom: 0;
+        margin: 0; padding: 0;
+        left: 130px;
+        li {
+            display: inline;
+            margin-right: 5px;
+            .font-size(1.4);
+        }
+    }
+}

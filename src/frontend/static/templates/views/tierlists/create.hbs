@@ -1,0 +1,72 @@
+<div data-rivets>
+    <div class="alert alert-warning" rv-show="opts.error.available">
+        <p><strong>Woopsie</strong></p>
+        <p rv-text="opts.error.msg"></p>
+    </div>
+
+    <form class="form">
+        <section>
+            <h1>Create a Tierlist</h1>
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="queue">Queue</label>
+                <select id="queue" name="queue" class="form-control">
+                    <option value="1">All Queues</option>
+                    <option value="2">Capture and Siege</option>
+                    <option value="3">Payload</option>
+                    <option value="4">Capture Only</option>
+                </select>
+            </div>
+            <label for="description">Description</label>
+            <textarea name="description" id="description" class="form-control"></textarea>
+
+            <button type="button" id="btn_save" class="btn btn-blue" rv-enabled="opts.canCreate" disabled>
+                Create Tierlist
+            </button>
+        </section>
+    </form>
+
+    <section class="top40">
+        <div class="col-md-8">
+            <ul class="tierlist">
+                {{#each tiers}}
+                    <li class="tier {{this}} top5">
+                        <div class="letter">{{this}}</div>
+                        <ul class="content">
+                            <li rv-each-champion="list.{{this}}">
+                                <div rv-champion-class="champion" rv-data-picked="champion" data-tier="{{this}}"></div>
+                            </li>
+                        </ul>
+                    </li>
+                {{/each}}
+            </ul>
+            <p class="info-text top5" rv-show="opts.hasChampion">Click to remove from tierlist</p>
+        </div>
+        <aside class="col-md-4">
+            <label>Champions</label>
+            <p class="info-text">Click to add to Tierlist</p>
+            {{#each champions}}
+                <div class="champion-64 {{this}} float-left left5 top5 pointer" data-champion="{{this}}"></div>
+            {{/each}}
+        </aside>
+    </section>
+
+    <div id="dialog" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p class="h6">Pick your Tier for <span rv-text="champion"></span></p>
+                    {{#each tiers}}
+                        <button type="button" class="btn btn-block btn-tier-{{this}}" data-tier="{{this}}">
+                            {{this}} Tier
+                        </button>
+                    {{/each}}
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

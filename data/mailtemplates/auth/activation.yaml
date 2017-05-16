@@ -1,0 +1,11 @@
+subject: Verify Your Email Address
+from: Paladins Top Decks
+content: >
+    <p><strong>Hey {{name}}, thanks for creating an account on <a style="color:#00bcff;text-decoration:none;" href="https://paladinstopdecks.com">paladinstopdecks.com</a></strong></p>
+    <p>Someone (we hope you) has used this email address at Paladins Top Decks. Please click the button below to verify your ownership of this email, {{name}}.</p>
+
+    <p>If you won't activate your account within 48 hours it will closed automatically.</p>
+    <div style="padding: 20px 0; margin-left: -20px; margin-right: -20px; width: auto; text-align: center; ">
+        <a href="{{url}}" style="background-color: #00bcff;color: #ffffff;display: inline-block;font-family: sans-serif;font-size: 14px;line-height: 40px;margin-bottom: 10px;text-align: center;text-decoration: none;width: 200px;">Verify your email</a>
+        <div style="color: #cccccc;font-size: 14px;font-weight: 300;text-decoration:none;word-wrap:break-word;">Or click on this link <a href="{{url}}" style="space-wrap:pre;color: #cccccc;font-size: 14px;font-weight: 300;text-decoration:none;">{{url}}</div>
+    </div>

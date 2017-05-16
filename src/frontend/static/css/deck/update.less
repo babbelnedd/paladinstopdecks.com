@@ -1,0 +1,88 @@
+.saving-deck {
+    position: fixed;
+    top: 0; left: 0;
+    height: 100%; width: 100%;
+    z-index: 999999;
+    background: rgba(0, 0, 0, 1);
+
+    > p {
+        position: absolute;
+        top: 35%; left: 50%;
+        transform: translateX(-50%);
+        .setSelection(transparent, @white);
+    }
+}
+.sub-overlay {
+    position: relative;
+    .sub-overlay-inner { display: none; }
+    &:hover {
+        .sub-overlay-inner {
+            cursor: pointer;
+            display: block;
+            position: absolute;
+            top: 0; left: 0;
+            height: 100%; width: 100%;
+            background: rgba(255, 0, 0, 0.75);
+            z-index: 100;
+            &:after {
+                font-family: FontAwesome, serif;
+                content: '\f00d';
+                font-size: 32px;
+                position: absolute;
+                top: 50%; left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+
+}
+textarea.substitution {
+    border: 1px solid @gray-darker; outline: 0 !important;
+    margin: 0; padding: 5px;
+    border-radius: 2px;
+    height: 70px;
+    width: 300px;
+    background: @gray-dark;
+    resize: none;
+    &:focus, &:active {
+        border-color: @gray;
+    }
+
+}
+.deck-info {
+    @media (min-width: @screen-md-min) {
+        background: url('@{cdn}/static/img/filter.jpg') no-repeat;
+    }
+    input.title {
+        background: transparent;
+        padding: 5px;
+        border: 0;
+        height: 50px;
+        width: 100%;
+        margin-top: 0;
+        margin-bottom: 20px;
+        border-bottom: 1px solid @gray-light;
+        font-weight: 700;
+        color: @col-light;
+
+        &:focus { border-color: @light-blue; }
+        &.error { border-color: rgba(255, 0, 0, 0.9) !important; }
+        &.success { border-color: rgba(0, 255, 0, 0.9) !important; }
+    }
+
+    .footer {
+        height: 60px;
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    &.update {
+        @media (min-width: @screen-md-min) {
+            background: url('@{cdn}/static/img/update.jpg') no-repeat;
+            input.title {
+                background: rgba(0, 0, 0, 0.5);
+            }
+            border-bottom: 4px solid @light-blue;
+            padding-bottom: 20px;
+        }
+    }
+}

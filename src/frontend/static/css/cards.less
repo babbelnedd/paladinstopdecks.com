@@ -1,0 +1,398 @@
+.card {
+    // display: inline-block;
+    position: relative;
+    border-radius: 0;
+    background: none;
+    width: 300px;
+    height: 410px;
+    margin: 0;
+    overflow: hidden;
+    //cursor: pointer;
+    text-align: initial;
+    pointer-events: none;
+
+    &.picked {
+        opacity: .5;
+        filter: grayscale(100%);
+    }
+
+    &.xl { .createCardSize(1.25); }
+
+    &.small { .createCardSize(0.75); }
+
+    &.mini { .createCardSize(0.6); }
+
+    .image {
+        position: absolute;
+        z-index: 0;
+        top: 45px;
+        left: 0;
+        right: 0;
+        text-align: center;
+
+        img, .inner {
+            display: inline-block;
+            background-size: 100% !important;
+            width: 228px; height: 165px;
+            // background: @gray-dark;
+            &::selection {
+                background: none !important;
+            }
+        }
+        .shadow {
+            position: absolute;
+            top: 0;
+            height: 165px;
+            width: 228px;
+            //background: rgba(255, 0, 0, 0.5);
+            box-shadow: inset 0 0 40px 5px @black;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .setSelection(transparent, @white);
+    }
+
+    .champion {
+        position: absolute;
+        z-index: 2;
+        top: 20px;
+        left: 10px;
+        right: 0;
+
+        .inner {
+            background-size: 60px 60px;
+            width: 60px;
+            height: 60px;
+        }
+    }
+
+    .name {
+        position: absolute;
+        z-index: 2;
+        top: 212px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        color: @white;
+        text-transform: uppercase;
+        font-weight: bold;
+        .font-size(1.6);
+        text-shadow: -1px 0 0.2em black, 0 1px 0.2em black, 1px 0 0.2em black, 0 -1px 0.2em black;
+        // cursor: pointer;
+        .setSelection(transparent, @white);
+    }
+
+    .tier {
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 125px;
+        right: 0;
+    }
+
+    .frame {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 25px;
+        width: 250px;
+        height: 410px;
+        background-size: 250px 410px;
+    }
+
+    .base(@img) {
+        background-image: url('@{cdn}@{img}');
+    }
+
+    .for(@paladins-tiers);
+    .-each(@value) {
+        &.@{value} {
+            .frame {
+                background-image: url('@{cdn}/static/img/frames/@{value}.png?v=@{patch}');
+            }
+        }
+    }
+
+    .ability {
+        position: absolute;
+        z-index: 1;
+        top: 240px;
+        left: 0; right: 0;
+        margin: auto;
+        color: @white;
+        font-weight: bold;
+        .font-size(1.2);
+        height: 20px;
+        text-align: center;
+        text-shadow: -1px 0 0.1em black, 0 1px 0.1em black, 1px 0 0.1em black, 0 -1px 0.1em black;
+        // cursor: pointer;
+        .setSelection(transparent, @white);
+    }
+
+    &.legendary {
+        .ability { top: 243px; }
+        .name { top: 215px; }
+        .image { top: 50px; }
+    }
+
+    .dmg {
+        position: absolute;
+        z-index: 1;
+        top: 387px;
+        left: 60px;
+        right: 0;
+        color: @white;
+        .font-size(1.3);
+        font-weight: bold;
+        text-align: left;
+        // cursor: pointer;
+        .setSelection(transparent, @white);
+    }
+
+    .hp {
+        position: absolute;
+        z-index: 1;
+        top: 387px;
+        left: 210px;
+        right: 0;
+        color: @white;
+        .font-size(1.3);
+        font-weight: bold;
+        text-align: justify;
+        // cursor: pointer;
+        .setSelection(transparent, @white);
+    }
+
+    .desc {
+        position: absolute;
+        z-index: 1;
+        top: 265px; left: 60px; right: 60px;
+        word-wrap: break-word;
+        text-align: center;
+        color: @gray-darker;
+        font-weight: 900;
+        .font-size(1.2);
+        font-style: italic;
+        // cursor: pointer;
+        .setSelection(transparent, @gray-darker);
+        line-height: 125%;
+        // fix things to mid
+        display: table;
+        width: 180px; height: 100px;
+
+        .inner {
+            display: table-cell;
+            vertical-align: middle;
+            //text-align: center;
+            &::selection {
+                background: none !important;
+                color: @gray-darker;
+            }
+        }
+    }
+
+    .rank {
+        position: absolute;
+        z-index: 1;
+        bottom: 32px;
+        .font-size(1.2);
+        font-weight: 700;
+        left: 60px; right: 60px;
+        text-align: center;
+        color: @gray-dark;
+        .setSelection(transparent, @gray-dark);
+    }
+
+    .cooldown {
+        position: absolute;
+        z-index: 1;
+        top: 387px;
+        left: 135px;
+        right: 0;
+        color: @black;
+        font-size: 13px;
+        font-weight: bold;
+        text-align: justify;
+        // cursor: pointer;
+        .setSelection(transparent, @black);
+    }
+
+    /*    &:hover {
+            zoom: 1.1;
+        }*/
+}
+.createCardSize(@factor) {
+    width: round(300px * @factor, 2);
+    height: round(410px * @factor, 2);
+
+    .image {
+        top: round(45px * @factor, 2);
+
+        img, .inner {
+            //background-size: 228px * @factor round(228px * @factor, 2);
+            width: round(228px * @factor, 2);
+            height: round(165px * @factor, 2);
+        }
+
+        .shadow {
+            height: round(165px * @factor, 2);
+            width: round(228px * @factor, 2);
+        }
+    }
+
+    .champion {
+        top: round(20px * @factor, 2);
+        left: round(10px * @factor, 2);
+
+        .inner {
+            background-size: 60px * @factor round(60px * @factor, 2);
+            width: round(60px * @factor, 2);
+            height: round(60px * @factor, 2);
+        }
+    }
+
+    .name {
+        top: round(212px * @factor, 2);
+        .font-size(1.6 * @factor);
+    }
+
+    .tier {
+        height: round(56px * @factor, 2);
+        width: round(50px * @factor, 2);
+        left: round(125px * @factor, 2);
+    }
+
+    .frame {
+        left: round(25px * @factor, 2);
+        width: round(250px * @factor, 2);
+        height: round(410px * @factor, 2);
+        background-size: 250px * @factor round(410px * @factor, 2);
+    }
+
+    &.legendary {
+        .ability { top: round(243px * @factor, 2); }
+        .name { top: round(215px * @factor, 2); }
+        .image { top: round(50px * @factor, 2); }
+    }
+
+    .ability {
+        top: round(240px * @factor, 2);
+        right: round(5px * @factor, 2);
+        .font-size(1.2 * @factor);
+    }
+
+    .dmg {
+        top: round(387px * @factor, 2);
+        left: round(60px * @factor, 2);
+        .font-size(1.3 * @factor);
+    }
+
+    .hp {
+        top: round(387px * @factor, 2);
+        left: round(210px * @factor, 2);
+        .font-size(1.3 * @factor);
+    }
+
+    .desc {
+        width: round(180px * @factor, 2);
+        height: round(100px * @factor, 2);
+        top: round(265px * @factor, 2);
+        left: round(60px * @factor, 2);
+        right: round(60px * @factor, 2);
+        .font-size(1.2 * @factor);
+    }
+
+    .rank {
+        bottom: round(32px * @factor, 2);
+        .font-size(1.2 * @factor);
+        left: round(60px * @factor, 2);
+        right: round(60px * @factor, 2);
+    }
+
+    .cooldown {
+        top: round(387px * @factor, 2);
+        left: round(135px * @factor, 2);
+        .font-size(1.3 * @factor);
+    }
+}
+#card_container {
+    text-align: center;
+    height: 560px;
+    @media (max-width: @screen-sm-min) {
+        height: 280px;
+    }
+}
+.rectangle-card {
+    position: relative;
+    display: inline-block;
+    margin-right: 5px;
+    cursor: pointer;
+    .for(@paladins-tiers);
+    .-each(@value) {
+        &.@{value} {
+            @color: 'col-@{value}';
+            border-top: 4px solid @@color;
+        }
+    }
+
+    img {
+        height: 41px;
+        width: 53px;
+        .setSelection(transparent, transparent);
+    }
+
+    .title {
+        position: absolute;
+        bottom: 0; left: 0;
+        text-align: center;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.75);
+        color: @white;
+        .font-size(1.4);
+        .text-overflow;
+        .setSelection(transparent, @white);
+        @media (max-width: @screen-sm-min) {
+            .font-size(1.2);
+        }
+    }
+
+    &.small {
+        img {
+            min-width: 36px;
+            height: 36px;
+        }
+    }
+
+    &.large {
+        img {
+            min-width: 86px;
+            width: 112px;
+            height: 86px;
+        }
+    }
+
+    &.responsive {
+        margin-right: 0;
+        width: 19%;
+        height: auto;
+
+        img {
+            width: 100%;
+            height: auto;
+            /*            @media (min-width: 0) { height: 80px; }
+                        @media (min-width: 420px) { height: 56px; }
+                        @media (min-width: 600px) { height: 71px; }
+                        @media (min-width: 768px) { height: 96px; }
+                        @media (min-width: 1200px) { height: 116px; }*/
+        }
+    }
+
+    &.picked {
+        opacity: .75;
+        img {
+            opacity: .5;
+            filter: grayscale(100%);
+        }
+    }
+}

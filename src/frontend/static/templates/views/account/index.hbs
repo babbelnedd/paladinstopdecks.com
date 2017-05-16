@@ -1,0 +1,43 @@
+<div class="box linear-bg">
+    <div class="box-body">
+        <div class="col-xs-12 col-md-9">
+            {{>profile bio=user.bio username=user.name}}
+        </div>
+        <div class="col-xs-12 col-md-3">
+            <div class="pull-right">
+                {{#ifEqual user.id _auth.uid}}
+                    {{#ifEqual _auth.activated false}}
+                        <a class="btn btn-dark btn-sm" href="/auth/resend-activation">Resend Activation Mail</a>
+                    {{/ifEqual}}
+                    <a href="edit" class="btn btn-dark btn-sm">Edit Profile</a>
+                {{else}}
+                {{!--<a href="#" class="btn btn-danger btn-sm">Report User</a>--}}
+                {{!--<a href="#" class="btn btn-dark btn-sm">Follow User</a>--}}
+                {{!--<a href="#" class="btn btn-dark btn-sm">Send PM</a>--}}
+                {{/ifEqual}}
+            </div>
+        </div>
+    </div>
+    <i class="clearfix"></i>
+
+    <ul class="nav nav-tabs top90">
+        <li><a href="#tab_decks" data-toggle="tab">Decks</a></li>
+        <li><a href="#tab_favorites" data-toggle="tab">Favorites</a></li>
+        <li><a href="#tab_activity" data-toggle="tab">Activity</a></li>
+        {{!--<li><a href="#tab_comments" data-toggle="tab">Comments</a></li>--}}
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane" id="tab_decks">
+            {{> account/decks}}
+        </div>
+        <div class="tab-pane" id="tab_activity">
+            {{>utils/spinner}}
+        </div>
+        <div class="tab-pane" id="tab_favorites">
+            {{> account/favorites}}
+        </div>
+        {{!--            <div class="tab-pane" id="tab_comments">
+                        {{> account/comments}}
+                    </div>--}}
+    </div>
+</div>

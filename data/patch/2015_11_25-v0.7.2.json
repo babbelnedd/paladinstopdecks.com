@@ -1,0 +1,18 @@
+{
+  "version": "0.7.2",
+  "date": "24.11.2015",
+  "changes": [
+    {
+      "type": "general",
+      "change": " Our previous change was to make the Siege Engine immune while traveling to try to emphasize more combat between players until the actual siege began. We are reverting this change and will continue to evaluate the way the Siege Engine plays into the match"
+    },
+    {
+      "type": "general",
+      "change": "The Siege Engine is no longer immune while traveling, but will continue to travel at its updated speed"
+    },
+    {
+      "type": "general",
+      "change": "The Siege Engine mitigates 50% damage while en route to the base."
+    }
+  ]
+}

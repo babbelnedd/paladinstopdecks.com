@@ -1,0 +1,260 @@
+@z-index: 1;
+@cardHeight: 35px;
+@responsiveCardHeight: 25px;
+@cardGutter: 2px;
+@flatTierWidth: 10px;
+
+.deck-header {
+    border-bottom: 1px solid @gray-lighter;
+    line-height: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    input {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        width: 200px;
+        height: 50px;
+
+        &:focus {
+            box-shadow: none !important;
+        }
+    }
+
+    .clear-search {
+        color: @gray-lighter;
+    }
+}
+.deck-container {
+    .deck {
+        /*        @media (max-width: @screen-sm-max) {
+                    li {
+                        width: 50%;
+                        float: left;
+                        display: inline;
+                        padding-right: @cardGutter;
+                    }
+                }*/
+
+        .card-container {
+            border: 1px solid @gray-darker;
+            cursor: pointer;
+            position: relative;
+            height: @cardHeight;
+            width: 100%;
+            overflow: hidden;
+            margin-bottom: @cardGutter;
+            // fix google chrome bug with transformations and border radius
+            // see: http://stackoverflow.com/questions/16687023/bug-with-transform-scale-and-overflow-hidden-in-chrome
+            z-index: @z-index;
+            border-bottom-right-radius: 4px;
+            border-top-right-radius: 4px;
+
+            .flat-tier {
+                z-index: @z-index + 2;
+                position: absolute;;
+                width: @flatTierWidth;
+                height: 100%;
+                .for(@paladins-tiers);
+                .-each(@value) {
+                    &.@{value} {
+                        @color: 'col-@{value}';
+                        background-color: @@color;
+                    }
+                }
+            }
+
+            img {
+                position: absolute;
+                z-index: @z-index;
+                margin-top: -77px;
+                width: 100%;
+                //padding-left: 60px;
+                background-color: @black;
+            }
+
+            .overlay {
+                position: absolute;
+                z-index: @z-index + 1;
+                height: 100%;
+                width: 100%;
+                background: linear-gradient(to right, rgba(0, 0, 0, 1) 50px, rgba(128, 128, 128, 0.3)) 100%;
+            }
+
+            .name {
+                position: absolute;
+                z-index: @z-index + 2;
+                margin-left: @flatTierWidth + 10px;
+                line-height: @cardHeight;
+                color: @white;
+                text-transform: uppercase;
+                font-weight: 900;
+            }
+
+            @media (max-width: @screen-sm-max) {
+                height: @responsiveCardHeight;
+
+                .name {
+                    line-height: @responsiveCardHeight;
+                }
+                img {
+                    margin-top: -35px;
+                }
+            }
+        }
+    }
+}
+.voted, .is-favorite {
+    color: @col-highlight;
+}
+ul.decklist {
+    @avatarWidth: 35px;
+    padding: 0;
+
+    li {
+        position: relative;
+        margin-bottom: 5px;
+        // border-bottom: 1px solid @gray-lighter;
+        height: 30px;
+        line-height: 30px;
+
+        &:after {
+            content: ' ';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            .calc(width, ~'100% - @{avatarWidth}');
+            // border-bottom: 1px solid @reddit-orange;
+            border-width: 5px;
+            border-image: linear-gradient(to right, black, rgba(0, 0, 0, 0)) 0% 100%;
+        }
+
+        img {
+            height: 28px;
+            width: 28px;
+            background-size: 100%;
+            border-radius: 30em;
+            border: 2px solid @light-blue;
+        }
+    }
+
+}
+.upvote, .downvote {
+    cursor: pointer;
+}
+.deck-search {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid @gray-lighter;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    width: 200px;
+
+    &:focus {
+        margin-bottom: 29px; // fix for +1px border
+        box-shadow: none !important;
+        border-bottom: 2px solid @light-blue;
+        color: @gray-darker;
+        font-weight: 500;
+    }
+}
+.deck-search-remove {
+    display: inline-block;
+    position: absolute;
+    right: 45px;
+    color: @gray-lighter;
+}
+.deck-view-count {
+    color: @gray-light;
+}
+.deck-desc-container, .md-preview {
+    font-family: 'Lato', sans-serif !important;
+    overflow-x: hidden;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    img {
+        max-width: 100%;
+        width: auto;
+        height: auto;
+    }
+    ul {
+        list-style-type: disc;
+    }
+}
+ul.toprated {
+    padding: 0;
+    margin: 0;
+    li {
+        //height: 40px;
+        //line-height: 40px;
+        //border-bottom: 1px solid @light-blue;
+        padding: 0 2px;
+
+        div[class^=col-] {
+            padding: 0;
+            margin: 0;
+        }
+
+        &:last-of-type {
+            border-bottom: none;
+        }
+
+        //div {
+        //    &:nth-child(1) {
+        //        border-left: 1px solid @light-blue;
+        //        border-right: 1px solid @light-blue;
+        //    }
+        //
+        //    &:last-child {
+        //        border-right: 1px solid @light-blue;
+        //    }
+        //}
+    }
+}
+.toprated-outline {
+    border: 2px solid @gray-dark;
+}
+.db-preview {
+    display: block;
+    position: relative;
+    margin-bottom: 40px;
+
+    &:hover {
+        .title {
+            background: @gray-dark !important;
+        }
+    }
+
+    .img-wrap {
+        height: 120px;
+        overflow: hidden;
+        img {
+            background-size: 100%;
+            width: 100%;
+            margin-top: -25%;
+        }
+    }
+
+    .title {
+        height: 40px;
+        line-height: 40px;
+        text-transform: uppercase;
+        font-weight: 700;
+        background: @gray-dark;
+        color: @white;
+        padding-left: 10px;
+        .for(@paladins-champions);
+        .-each(@value) {
+            &.@{value} {
+                @color: 'col-@{value}';
+                background: @@color;
+            }
+        }
+    }
+}
+.deck-cards {
+    padding: 20px 0;
+    height: 420px;
+    overflow: auto;
+}

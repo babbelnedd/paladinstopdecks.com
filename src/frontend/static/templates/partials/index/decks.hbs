@@ -1,0 +1,27 @@
+<section id="top_decks" class="top-decks linear-bg">
+    <div class="p10">
+        <h2 class="no-padding no-margin inline-block">Top Decks</h2>
+        <a href="/paladins-top-rated-decks" class="pull-right" style="line-height:27px;">View All</a>
+    </div>
+    <div class="row">
+        {{#each decks.top}}
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                {{>deck/preview deck=this static=static}}
+            </div>
+        {{/each}}
+    </div>
+</section>
+
+<section id="recent_decks" class="top-decks linear-bg">
+    <div class="p10">
+        <h2 class="no-padding no-margin inline-block">Recent Decks</h2>
+        <a href="/recent-decks" class="pull-right" style="line-height:27px;">View All</a>
+    </div>
+    <div class="row">
+        {{#each decks.recent}}
+            <div class="col-md-3">
+                {{>deck/preview deck=this static=static}}
+            </div>
+        {{/each}}
+    </div>
+</section>

@@ -1,0 +1,296 @@
+[
+  {
+    "name": "Juggernaut",
+    "tier": "common",
+    "damage": 6,
+    "hp": 75,
+    "cooldown": 0,
+    "description": "You take 4 less damage per hit",
+    "rankText": "",
+    "isRemoved": true
+  },
+  {
+    "name": "Resilience",
+    "tier": "common",
+    "damage": 2,
+    "hp": 200,
+    "cooldown": 0,
+    "description": "Reduce Crowd Control by 50%",
+    "rankText": "",
+    "isRemoved": false
+  },
+  {
+    "name": "Shelter",
+    "tier": "common",
+    "damage": 4,
+    "hp": 125,
+    "cooldown": 50,
+    "description": "After being hit for more than 15% of your max HP, you cannot be hit again for more than 15% of your max HP for 3s. 50s CD",
+    "rankText": "",
+    "isRemoved": true
+  },
+  {
+    "name": "Sterilize",
+    "tier": "common",
+    "damage": 2,
+    "hp": 200,
+    "cooldown": 0,
+    "description": "Reduce the duration of Damage Over Time effects on you by 15%",
+    "rankText": "",
+    "isRemoved": false
+  },
+  {
+    "name": "Exit Strategy",
+    "tier": "common",
+    "damage": 4,
+    "hp": 50,
+    "cooldown": 0,
+    "description": "Exit combat 2s faster",
+    "rankText": "",
+    "isRemoved": true
+  },
+  {
+    "name": "Nimble",
+    "tier": "common",
+    "damage": 7,
+    "hp": 50,
+    "cooldown": 0,
+    "description": "+20% Movement Speed",
+    "rankText": "",
+    "isRemoved": false
+  },
+  {
+    "name": "Bulldozer",
+    "tier": "common",
+    "damage": 10,
+    "hp": 50,
+    "cooldown": 0,
+    "description": "Deal +150% damage to deployables",
+    "rankText": "",
+    "isRemoved": false
+  },
+  {
+    "name": "Cauterize",
+    "tier": "common",
+    "damage": 5,
+    "hp": 100,
+    "cooldown": 5,
+    "description": "Your Weapon shots reduce your target's healing by 35% for 3s",
+    "rankText": "",
+    "isRemoved": false
+  },
+  {
+    "name": "Hamstring",
+    "tier": "common",
+    "damage": 4,
+    "hp": 100,
+    "cooldown": 6,
+    "description": "Your Weapon attacks slow enemies by 15% for 2s",
+    "rankText": "",
+    "isRemoved": true
+  },
+  {
+    "name": "Thunderstruck",
+    "tier": "common",
+    "damage": 3,
+    "hp": 150,
+    "cooldown": 30,
+    "description": "Hitting a stealth target with your weapon reveals it for 2s",
+    "rankText": "",
+    "isRemoved": false
+  },
+  {
+    "name": "Chronos",
+    "tier": "common",
+    "damage": 3,
+    "hp": 100,
+    "cooldown": 0,
+    "description": "Reduce the Cooldown of your abilities by 10%",
+    "rankText": "",
+    "isRemoved": false
+  },
+  {
+    "name": "Morale Boost",
+    "tier": "common",
+    "damage": 5,
+    "hp": 100,
+    "cooldown": 0,
+    "description": "Increase the rate at which you charge your ultimate by 20%",
+    "rankText": "",
+    "isRemoved": false
+  },
+  {
+    "name": "Big Game",
+    "tier": "common",
+    "damage": 7,
+    "hp": 62,
+    "cooldown": 5,
+    "description": "Weapon shots deal bonus damage equal to 6% of your target's maximum Health",
+    "rankText": "",
+    "isRemoved": true
+  },
+  {
+    "name": "Wrecker",
+    "tier": "common",
+    "damage": 10,
+    "hp": 50,
+    "cooldown": 0,
+    "description": "Your weapon attacks deal 100% increased damage to Shields",
+    "rankText": "",
+    "isRemoved": false
+  },
+  {
+    "name": "Gather",
+    "tier": "common",
+    "ability": "Armor",
+    "damage": 5,
+    "hp": 100,
+    "rankText": "",
+    "description": "Picking up a HP Drop instantly restores 25% of your maximum Health",
+    "cooldown": 0,
+    "isRemoved": false
+  },
+  {
+    "name": "Blast Shields",
+    "tier": "common",
+    "ability": "Armor",
+    "damage": 2,
+    "hp": 200,
+    "cooldown": 0,
+    "description": "Attacks you receive that deal over 500 damage are reduced by 35%",
+    "rankText": "",
+    "isRemoved": false
+  },
+  {
+    "name": "Deft Hands",
+    "ability": "Weapon",
+    "tier": "common",
+    "damage": 10,
+    "hp": 50,
+    "cooldown": 0,
+    "description": "Increase your reload speed by 50%",
+    "rankText": "",
+    "isRemoved": false
+  },
+  {
+    "name": "Develop",
+    "ability": "Armor",
+    "tier": "common",
+    "damage": 2,
+    "hp": 200,
+    "cooldown": 0,
+    "description": "You increase your maximum Health by +75 each time you level up",
+    "rankText": "",
+    "isRemoved": false
+  },
+  {
+    "name": "Equestrian",
+    "ability": "Armor",
+    "tier": "common",
+    "damage": 5,
+    "hp": 100,
+    "cooldown": 0,
+    "description": "Reduces the amount of time it takes to get on your mount by 50%",
+    "rankText": "",
+    "isRemoved": false
+  },
+  {
+    "name": "Forethought",
+    "ability": "Armor",
+    "tier": "common",
+    "damage": 5,
+    "hp": 100,
+    "cooldown": 0,
+    "description": "Increase the amount of experience you get by 25%",
+    "rankText": "",
+    "isRemoved": false
+  },
+  {
+    "name": "Haven",
+    "ability": "Armor",
+    "tier": "common",
+    "damage": 2,
+    "hp": 200,
+    "cooldown": 0,
+    "description": "Attacks that you receive that deal less than 75 damage are reduced by 35%",
+    "rankText": "",
+    "isRemoved": false
+  },
+  {
+    "name": "Hulking",
+    "ability": "Armor",
+    "tier": "common",
+    "damage": 1,
+    "hp": 125,
+    "cooldown": 0,
+    "description": "Increase your maximum Health by 10%",
+    "rankText": "",
+    "isRemoved": true
+  },
+  {
+    "name": "Veteran",
+    "ability": "Armor",
+    "tier": "common",
+    "damage": 2,
+    "hp": 200,
+    "cooldown": 0,
+    "description": "You heal an additional 4% of your max Health when out of combat",
+    "rankText": "",
+    "isRemoved": false
+  },
+  {
+    "name": "Life Rip",
+    "tier": "common",
+    "ability": "Weapon",
+    "damage": 5,
+    "hp": 100,
+    "rankText": "",
+    "description": "Your weapon shots gain +25% Lifesteal",
+    "cooldown": 0,
+    "isRemoved": false
+  },
+  {
+    "name": "Master Riding",
+    "tier": "common",
+    "ability": "Armor",
+    "damage": 5,
+    "hp": 100,
+    "rankText": "",
+    "description": "Your mounting time is reduced, and you gain 20% Movement Speed while mounted",
+    "cooldown": 0,
+    "isRemoved": false
+  },
+  {
+    "name": "Illuminate",
+    "tier": "common",
+    "ability": "Armor",
+    "damage": 5,
+    "hp": 100,
+    "rankText": "",
+    "description": "Increase the range at which you see nearby stealthed targets by 50%",
+    "cooldown": 0,
+    "isRemoved": false
+  },
+  {
+    "name": "Resuscitate",
+    "tier": "common",
+    "ability": "Armor",
+    "damage": 5,
+    "hp": 50,
+    "rankText": "",
+    "description": "You respawn 50% faster",
+    "cooldown": 0,
+    "isRemoved": true
+  },
+  {
+    "name": "Blessed",
+    "tier": "common",
+    "ability": "Armor",
+    "damage": 5,
+    "hp": 100,
+    "description": "All healing you receive is 30% more effective",
+    "cooldown": 0,
+    "rankText": "",
+    "isRemoved": false
+  }
+]

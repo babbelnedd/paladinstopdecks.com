@@ -1,0 +1,50 @@
+///<reference path="../typings/mongoose/mongoose.d.ts"/>
+'use strict';
+
+import _Card = require('./Card');
+import _Champion = require('./Champion');
+import _Deck = require('./Deck');
+import _Patch = require('./Patch');
+import _User = require('./User');
+import _Article = require('./Article');
+import _Rating = require('./Rating');
+import _ResetUserPassword = require('./ResetUserPassword');
+import _Activity = require('./Activity');
+import _Comment = require('./Comment');
+import _Notification = require('./Notification');
+import _Team = require('./Team');
+import _DeckFavorite = require('./DeckFavorite');
+import _Upload = require('./Upload');
+import _Tierlist = require('./Tierlist');
+
+export let Card = _Card.model;
+export let Champion = _Champion.model;
+export let Deck = _Deck.model;
+export let Patch = _Patch.model;
+export let User = _User.model;
+export let Article = _Article.model;
+export let Rating = _Rating.model;
+export let ResetUserPassword = _ResetUserPassword.model;
+export let Activity = _Activity.model;
+export let Comment = _Comment.model;
+export let Notification = _Notification.model;
+export let Team = _Team.model;
+export let DeckFavorite = _DeckFavorite.model;
+export let Upload = _Upload.model;
+export let Tierlist = _Tierlist.model;
+
+export type ICard = _Card.ICard;
+export type IChampion = _Champion.IChampion;
+export type IDeck = _Deck.IDeck;
+export type IPatch = _Patch.IPatch;
+export type IUser = _User.IUser;
+export type IArticle = _Article.IArticle;
+export type IRating = _Rating.IRating;
+export type IResetUserPassword = _ResetUserPassword.IResetUserPassword;
+export type IActivity = _Activity.IActivity;
+export type IComment = _Comment.IComment;
+export type INotification = _Notification.INotification;
+export type ITeam = _Team.ITeam;
+export type IDeckFavorite = _DeckFavorite.IDeckFavorite;
+export type IUpload = _Upload.IUpload;
+export type ITierlist = _Tierlist.ITierlist;

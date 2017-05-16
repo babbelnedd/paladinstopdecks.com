@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+    <title>{{static.title}}{{#if title}} - {{title}}{{/if}}</title>
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="shortcut icon" href="/static/img/i.ico"/>
+    <link rel="publisher" href="https://plus.google.com/104850007910960975967/">
+    <link rel="alternate" type="application/atom+xml" href="/feed/atom" title="Paladins Top Decks Feed"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+    {{#if meta.description}}
+        <meta name="description" content="{{{meta.description}}}"/>
+        <meta name="twitter:description" content="{{meta.description}}">
+        <meta name="og:description" content="{{meta.description}}">
+    {{else}}
+        <meta name="description" content="{{{static.meta.description}}}"/>
+        <meta name="twitter:description" content="{{static.meta.description}}">
+        <meta name="og:description" content="{{static.meta.description}}">
+    {{/if}}
+
+    {{#ifEqual meta.noindex true}}
+        <meta name="robots" content="noindex">
+    {{/ifEqual}}
+    <meta name="keywords" content="{{static.meta.keywords}}"/>
+    <meta name="theme-color" content="#00bcff"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#00bcff">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@paladinstopdeck">
+    <meta name="twitter:title" content="{{title}}">
+    <meta name="twitter:creator" content="@paladinstopdeck">
+    <meta name="twitter:domain" content="https://paladinstopdecks.com">
+    <meta property="og:site_name" content="Paladins Top Decks"/>
+    <meta property="og:title" content="{{title}}"/>
+    <meta property="og:type" content="{{#ifEqual nav 'index'}}website{{else}}article{{/ifEqual}}"/>
+    {{#if meta.image}}
+        <meta name="twitter:image:src" content="{{static.cdn}}{{meta.image}}">
+        <meta property="og:image" content="{{static.cdn}}{{meta.image}}"/>
+    {{else}}
+        <meta name="twitter:image:src" content="{{static.cdn}}/static/img/og.png">
+        <meta property="og:image" content="{{static.cdn}}/static/img/og.png"/>
+    {{/if}}
+    {{#if meta.date}}
+        <meta name="date" content="{{moment meta.date 'x' 'YYYY-MM-DD'}}">
+    {{/if}}
+    {{#if meta.last-modified}}
+        <meta name="last-modified" content="{{moment meta.last-modified 'x' 'YYYY-MM-DD'}}">
+    {{/if}}
+
+    {{#each og}}
+        <meta property="{{this.property}}" content="{{{this.content}}} ">
+    {{/each}}
+
+    <link rel="stylesheet" type="text/css" href="{{static.cdn}}/static/css/index.css?v={{static.version}}"/>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/headjs/1.0.3/head.min.js"></script>
+    {{>googleAnalytics}}
+</head>
+
+<body class="cbp-spmenu-push">
+    {{!--{{> navigation/notification}}--}}
+    {{> navigation/top}}
+    <div id="content">
+        <div id="content_overlay" class="content-overlay"></div>
+        <div class="container">
+            {{> navigation/top-desktop}}
+            {{{body}}}
+        </div>
+        <div class="spacer"></div>
+    </div>
+    {{> navigation/footer}}
+    <div class="mobile-bottom-ad">{{>ads/320x100}}</div>
+
+    <script>head.load(['{{static.cdn}}/static/js/bundle/common.min.js?v={{static.version}}', '{{static.cdn}}/static/js/bundle/app.min.js?v={{static.version}}'], function () {head.load([{{#each dependencies.js}}'{{../static.cdn}}/static/js/bundle/{{this}}.min.js?v={{../static.version}}'{{#ifNotEqual @last true}},{{/ifNotEqual}}{{/each}}]);});</script>
+</body>
+</html>

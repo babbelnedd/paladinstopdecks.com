@@ -1,0 +1,5 @@
+#! /bin/bash
+cd src
+gulp build
+cd ..
+node pre-push.js

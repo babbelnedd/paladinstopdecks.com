@@ -1,0 +1,104 @@
+ul.streams {
+    @barHeight: 35px;
+    // @barBackground: rgba(red(@light-blue), green(@light-blue), blue(@light-blue), 0.75);
+    @barBackground: rgba(0, 0, 0, 0.75);
+    @barColor: @white;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+
+    li {
+        position: relative;
+        display: inline-block;
+        margin-right: 20px;
+        width: 320px;
+        height: 180px;
+
+        .img-container {
+            display: inline-block;
+            overflow: hidden;
+
+            img {
+                max-width: 100%;
+                height: auto;
+                width: auto;
+                transition: all .4s ease-in-out;
+            }
+
+            @media (min-width: @screen-md-min) {
+                &:hover {
+                    img {
+                        transform: scale(1.1);
+                    }
+                    span.streamer, span.status {
+                        background-color: @black;
+                    }
+                }
+            }
+
+            span {
+                position: absolute;
+                height: @barHeight;
+                line-height: @barHeight;
+                color: @barColor;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                font-weight: 500;
+                padding-left: 10px;
+                transition: all .4s ease-in-out;
+
+                &.streamer {
+                    top: 0;
+                    width: 100%;
+                    background-color: @barBackground;
+                    text-transform: uppercase;
+                    left: 0;
+                }
+
+                &.status {
+                    display: block;
+                    bottom: 0;
+                    width: 100%;
+                    background-color: @barBackground;
+                }
+
+                &.counter {
+                    top: 0;
+                    right: 0;
+                    padding-right: 10px;
+
+                    .fa-circle {
+                        color: @red;
+                    }
+                }
+
+            }
+
+        }
+
+    }
+
+    @media (max-width: 768px) {
+        li:nth-child(2),
+        li:nth-child(3),
+        li:nth-child(4) {
+            display: none;
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 1200px) {
+        li:nth-child(3),
+        li:nth-child(4) {
+            display: none;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        li:nth-child(4) {
+            display: none;
+        }
+    }
+
+}

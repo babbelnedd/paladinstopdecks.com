@@ -1,0 +1,14 @@
+{
+  "version": "0.7.1",
+  "date": "24.11.2015",
+  "changes": [
+    {
+      "type": "general",
+      "change": "The Siege Engine now moves at a consistent speed throughout the match, which is much faster than its previous speed"
+    },
+    {
+      "type": "general",
+      "change": "Card cooldowns have changed based on their rarity: Common - 20 Seconds; Rare - 30 Seconds; Epic - 40 Seconds; Legendary - 60 Seconds (Unchanged)"
+    }
+  ]
+}

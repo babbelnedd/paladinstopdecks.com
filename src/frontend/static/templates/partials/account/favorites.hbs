@@ -1,0 +1,70 @@
+<div class="table-responsive">
+    <table class="decks tablesorter">
+        <thead>
+        <tr>
+            {{#ifNotEqual hide.name true}}
+                <th class="full">Name</th>
+            {{/ifNotEqual}}
+            {{#ifNotEqual hide.author true}}
+                <th>Author</th>
+            {{/ifNotEqual}}
+            {{#ifNotEqual hide.date true}}
+                <th>Date</th>
+            {{/ifNotEqual}}
+            {{#ifNotEqual hide.rating true}}
+                <th>Rating</th>
+            {{/ifNotEqual}}
+            {{#ifNotEqual hide.views true}}
+                <th>Views</th>
+            {{/ifNotEqual}}
+            {{#ifNotEqual hide.patch true}}
+                <th>Patch</th>
+            {{/ifNotEqual}}
+        </tr>
+        </thead>
+        <tbody>
+        {{#each decks}}
+            <tr data-href="{{this.fullPath}}">
+                {{#ifNotEqual ../hide.name true}}
+                    <td class="full">
+                        <a href="{{this.fullPath}}" class="col-{{../champion}}">
+                            {{this.name}}
+                        </a>
+                    </td>
+                {{/ifNotEqual}}
+                {{#ifNotEqual ../hide.author true}}
+                    <td>
+                        <a href="/account/{{this.author}}/decks" class="col-light">
+                            {{this.author}}
+                        </a>
+                    </td>
+                {{/ifNotEqual}}
+                {{#ifNotEqual ../hide.date true}}
+                    <td>
+                        {{moment this.updated 'x' 'L'}}
+                    </td>
+                {{/ifNotEqual}}
+                {{#ifNotEqual ../hide.rating true}}
+                    <td>
+                        {{shortNumber this.rating}}
+                    </td>
+                {{/ifNotEqual}}
+                {{#ifNotEqual ../hide.views true}}
+                    <td>
+                        {{shortNumber this.views}}
+                    </td>
+                {{/ifNotEqual}}
+                {{#ifNotEqual ../hide.patch true}}
+                    <td>
+                        {{#ifEqual this.patch ../static.patch}}
+                            <span class="col-highlight">{{this.patch}}</span>
+                        {{else}}
+                            {{this.patch}}
+                        {{/ifEqual}}
+                    </td>
+                {{/ifNotEqual}}
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</div>

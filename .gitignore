@@ -1,0 +1,36 @@
+# GENERAL
+*.log*
+.idea/
+src/**/npm/
+**/node_modules/**/*
+**/bower_components/**/*
+
+# SRC
+!src/gulpfile.js
+src/*.js
+src/*.js.map
+!src/gulpfile.js
+
+# BACKEND
+src/backend/**/*.js
+src/backend/**/*.js.map
+
+# BIN
+src/bin/**/*.js
+src/bin/**/*.js.map
+
+# SHARED
+# src/shared/**/*.js
+# src/shared/**/*.js.map
+
+# FRONTEND
+src/frontend/static/css/*.css
+src/frontend/static/css/*.css.map
+src/frontend/static/js/**/*.min.js
+src/frontend/static/js/**/*.min.js.map
+src/frontend/static/js/bundle/**/*.js
+src/frontend/static/**/*.min.hbs
+
+# CRAWLER
+src/crawler/cards/
+src/crawler/champions/

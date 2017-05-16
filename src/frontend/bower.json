@@ -1,0 +1,21 @@
+{
+  "name": "frontend",
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "font-awesome": "fontawesome#~4.5.0",
+    "tinymce": "tinymce-dist#~4.3.1",
+    "highcharts": "~4.2.1"
+  }
+}

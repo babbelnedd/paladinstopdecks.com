@@ -1,0 +1,8 @@
+<div class="notification {{#if notification.seen}}seen{{else}}new{{/if}}" data-notification="{{notification._id}}">
+    <div data-href="{{notification.url}}">
+        <strong class="pull-left">{{notification.title}}</strong>
+        <span class="pull-right">{{relativeMoment notification.created 'x'}}</span>
+        <i class="clearfix"></i>
+        <span>{{notification.info}}</span>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<section id="deckbuilder_selection" class="box linear-bg">
+
+    <h1 class="text-center">Paladins Deck Builder</h1>
+    <hr>
+    <p class="text-center">
+        Here you can build and share the best Paladins Decks.
+        Don't forget you need to be <a href="/auth/register">authenticated</a> to publish a Deck.
+    </p>
+    <hr>
+
+    <h2 class="text-center bottom40">Select your Champion</h2>
+
+    <div class="row">
+        {{#each static.champions}}
+            <div class="col-md-4">
+                <a class="db-preview" href="/deckbuilder/{{this.normalizedName}}"
+                   data-prerender="/deckbuilder/{{this.normalizedName}}">
+                    <div class="img-wrap">
+                        <img src="{{../static.cdn}}/static/img/champions/{{this.normalizedName}}/240.png?v={{../static.patch}}">
+                    </div>
+                    <div class="title {{this.normalizedName}} text-center">
+                        {{this.name}}
+                    </div>
+                </a>
+            </div>
+        {{/each}}
+    </div>
+
+</section>

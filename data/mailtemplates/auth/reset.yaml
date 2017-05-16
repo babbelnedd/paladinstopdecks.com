@@ -1,0 +1,18 @@
+subject: Password Reset
+from: Paladins Top Decks
+content: >
+    <p><strong>Hey {{name}}, it seems you want to reset your password?</p>
+    <p>
+    Someone (we hope you) has asked to reset the password for your Account. Please click the button below to reset your password.
+    If you don't want to change your password just ignore this mail!</p>
+
+    <p>If you won't reset your password within 24 hours the link will become invalid.</p>
+
+    <div style="padding: 20px 0; margin-left: -20px; margin-right: -20px; width: auto; text-align: center; ">
+        <a href="{{url}}" style="background-color: #00bcff;color: #ffffff;display: inline-block;font-family: sans-serif;font-size: 14px;line-height: 40px;margin-bottom: 10px;text-align: center;text-decoration: none;width: 200px;">
+          Reset your Password
+        </a>
+        <div style="color: #cccccc;font-size: 14px;font-weight: 300;text-decoration:none;word-wrap:break-word;">
+          Or click on this link <a href="{{url}}" style="space-wrap:pre;color: #cccccc;font-size: 14px;font-weight: 300;text-decoration:none;">{{url}}</a>
+        </div>
+    </div>

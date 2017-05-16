@@ -1,0 +1,22 @@
+<article class="deck-preview {{deck.normalizedChampion}} linear-bg">
+    <a href="{{deck.fullPath}}" data-prerender="{{deck.fullPath}}">
+        <div class="overlay"></div>
+        <span class="title">{{deck.name}}</span>
+        <div class="body">
+            <div style="overflow: hidden;">
+                <div class="background promo {{deck.normalizedChampion}}"></div>
+            </div>
+            <span class="subtitle">By {{deck.author}} - {{relativeMoment deck.updated 'x'}}</span>
+            {{!--<ul class="curve-container dmg">
+                {{#each deck.curve.dmg}}
+                    <li class="curve c{{this}}"></li>
+                {{/each}}
+            </ul>--}}
+            <div class="more">
+                <p>{{deck.curve.total.dmg}}% Damage</p>
+                <p>{{deck.curve.total.hp}} Health</p>
+                <p>Patch {{deck.patch}}</p>
+            </div>
+        </div>
+    </a>
+</article>

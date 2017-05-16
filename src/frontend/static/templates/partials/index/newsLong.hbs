@@ -1,0 +1,19 @@
+{{#each news}}
+    {{#if this.preview}}
+        <article class="box news-article index" data-href="/news/{{this.slug}}">
+            <header>
+                <a href="/news/{{this.slug}}">
+                    {{this.title}}
+                </a>
+                <ul class="info">
+                    <li class="published">{{relativeMoment this.date 'X'}}</li>
+                    <li class="author">{{this.author}}</li>
+                </ul>
+            </header>
+
+            <div class="p10">
+                {{{this.preview}}} <strong class="a">Continue Reading ..</strong>
+            </div>
+        </article>
+    {{/if}}
+{{/each}}

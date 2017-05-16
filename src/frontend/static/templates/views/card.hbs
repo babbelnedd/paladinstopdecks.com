@@ -1,0 +1,84 @@
+<section class="box" id="card_{{card.normalizedName}}">
+
+    <div class="linear-bg">
+        <div class="p10">
+            <h1 class="no-margin no-padding first-letter-1-5x">{{card.name}}</h1>
+            <p class="col-{{card.tier}}">{{capitalize card.tier}} Card</p>
+        </div>
+
+
+        <div class="col-xs-12 col-md-5 bottom10">
+            {{>card card=card static=static}}
+        </div>
+
+        <div class="col-xs-12 col-md-7">
+            {{>ads/responsive}}
+            <div class="panel panel-default top10">
+                <div class="panel-heading">Card Info</div>
+                <div class="panel-body">
+
+                    <ul class="no-padding">
+                        <li>
+                            <label>Name</label>
+                            <span class="left10">{{card.name}}</span>
+                        </li>
+                        <li>
+                            <label>Champion</label>
+                            <span class="left10">
+                                {{#ifEqual card.normalizedChampion null}}
+                                    Neutral
+                                {{else}}
+                                    <a href="/champion/{{card.champion}}" class="col-{{card.normalizedChampion}}">
+                                        {{card.champion}}
+                                    </a>
+                                {{/ifEqual}}
+                            </span>
+                        </li>
+                        <li>
+                            <label>Rarity</label>
+                            <span class="left10 col-{{card.tier}}">{{capitalize card.tier}}</span>
+                        </li>
+                        {{!--<li><label>Type</label><span class="left10">{{capitalize card.type}}</span></li>--}}
+                        <li>
+                            <label>Cooldown</label>
+                            <span class="left10">{{card.cooldown}}</span>
+                        </li>
+                        <li>
+                            <label>Health</label>
+                            <span class="left10">{{card.hp}}</span>
+                        </li>
+                        <li>
+                            <label>Damage</label>
+                            <span class="left10">{{card.damage}}</span>
+                        </li>
+                        {{#if card.rankText}}
+                            <li>
+                                <label>Per Rank</label>
+                                <span class="left10">{{card.rankText}}</span>
+                            </li>
+                        {{/if}}
+                        {{!-- <li>
+                            <label>Since</label>
+                            <span class="left10">Patch {{card.sincePatch}}</span> --}}{{!-- Link to Patch here op --}}{{!--
+                        </li>--}}
+                        <li>
+                            <label>Card Text</label>
+                            <br>
+                            <span><i>{{card.description}}</i></span>
+                        </li>
+                    </ul>
+                </div>
+
+                {{#ifNotEqual card.normalizedChampion null}}
+                    <div class="panel-heading">Card Stats</div>
+                    <div class="panel-body">
+                        <span>Used in {{stats.decksWithCardPercentage}}% of all {{card.champion}} Decks within the last 30 Days</span>
+                    </div>
+                {{/ifNotEqual}}
+            </div>
+
+        </div>
+        <i class="clearfix"></i>
+
+    </div>
+</section>

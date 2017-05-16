@@ -1,0 +1,20 @@
+<section class="box">
+
+    <div class="box-body">
+        <h1>Top Decks League Teams</h1>
+        <p>
+            Here you can find all Teams which will compete at Season I of our Top Decks League.
+        </p>
+
+        <ul class="no-padding">
+            {{#each teams}}
+                <li>
+                    <a href="/team/{{this.normalizedName}}">
+                        {{this.name}}
+                    </a>
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+
+</section>

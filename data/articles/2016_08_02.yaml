@@ -1,0 +1,51 @@
+title: 'New Design & Deckbuilder'
+slug: 'new-design-deckbuilder'
+meta:
+  title: 'New Design and Deckbuilder'
+  description: "It's done: We've revised our early, premature design and came up with something new. We hope you enjoy it as much as we do!"
+  other: [{name: date, content: 1454914019}, {name: 'last-modified', content: '1454914019'}]
+author: Schadstoff
+preview: >
+  Ayy it's done: We've revised our early, premature design and came up with something new. We hope you enjoy it as much as we do.
+comments: false
+date: 1454914019
+logo: /static/img/articles/deckbuilder.jpg
+content: >
+  <p>
+    Ayy it's done: We've revised our early, premature design and came up with something new. We hope you enjoy it as much as we do.
+  </p>
+
+  <h2>Deckbuilder</h2>
+
+  <p>
+    We have reworked the deckbuilder from scratch. You have to add five cards for each deck, one from each tier.
+    If you want to post multiple decks you'll have to create multiple decks.
+    But if you want to acknowledge certain cards that could be replaced with other cards, you can use the Substitution Tool.
+  </p>
+
+  <p>
+    The Text Editor got simplified, but we think it actually has improved. We have removed some formatting options to keep some consistence between guides.
+  </p>
+
+  <p>
+    As said earlier, to create a deck you just have to add 5 cards.
+    To be exact, you can't even add a description or substitutions until the deck is created.
+    Once the deck is created, you will be redirected to a page where you can update the guide.
+    In other words: you can add a description and substitutions once your deck is created.
+  </p>
+
+  <h2>Closed Beta 14</h2>
+
+  <p>
+    As you most likely already know, the upcoming patch will change the deck building process quite a bit.
+    However, you'll still build a deck for each match.
+  </p>
+
+  <p>
+    We will wait a bit and decide later if we want to add a level-guide for cards decks. Your opinion is welcome; leave a comment or send us a Tweet.
+  </p>
+
+  <p>
+    Another feature we've thought about is a matchup section for decks.
+    Build a Cassie Deck, for example, and explain how a matchup versus another champion would look.
+  </p>

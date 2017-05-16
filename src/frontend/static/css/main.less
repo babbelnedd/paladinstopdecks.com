@@ -1,0 +1,39 @@
+@import 'variables';
+html, body {
+    height: 100%;
+}
+#content {
+    min-height: 100%;
+    margin-bottom: -300px; /* Equivalent to footer's height */
+    .spacer {
+        height: 300px;
+    }
+}
+html {
+    font-size: 62.5%; // = 10px
+}
+body {
+    //fix navbar overlapping
+    //padding-top: @navbarHeight + @netbarHeight;
+    //margin-top: @navbarHeight + @netbarHeight;
+    color: @white;
+    padding-top: @netbarHeight;
+    @media (max-width: @screen-md-min) {
+        padding-top: 60px;
+    }
+}
+.four-o-four {
+    @media (min-width: @screen-md-min) {
+        background: url('@{cdn}/static/img/404.png') no-repeat;
+        background-position-y: 20px;
+        background-position-x: 100%;
+        background-size: auto 100%;
+        height: 370px;
+        > div {
+            width: 400px;
+        }
+    }
+    > div {
+        padding: 10px;
+    }
+}

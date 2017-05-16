@@ -1,0 +1,11 @@
+'use strict';
+var $ = window.jQuery = window.$ = require('jquery');
+require('../lib/devtools');
+require('../lib/navigation');
+require('../lib/notifications');
+require('../lib/vendor/bootstrap');
+require('../lib/bootstrapTooltips');
+require('../lib/tableRowLink');
+require('../lib/siteSearch');
+require('../lib/prerender');
+require('../lib/cardtip');

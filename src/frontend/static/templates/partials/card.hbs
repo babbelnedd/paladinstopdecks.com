@@ -1,0 +1,59 @@
+{{#ifEqual linked true}}
+    <a href="/card/{{card.normalizedName}}">
+{{/ifEqual}}
+    <div class="card {{card.tier}} {{size}}"
+         data-card="true"
+         data-id="{{card._id}}"
+         data-normalized-champion="{{card.normalizedChampion}}"
+         data-name="{{card.name}}"
+         data-normalized-name="{{card.normalizedName}}"
+         data-hp="{{card.hp}}"
+         data-dmg="{{card.damage}}"
+         data-ability="{{card.ability}}"
+         data-tier="{{card.tier}}">
+        <div class="image">
+            <div class="inner" style="background: url({{static.cdn}}{{card.imagePath}}?v={{static.patch}})"></div>
+            <div class="shadow"></div>
+        </div>
+        <div class="name">{{card.name}}</div>
+        <div class="frame {{!--{{card.tier}} {{#ifEqual card.ability ''}}passive{{/ifEqual}}--}}"></div>
+        <div class="ability">
+            {{#ifNotEqual card.normalizedChampion null}}
+                {{card.ability}}
+            {{else}}
+                {{#ifEqual card.tier 'uncommon'}}
+                    Armor
+                {{/ifEqual}}
+                {{#ifEqual card.tier 'common'}}
+                    Armor
+                {{/ifEqual}}
+                {{#ifEqual card.tier 'rare'}}
+                    Weapon
+                {{/ifEqual}}
+                {{#ifEqual card.tier 'epic'}}
+                    Armor
+                {{/ifEqual}}
+                {{#ifEqual card.tier 'legendary'}}
+                    Weapon
+                {{/ifEqual}}
+            {{/ifNotEqual}}
+        </div>
+        <div class="dmg">0%</div>
+        <div class="hp">+0</div>
+        <div class="desc">
+            <div class="inner">{{card.description}}</div>
+        </div>
+        {{#if card.rankText}}
+            <div class="rank">{{card.rankText}} Per Rank</div>
+        {{/if}}
+        <div class="cooldown">
+            {{#ifGreater card.cooldown 0}}
+                {{card.cooldown}}
+            {{else}}
+                -
+            {{/ifGreater}}
+        </div>
+    </div>
+{{#ifEqual linked true}}
+    </a>
+{{/ifEqual}}

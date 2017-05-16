@@ -1,0 +1,59 @@
+{
+  "name": "Cassie",
+  "normalizedName": "cassie",
+  "abilities": [
+    {
+      "name": "Blast Shot",
+      "description": "Fire an explosive projectile that knocks enemies back.",
+      "type": "Ability",
+      "properties": {
+        "cooldown": "12s",
+        "damage": "300",
+        "key": "e"
+      }
+    },
+    {
+      "name": "Disengage",
+      "description": "The next shot you fire after activating Disengage blasts the target backward.",
+      "type": "AltFire",
+      "properties": {
+        "cooldown": "12s",
+        "key": "alt"
+      }
+    },
+    {
+      "name": "Scout",
+      "description": "Cassie reveals all enemies on the map to her and her team for 8s. While Scout is active, Cassie deals +15% damage.",
+      "type": "Ultimate",
+      "properties": {
+        "duration": "6s",
+        "key": "q"
+      }
+    },
+    {
+      "name": "Dodge Roll",
+      "description": "Quickly roll in the direction you are moving. Removes all debuffs on use.",
+      "type": "Ability",
+      "properties": {
+        "cooldown": "8s",
+        "key": "f"
+      }
+    },
+    {
+      "name": "Shortbow",
+      "type": "Basic Attack",
+      "description": "A fast firing shortbow",
+      "damage": "460 damage",
+      "properties": {
+        "key": "basic",
+        "damage": "460"
+      }
+    }
+  ],
+  "movementSpeed": 395,
+  "clipSize": 8,
+  "title": "The Hunter's Daughter",
+  "class": "Human Huntress",
+  "releaseDate": 1445032800000,
+  "health": "1750"
+}

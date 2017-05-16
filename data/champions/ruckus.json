@@ -1,0 +1,62 @@
+{
+  "name": "Ruckus",
+  "normalizedName": "ruckus",
+  "abilities": [
+    {
+      "name": "Emitter",
+      "description": "Create an energy shield around yourself for 3.5s, absorbing 1500 damage.",
+      "type": "Ability",
+      "properties": {
+        "cooldown": "16s",
+        "duration": "3.5s",
+        "defense": "1500",
+        "key": "e"
+      }
+    },
+    {
+      "name": "Hexa Fire",
+      "description": "Ruckus roots himself in place and reveals four extra guns: two additional miniguns and two rocket launchers. All six guns fire simultaneously for 5s",
+      "type": "Ultimate",
+      "properties": {
+        "key": "q"
+      }
+    },
+    {
+      "name": "Dual Fire",
+      "description": "Increases your attack speed by 100%.",
+      "type": "AltFire",
+      "properties": {
+        "key": "alt"
+      }
+    },
+    {
+      "name": "Hover",
+      "description": "Hovers for 2.5 seconds. Removes all debuffs on use.",
+      "type": "Ability",
+      "properties": {
+        "cooldown": "12s",
+        "duration": "2.5s",
+        "speed": "50%",
+        "height": "4ft",
+        "key": "f"
+      }
+    },
+    {
+      "name": "Minigun",
+      "type": "Basic Attack",
+      "description": "An incredibly fast firing minigun with medium range.",
+      "damage": "85 damage",
+      "properties": {
+        "range": "100ft",
+        "key": "basic",
+        "damage": "85"
+      }
+    }
+  ],
+  "movementSpeed": 410,
+  "clipSize": 60,
+  "title": "The Worst of Friends",
+  "class": "Goblin Mech Pilot",
+  "releaseDate": 1445032800000,
+  "health": 2400
+}

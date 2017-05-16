@@ -1,0 +1,61 @@
+{
+  "name": "Buck",
+  "normalizedName": "buck",
+  "abilities": [
+    {
+      "name": "Recovery",
+      "description": "Heal for 650 Health overs 4s.",
+      "type": "Ability",
+      "properties": {
+        "cooldown": "15s",
+        "duration": "4s",
+        "heal": "650",
+        "key": "e"
+      }
+    },
+    {
+      "name": "Net Shot",
+      "description": "Fire a net that roots a single target.",
+      "type": "AltFire",
+      "properties": {
+        "cooldown": "15s",
+        "speed": "260ft/s",
+        "key": "alt"
+      }
+    },
+    {
+      "name": "Imprisonment",
+      "description": "Buck creates a giant rock ring around him, trapping enemies inside with him. He has 50% damage reduction while inside the ring.",
+      "type": "Ultimate",
+      "properties": {
+        "duration": "4s",
+        "key": "q"
+      }
+    },
+    {
+      "name": "Heroic Leap",
+      "description": "Buck leaps an incredible height and distance. Removes all debuffs on use.",
+      "type": "Ability",
+      "properties": {
+        "cooldown": "10s",
+        "key": "f"
+      }
+    },
+    {
+      "name": "Shrapnel Cannon",
+      "type": "Basic Attack",
+      "description": "A massive cannon that fires 8 small pieces of shrapnel.",
+      "damage": "64 damage per hit / 8 hits per shot",
+      "properties": {
+        "key": "basic",
+        "damage": "64 per hit / 8 hits per shot"
+      }
+    }
+  ],
+  "movementSpeed": 385,
+  "clipSize": 5,
+  "class": "Human Warrior",
+  "releaseDate": 1445032800000,
+  "attackRange": "50",
+  "health": "3000"
+}

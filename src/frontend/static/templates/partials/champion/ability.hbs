@@ -1,0 +1,16 @@
+<div class="ability-container">
+    <div class="ability {{champion.normalizedName}} {{ability.properties.key}}"></div>
+    <label class="title">
+        {{capitalize ability.name}}
+        {{#ifEqual ability.type 'Ultimate'}}&nbsp;(Ultimate){{/ifEqual}}
+        {{#ifEqual ability.type 'Basic Attack'}}&nbsp;(Basic Fire){{/ifEqual}}
+        {{#ifEqual ability.type 'AltFire'}}&nbsp;(Alt Fire){{/ifEqual}}
+    </label>
+    <p class="desc">{{ability.description}}</p>
+    <ul class="properties">
+        {{#ifEqual ability.type 'Basic Attack'}}<li>Clip Size: <strong>{{champion.clipSize}}</strong></li>{{/ifEqual}}
+        {{#if ability.properties.cooldown}}<li>Cooldown: <strong>{{ability.properties.cooldown}}</strong></li>{{/if}}
+        {{#if ability.properties.duration}}<li>Duration: <strong>{{ability.properties.duration}}</strong></li>{{/if}}
+        {{#if ability.properties.damage}}<li>Damage: <strong>{{ability.properties.damage}}</strong></li>{{/if}}
+    </ul>
+</div>

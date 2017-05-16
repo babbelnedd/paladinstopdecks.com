@@ -1,0 +1,22 @@
+.navigation-notification {
+    @height: 50px;
+    background: @light-blue;
+    color: @white;
+    height: @height;
+    line-height: @height;
+    .font-size(1.8);
+
+    > .close-notification {
+        .font-size(2.4);
+        top: 0; right: 10px;
+        width: 50px;
+        color: @white;
+        text-shadow: 1px 1px darken(@white, 30);
+        background: darken(@light-blue, 25);
+        cursor: pointer;
+    }
+
+    a {
+        color: @white;
+    }
+}

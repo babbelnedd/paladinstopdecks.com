@@ -1,0 +1,62 @@
+{
+  "name": "Fernando",
+  "normalizedName": "fernando",
+  "abilities": [
+    {
+      "name": "Fireball",
+      "description": "Shoot a ball of fire that deals damage.",
+      "type": "Ability",
+      "properties": {
+        "cooldown": "20s",
+        "damage": "300",
+        "key": "e"
+      }
+    },
+    {
+      "name": "Immortal",
+      "description": "Fernando prevents any nearby deaths. Fernando and allies within 70 ft cannot be brought below 100 HP for 4s",
+      "type": "Ultimate",
+      "properties": {
+        "key": "q"
+      }
+    },
+    {
+      "name": "Shield",
+      "description": "Expand your shield to block 2500 damage. Cannot attack.",
+      "type": "AltFire",
+      "properties": {
+        "cooldown": "26s",
+        "defense": "7500",
+        "duration": "8s",
+        "key": "alt"
+      }
+    },
+    {
+      "name": "Charge",
+      "description": "Dash forward at great speed. Removes all debuffs on use",
+      "type": "Ability",
+      "properties": {
+        "cooldown": "20s",
+        "key": "f"
+      }
+    },
+    {
+      "name": "lance",
+      "type": "Basic Attack",
+      "description": "A short range flamethrower",
+      "damage": "31 damage",
+      "properties": {
+        "range": "40",
+        "key": "basic",
+        "damage": "45"
+      }
+    }
+  ],
+  "movementSpeed": 400,
+  "clipSize": 0,
+  "heatRegen": "100/s",
+  "title": "The Self-Appointed Knight",
+  "class": "Human Knight",
+  "releaseDate": 1445032800000,
+  "health": 3500
+}

@@ -1,0 +1,9 @@
+<section id="news" class="row">
+    {{#each static.articles}}
+        {{#ifLess @index 3}}
+            <div class="col-xs-12 col-md-4">
+                {{>article article=this static=../../static preview=true}}
+            </div>
+        {{/ifLess}}
+    {{/each}}
+</section>

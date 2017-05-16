@@ -1,0 +1,69 @@
+table.decks {
+    @rowHeight: 30px;
+    tr {
+        height: @rowHeight;
+        line-height: @rowHeight;
+    }
+    th, td {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: center;
+        padding: 0 10px;
+        &.full {
+            width: 99%;
+            text-align: left;
+        }
+    }
+
+    tr th {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        background-color: @panel-default-heading-bg;
+    }
+
+    tr td {
+        cursor: pointer;
+        background-color: @panel-bg;
+        color: @gray-lightest;
+        .font-size(1.3);
+    }
+
+    @tableBorderColor: @gray-dark;
+    tr td {
+        border-left: 1px solid @tableBorderColor;
+        border-top: 1px solid @tableBorderColor;
+
+        &:nth-child(1) { border-left: none; }
+    }
+    tr th {
+        border-left: 1px solid @tableBorderColor;
+        cursor: pointer;
+
+        &:nth-child(1) { border-left: none; }
+    }
+}
+form.deck-filter {
+    background: url(/static/img/filter.jpg);
+
+    .filter {
+        padding: 0 10px;
+    }
+    .info-bar {
+        background: rgba(0, 0, 0, 0.5);
+        height: 60px;
+        line-height: 60px;
+        padding: 0 10px;
+    }
+    input {
+        background: transparent;
+        color: @col-light;
+        border: 0;
+        border-bottom: 1px solid @col-light;
+        padding-left: 2px;
+        &:focus {
+            border-color: @col-highlight;
+            background: transparent;
+        }
+    }
+}

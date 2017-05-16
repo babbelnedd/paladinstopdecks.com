@@ -1,0 +1,47 @@
+<section id="team" class="box">
+    <div class="box-body">
+        <div class="pull-right">
+            {{#ifEqual isInvited true}}
+                <form method="POST" action="/api/teams/accept">
+                    <input type="hidden" name="name" value="{{team.name}}">
+                    <button type="submit" class="btn btn-dark">
+                        Accept Invite
+                    </button>
+                </form>
+            {{/ifEqual}}
+            {{#ifEqual isMember true}}
+                <form method="get" action="/account/{{_auth.username}}/team/leave">
+                    <div class="btn-group">
+                        {{#ifEqual isCaptain true}}
+                            <a href="/manage-team/about" class="btn btn-dark">Manage Team</a>
+                        {{/ifEqual}}
+                        {{#ifEqual isManager true}}
+                            <a href="/manage-team/about" class="btn btn-dark">Manage Team</a>
+                        {{/ifEqual}}
+                        {{#ifEqual isCaptain false}}
+                            <button type="submit" class="btn btn-danger">Leave Team</button>
+                        {{/ifEqual}}
+                    </div>
+                </form>
+            {{/ifEqual}}
+        </div>
+        <h1>Team: {{team.name}}</h1>
+
+        {{#if team.biography}}
+            <p>{{team.biography}}</p>
+        {{else}}
+            <p><em>No Biography</em></p>
+        {{/if}}
+
+        <h2>Roster</h2>
+        {{#each team.roster}}
+            <div class="bottom20">
+                {{>profile user=this static=static short=true}}
+            </div>
+        {{/each}}
+        <i class="clearfix"></i>
+        <h2>Match History</h2>
+        <strong>No games played yet</strong>
+
+    </div>
+</section>

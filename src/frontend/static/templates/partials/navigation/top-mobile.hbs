@@ -1,0 +1,74 @@
+<nav id="nav_responsive_top" class="nav-top-responsive">
+    <div id="showLeftPush">
+        <i class="fa fa-navicon fa-2x no-padding no-margin"></i>
+        <strong class="left5">Menu</strong>
+        <div class="logo"></div>
+    </div>
+</nav>
+
+<nav id="nav_responsive_left" class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left">
+    <div id="cssmenu">
+        <header>
+            <ul>
+                {{#ifEqual _auth.authenticated false}}
+                    <li>
+                        <a href="/auth/register">
+                            <i class="fa fa-user-plus"></i>
+                            Register
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/auth/login">
+                            <i class="fa fa-sign-in"></i>
+                            Login
+                        </a>
+                    </li>
+                {{/ifEqual}}
+                {{#ifEqual _auth.authenticated true}}
+                    {{#ifEqual _auth.activated false}}
+                        <li>
+                            <a href="/auth/resend-activation">
+                                <i class="fa fa-mail-forward"></i>
+                                Resend Activation Mail
+                            </a>
+                        </li>
+                    {{/ifEqual}}
+                    <li>
+                        <a href="/auth/logout">
+                            <i class="fa fa-sign-out"></i>
+                            Log Out
+                        </a>
+                    </li>
+                {{/ifEqual}}
+            </ul>
+        </header>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/news">News</a></li>
+            <li class="has-sub"><a href="#">Champions</a>
+                <ul>
+                    {{#each static.champions}}
+                        <li><a href="/champion/{{this.normalizedName}}">{{this.name}}</a></li>
+                    {{/each}}
+                </ul>
+            </li>
+            <li class="has-sub"><a href="#">Decks</a>
+                <ul>
+                    {{#each static.champions}}
+                        <li><a href="/decks/{{this.normalizedName}}">{{this.name}}</a></li>
+                    {{/each}}
+                </ul>
+            </li>
+            <li><a href="/deckbuilder">Deckbuilder</a></li>
+            <li class="has-sub"><a href="#">Social</a>
+                <ul>
+                    <li><a href="/social/twitter" target="_blank">Twitter</a></li>
+                    <li><a href="/social/twitch" target="_blank">Twitch</a></li>
+                    <li><a href="/social/youtube" target="_blank">YouTube</a>
+                </ul>
+            </li>
+            <li><a href="/feedback">Feedback</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>

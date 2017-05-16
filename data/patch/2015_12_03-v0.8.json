@@ -1,0 +1,828 @@
+{
+  "version": "0.8",
+  "date": "03.12.2015",
+  "changes": [
+    {
+      "type": "ability",
+      "champion": "Barik",
+      "change": "Reduced time to deploy from 5 to 4s",
+      "ability": "Turret"
+    },
+    {
+      "type": "ability",
+      "champion": "Barik",
+      "change": "Increased Attack Speed from 1.5 to 1.2.",
+      "ability": "Turret"
+    },
+    {
+      "type": "ability",
+      "champion": "Barik",
+      "change": "Increased Health from 1000 to 1100",
+      "ability": "Turret"
+    },
+    {
+      "type": "ability",
+      "champion": "Barik",
+      "change": "Fixed an issue where the Turret would gain maximum Health but would not heal it",
+      "ability": "Turret"
+    },
+    {
+      "type": "ability",
+      "champion": "Barik",
+      "change": "Reduced damage from 300 to 250",
+      "ability": "Rifle"
+    },
+    {
+      "type": "ability",
+      "champion": "Buck",
+      "change": "Is now team colored",
+      "ability": "Cataclysm"
+    },
+    {
+      "type": "ability",
+      "champion": "Buck",
+      "change": "Is no longer destroyed if Buck dies",
+      "ability": "Cataclysm"
+    },
+    {
+      "type": "ability",
+      "champion": "Buck",
+      "change": "Now has a targeter for placement",
+      "ability": "Cataclysm"
+    },
+    {
+      "type": "ability",
+      "champion": "Cassie",
+      "change": "Fixed an issue where if you jumped and then used Dodge Roll you wouldn't move forward",
+      "ability": "Dodge Roll"
+    },
+    {
+      "type": "ability",
+      "champion": "Grohk",
+      "change": "Fixed an issue where this would fire through the randomized cover in Temple Ruins",
+      "ability": "Lightning Staff"
+    },
+    {
+      "type": "ability",
+      "champion": "Grohk",
+      "change": "Fixed an issue which would cause players to crash while using Chain Lightning",
+      "ability": "Chain Lightning"
+    },
+    {
+      "type": "ability",
+      "champion": "Pip",
+      "change": "Now drops an actual projectile, meaning this can be dropped off of ledges so that the slow field will be deployed below",
+      "ability": "Adhesive"
+    },
+    {
+      "type": "ability",
+      "champion": "Pip",
+      "change": "Fixed an issue where direct hits on shields would not deal the full damage that a direct hit deals",
+      "ability": "Potion Launcher"
+    },
+    {
+      "type": "ability",
+      "champion": "Ruckus",
+      "change": "Reduced height to allow Ruckus to hover under gateways more easily",
+      "ability": "Hover"
+    },
+    {
+      "type": "ability",
+      "champion": "Skye",
+      "change": "Reduced damage from 120 to 110",
+      "ability": "Crossbow"
+    },
+    {
+      "type": "ability",
+      "champion": "Skye",
+      "change": "Reduced damage per tick from 12 to 10",
+      "ability": "Poison Bolts"
+    },
+    {
+      "type": "ability",
+      "champion": "Skye",
+      "change": "Recolored team effects to be all blue",
+      "ability": "Time Bombs"
+    },
+    {
+      "type": "ability",
+      "champion": "Skye",
+      "change": "Added a small grace period after activating Hidden where you cannot reactivate it, preventing accidental cancels",
+      "ability": "Hidden"
+    },
+    {
+      "type": "card",
+      "champion": "Barik",
+      "change": "**NEW** Barricade is now a complete dome",
+      "card": "Capsule"
+    },
+    {
+      "type": "card",
+      "champion": "Barik",
+      "change": "Reduced rarity from Epic to Common",
+      "card": "Accelerator Field"
+    },
+    {
+      "type": "card",
+      "champion": "Barik",
+      "change": "Reduced rarity from Epic to Rare",
+      "card": "Coming Through"
+    },
+    {
+      "type": "card",
+      "champion": "Barik",
+      "change": "Reduced rarity from Epic to Rare",
+      "card": "Epicenter"
+    },
+    {
+      "type": "card",
+      "champion": "Barik",
+      "change": "Increased Health per second from 100 to 125",
+      "card": "Healing Station"
+    },
+    {
+      "type": "card",
+      "champion": "Barik",
+      "change": "Increased rarity from Rare to Epic",
+      "card": "Infernal Wall"
+    },
+    {
+      "type": "card",
+      "champion": "Barik",
+      "change": "Increased rarity from Common to Epic",
+      "card": "Inflame"
+    },
+    {
+      "type": "card",
+      "champion": "Barik",
+      "change": "Increased damage to Siege Engine from 60 to 100%",
+      "card": "On Guard"
+    },
+    {
+      "type": "card",
+      "champion": "Barik",
+      "change": "Increased rarity from Common to Rare",
+      "card": "On Guard"
+    },
+    {
+      "type": "card",
+      "champion": "Barik",
+      "change": "Reduced Attack Speed from 100 to 60%",
+      "card": "Overdrive"
+    },
+    {
+      "type": "card",
+      "champion": "Barik",
+      "change": "Reduced rarity from Legendary to Epic",
+      "card": "Overdrive"
+    },
+    {
+      "type": "card",
+      "champion": "Barik",
+      "change": "Increased rarity from Rare to Epic",
+      "card": "Promote"
+    },
+    {
+      "type": "card",
+      "champion": "Barik",
+      "change": "Reduced damage from 100 to 75%",
+      "card": "Pyromancer"
+    },
+    {
+      "type": "card",
+      "champion": "Barik",
+      "change": "Increased rarity from Rare to Epic",
+      "card": "Rigged"
+    },
+    {
+      "type": "card",
+      "champion": "Barik",
+      "change": "Reduced rarity from Epic to Rare",
+      "card": "Siege Armor"
+    },
+    {
+      "type": "card",
+      "champion": "Barik",
+      "change": "Reduced rarity from Rare to Common",
+      "card": "Stagger"
+    },
+    {
+      "type": "card",
+      "champion": "Barik",
+      "change": "Reduced rarity from Epic to Rare",
+      "card": "Thumper"
+    },
+    {
+      "type": "card",
+      "champion": "Buck",
+      "change": "No longer increases Projectile Speed, but instead increases Projectile Range by 150%",
+      "card": "Tracer Rounds"
+    },
+    {
+      "type": "card",
+      "champion": "Buck",
+      "change": "Increased rarity from Rare to Epic",
+      "card": "Acid Rounds"
+    },
+    {
+      "type": "card",
+      "champion": "Buck",
+      "change": "Fixed an issue where this would not effect your Cooldown if you had Imprisonment equipped",
+      "card": "Accelerate"
+    },
+    {
+      "type": "card",
+      "champion": "Buck",
+      "change": "Reduced bonus healing from 80 to 50%",
+      "card": "Blessed"
+    },
+    {
+      "type": "card",
+      "champion": "Buck",
+      "change": "Increase rarity from Rare to Epic",
+      "card": "Buck Shot"
+    },
+    {
+      "type": "card",
+      "champion": "Buck",
+      "change": "Increased rarity from Rare to Epic",
+      "card": "Celerity"
+    },
+    {
+      "type": "card",
+      "champion": "Buck",
+      "change": "Increased rarity from Rare to Epic",
+      "card": "Concussion"
+    },
+    {
+      "type": "card",
+      "champion": "Buck",
+      "change": "Reduced rarity from Epic to Rare",
+      "card": "Galvanize"
+    },
+    {
+      "type": "card",
+      "champion": "Buck",
+      "change": "Reduced Lifesteal from 100 to 60%",
+      "card": "Giga Siphon"
+    },
+    {
+      "type": "card",
+      "champion": "Buck",
+      "change": "Reduced rarity from Rare to Common",
+      "card": "Immovable"
+    },
+    {
+      "type": "card",
+      "champion": "Buck",
+      "change": "Increased rarity from Rare to Epic",
+      "card": "Into the Fray"
+    },
+    {
+      "type": "card",
+      "champion": "Buck",
+      "change": "Reduced rarity from Epic to Common",
+      "card": "Leg Day"
+    },
+    {
+      "type": "card",
+      "champion": "Buck",
+      "change": "Increased rarity from Rare to Epic",
+      "card": "Rend"
+    },
+    {
+      "type": "card",
+      "champion": "Buck",
+      "change": "Reduced rarity from Epic to Rare",
+      "card": "Seismic Wave"
+    },
+    {
+      "type": "card",
+      "champion": "Buck",
+      "change": "Reduced rarity from Epic to Common",
+      "card": "Tightrope"
+    },
+    {
+      "type": "card",
+      "champion": "Buck",
+      "change": "Increased rarity from Common to Rare",
+      "card": "Unsettled"
+    },
+    {
+      "type": "card",
+      "champion": "Cassie",
+      "change": "Only triggers effects once per Champion rather than once per hit",
+      "card": "Blast Shower"
+    },
+    {
+      "type": "card",
+      "champion": "Cassie",
+      "change": "Reduced Disarm duration from 2.5 to 1.5s",
+      "card": "Kinetics"
+    },
+    {
+      "type": "card",
+      "champion": "Cassie",
+      "change": "Reduced Lifesteal from 100 to 50% during Scout",
+      "card": "Survival Instincts"
+    },
+    {
+      "type": "card",
+      "champion": "Cassie",
+      "change": "Increased rarity from Rare to Epic",
+      "card": "Battle Frenzy"
+    },
+    {
+      "type": "card",
+      "champion": "Cassie",
+      "change": "Reduced rarity from Epic to Common",
+      "card": "Drain Life"
+    },
+    {
+      "type": "card",
+      "champion": "Cassie",
+      "change": "Increased rarity from Rare to Epic",
+      "card": "Dormancy"
+    },
+    {
+      "type": "card",
+      "champion": "Cassie",
+      "change": "",
+      "card": ""
+    },
+    {
+      "type": "card",
+      "champion": "Cassie",
+      "change": "Increased rarity from Rare to Epic",
+      "card": "Exaction"
+    },
+    {
+      "type": "card",
+      "champion": "Cassie",
+      "change": "Increased rarity from Rare to Epic",
+      "card": "Lift Off"
+    },
+    {
+      "type": "card",
+      "champion": "Cassie",
+      "change": "Only triggers its effect once per Champion rather than once per hit",
+      "card": "Reload"
+    },
+    {
+      "type": "card",
+      "champion": "Cassie",
+      "change": "Increased rarity from Rare to Epic",
+      "card": "Serrated Arrow"
+    },
+    {
+      "type": "card",
+      "champion": "Cassie",
+      "change": "Increased rarity from Rare to Epic",
+      "card": "Sniper"
+    },
+    {
+      "type": "card",
+      "champion": "Cassie",
+      "change": "Increased rarity from Rare to Epic",
+      "card": "Stalker"
+    },
+    {
+      "type": "card",
+      "champion": "Cassie",
+      "change": "Increased rarity from Rare to Epic",
+      "card": "Tranquility"
+    },
+    {
+      "type": "card",
+      "champion": "Cassie",
+      "change": "Increased rarity from Common to Rare",
+      "card": "Trauma"
+    },
+    {
+      "type": "card",
+      "champion": "Fernando",
+      "change": "Reduced rarity from Epic to Common",
+      "card": "Bleeding Heart"
+    },
+    {
+      "type": "card",
+      "champion": "Fernando",
+      "change": "Reduced rarity from Epic to Rare",
+      "card": "Dire Need"
+    },
+    {
+      "type": "card",
+      "champion": "Fernando",
+      "change": "Added a 10 second internal cooldown upon use",
+      "card": "Dire Need"
+    },
+    {
+      "type": "card",
+      "champion": "Fernando",
+      "change": "Increased rarity from Rare to Epic",
+      "card": "Incinerate"
+    },
+    {
+      "type": "card",
+      "champion": "Fernando",
+      "change": "Reduced rarity from Epic to Common",
+      "card": "Inferno"
+    },
+    {
+      "type": "card",
+      "champion": "Fernando",
+      "change": "Reduced rarity from Rare to Common",
+      "card": "Insurmountable"
+    },
+    {
+      "type": "card",
+      "champion": "Fernando",
+      "change": "Increased rarity from Rare to Epic",
+      "card": "Lance Strike"
+    },
+    {
+      "type": "card",
+      "champion": "Fernando",
+      "change": "Reduced rarity from Epic to Common",
+      "card": "Launch"
+    },
+    {
+      "type": "card",
+      "champion": "Fernando",
+      "change": "Reduced rarity from Rare to Common",
+      "card": "Queen of the Hill"
+    },
+    {
+      "type": "card",
+      "champion": "Fernando",
+      "change": "Increased rarity from Rare to Epic",
+      "card": "Scorch"
+    },
+    {
+      "type": "card",
+      "champion": "Fernando",
+      "change": "Reduced rarity from Epic to Common",
+      "card": "Tenacity"
+    },
+    {
+      "type": "card",
+      "champion": "Fernando",
+      "change": "Titan's Rage",
+      "card": "Increased rarity from Rare to Epic."
+    },
+    {
+      "type": "card",
+      "champion": "Grohk",
+      "change": "Increased rarity from Common to Rare",
+      "card": "Anvil"
+    },
+    {
+      "type": "card",
+      "champion": "Grohk",
+      "change": "Increased rarity from Common to Rare",
+      "card": "Blackout"
+    },
+    {
+      "type": "card",
+      "champion": "Grohk",
+      "change": "Increased rarity from Rare to Epic",
+      "card": "Cluster"
+    },
+    {
+      "type": "card",
+      "champion": "Grohk",
+      "change": "Increased rarity from Rare to Epic",
+      "card": "Electrical Imbalance"
+    },
+    {
+      "type": "card",
+      "champion": "Grohk",
+      "change": "Increased rarity from Common to Epic",
+      "card": "Discharge"
+    },
+    {
+      "type": "card",
+      "champion": "Grohk",
+      "change": "Reduced rarity from Rare to Common",
+      "card": "Distribution"
+    },
+    {
+      "type": "card",
+      "champion": "Grohk",
+      "change": "Reduced rarity from Epic to Common",
+      "card": "Outreach"
+    },
+    {
+      "type": "card",
+      "champion": "Grohk",
+      "change": "Reduced rarity from Epic to Common",
+      "card": "Overcharge"
+    },
+    {
+      "type": "card",
+      "champion": "Grohk",
+      "change": "Increased rarity from Common to Rare",
+      "card": "Planted"
+    },
+    {
+      "type": "card",
+      "champion": "Grohk",
+      "change": "Increased rarity from Rare to Epic",
+      "card": "Precinct"
+    },
+    {
+      "type": "card",
+      "champion": "Grohk",
+      "change": "Reduced rarity from Epic to Rare",
+      "card": "Sow the Seed"
+    },
+    {
+      "type": "card",
+      "champion": "Grohk",
+      "change": "Reduced rarity from Epic to Rare",
+      "card": "Spirit Steal"
+    },
+    {
+      "type": "card",
+      "champion": "Grohk",
+      "change": "Increased rarity from Rare to Epic",
+      "card": "Stimulate"
+    },
+    {
+      "type": "card",
+      "champion": "Grohk",
+      "change": "Reduced rarity from Rare to Common.",
+      "card": "Totemic Rescue"
+    },
+    {
+      "type": "card",
+      "champion": "Pip",
+      "change": "Reduced healing from 60 to 50% of maximum Health",
+      "card": "Gather"
+    },
+    {
+      "type": "card",
+      "champion": "Pip",
+      "change": "Reduced damage per second from 250 to 200",
+      "card": "Acid Cloud"
+    },
+    {
+      "type": "card",
+      "champion": "Pip",
+      "change": "Increased rarity from Rare to Epic",
+      "card": "Compound Reaction"
+    },
+    {
+      "type": "card",
+      "champion": "Pip",
+      "change": "Increased rarity from Rare to Epic",
+      "card": "Fortune Fury"
+    },
+    {
+      "type": "card",
+      "champion": "Pip",
+      "change": "Increased rarity from Rare to Epic",
+      "card": "From Above"
+    },
+    {
+      "type": "card",
+      "champion": "Pip",
+      "change": "Increased rarity from Rare to Epic",
+      "card": "Masterful"
+    },
+    {
+      "type": "card",
+      "champion": "Pip",
+      "change": "Reduced rarity from Epic to Rare",
+      "card": "Panic"
+    },
+    {
+      "type": "card",
+      "champion": "Pip",
+      "change": "Fixed an issue where this would damage Grohk while he was in Ghost Walk",
+      "card": "Poison Cloud"
+    },
+    {
+      "type": "card",
+      "champion": "Pip",
+      "change": "Reduced rarity from Epic to Rare",
+      "card": "Stickiness"
+    },
+    {
+      "type": "card",
+      "champion": "Pip",
+      "change": "Increased rarity from Common to Epic.",
+      "card": "Thermite Load"
+    },
+    {
+      "type": "card",
+      "champion": "Pip",
+      "change": "Fixed an issue where Barik's Barricade and Fernando's Shield did not receive additional damage",
+      "card": "Thermite Load"
+    },
+    {
+      "type": "card",
+      "champion": "Pip",
+      "change": "Increased rarity from Rare to Epic.",
+      "card": "Tyranny"
+    },
+    {
+      "type": "card",
+      "champion": "Ruckus",
+      "change": "Reduced duration increase from 80 to 50%",
+      "card": "Suppressive Fire"
+    },
+    {
+      "type": "card",
+      "champion": "Ruckus",
+      "change": "Increased rarity from Rare to Epic",
+      "card": "Suppressive Fire"
+    },
+    {
+      "type": "card",
+      "champion": "Ruckus",
+      "change": "Increased rarity from Rare to Epic",
+      "card": "Combat Station"
+    },
+    {
+      "type": "card",
+      "champion": "Ruckus",
+      "change": "Reduced rarity from Epic to Rare",
+      "card": "E.M.P."
+    },
+    {
+      "type": "card",
+      "champion": "Ruckus",
+      "change": "Increased rarity from Common to Epic",
+      "card": "Gunship"
+    },
+    {
+      "type": "card",
+      "champion": "Ruckus",
+      "change": "Reduced rarity from Epic to Common",
+      "card": "Harvest"
+    },
+    {
+      "type": "card",
+      "champion": "Ruckus",
+      "change": "Reduced rarity from Rare to Common",
+      "card": "Heat Diffuser"
+    },
+    {
+      "type": "card",
+      "champion": "Ruckus",
+      "change": "Reduced rarity from Rare to Common",
+      "card": "Life Rip"
+    },
+    {
+      "type": "card",
+      "champion": "Ruckus",
+      "change": "Increased rarity from Rare to Epic",
+      "card": "Lined Up"
+    },
+    {
+      "type": "card",
+      "champion": "Ruckus",
+      "change": "Reduced rarity from Rare to Common",
+      "card": "Nanotechnology"
+    },
+    {
+      "type": "card",
+      "champion": "Ruckus",
+      "change": "Reduced rarity from Epic to Common",
+      "card": "Projector"
+    },
+    {
+      "type": "card",
+      "champion": "Ruckus",
+      "change": "Increased rarity from Rare to Epic",
+      "card": "Rush"
+    },
+    {
+      "type": "card",
+      "champion": "Ruckus",
+      "change": "Increased rarity from Common to Rare",
+      "card": "Sabotage"
+    },
+    {
+      "type": "card",
+      "champion": "Ruckus",
+      "change": "Reduced rarity from Epic to Common",
+      "card": "Sonar Upgrade"
+    },
+    {
+      "type": "card",
+      "champion": "Ruckus",
+      "change": "Increased rarity from Rare to Epic",
+      "card": "Soul Collector"
+    },
+    {
+      "type": "card",
+      "champion": "Skye",
+      "change": "Reduced rarity from Epic to Common",
+      "card": "Circle of Life"
+    },
+    {
+      "type": "card",
+      "champion": "Skye",
+      "change": "Increased rarity from Common to Rare",
+      "card": "Decay"
+    },
+    {
+      "type": "card",
+      "champion": "Skye",
+      "change": "Increased rarity from Common to Rare",
+      "card": "Diminish"
+    },
+    {
+      "type": "card",
+      "champion": "Skye",
+      "change": "Reduced rarity from Rare to Common",
+      "card": "Emergency Exit"
+    },
+    {
+      "type": "card",
+      "champion": "Skye",
+      "change": "Reduced rarity from Epic to Common",
+      "card": "Endure"
+    },
+    {
+      "type": "card",
+      "champion": "Skye",
+      "change": "Increased rarity from Rare to Epic",
+      "card": "Killstreak"
+    },
+    {
+      "type": "card",
+      "champion": "Skye",
+      "change": "Increased rarity from Rare to Epic",
+      "card": "Lethal Dose"
+    },
+    {
+      "type": "card",
+      "champion": "Skye",
+      "change": "No longer heals Skye if she is in combat, even if standing still",
+      "card": "Lie in Wait"
+    },
+    {
+      "type": "card",
+      "champion": "Skye",
+      "change": "Reduced rarity from Rare to Common",
+      "card": "Master Riding"
+    },
+    {
+      "type": "card",
+      "champion": "Skye",
+      "change": "Reduced rarity from Epic to Common",
+      "card": "Re-entry"
+    },
+    {
+      "type": "card",
+      "champion": "Skye",
+      "change": "Increased rarity from Rare to Epic",
+      "card": "Scales of Justice"
+    },
+    {
+      "type": "card",
+      "champion": "Skye",
+      "change": "Increased rarity from Common to Rare",
+      "card": "Shell Shock"
+    },
+    {
+      "type": "card",
+      "champion": "Skye",
+      "change": "Reduced rarity from Epic to Rare",
+      "card": "Sticky Bomb"
+    },
+    {
+      "type": "card",
+      "champion": "Skye",
+      "change": "",
+      "card": ""
+    },
+    {
+      "type": "card",
+      "champion": "Skye",
+      "change": "Increased rarity from Rare to Epic",
+      "card": "Victory Rush"
+    },
+    {
+      "type": "card",
+      "champion": "Skye",
+      "change": "Increased rarity from Common to Rare",
+      "card": "Weakening Poison"
+    },
+    {
+      "type": "card",
+      "champion": "Skye",
+      "change": "Fixed an issue where Well Rested wouldn't activate if it came off of Cooldown while you were above 80% Health",
+      "card": "Well Rested"
+    },
+    {
+      "type": "card",
+      "champion": "",
+      "change": "",
+      "card": ""
+    }
+  ]
+}

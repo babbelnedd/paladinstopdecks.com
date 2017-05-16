@@ -1,0 +1,11 @@
+subject: New Notification on Paladins Top Decks
+from: Paladins Top Decks
+content: >
+    <p><strong>Hey {{name}}, you have an unread notification on <a style="color:#00bcff;text-decoration:none;" href="https://paladinstopdecks.com">paladinstopdecks.com</a></strong></p>
+    {{#if message}}
+      <p>{{message}}</p>
+    {{/if}}
+
+    <p>
+      When you want to disable email notifications you can turn them off in your <a href="https://paladinstopdecks.com/account/{{name}}/">Profile Settings</a>
+    </p>

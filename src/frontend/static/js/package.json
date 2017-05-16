@@ -1,0 +1,16 @@
+{
+  "name": "js",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "handlebars": "^4.0.5",
+    "highcharts": "^4.2.1",
+    "jquery": "^2.1.4",
+    "moment": "^2.10.6",
+    "rivets": "^0.8.1",
+    "selectize": "^0.12.1",
+    "vex-js": "^2.3.4"
+  },
+  "author": "",
+  "license": "ISC"
+}

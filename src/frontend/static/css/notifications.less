@@ -1,0 +1,62 @@
+.dropdown-menu-notifications {
+    position: absolute;
+    right: 0;
+    z-index: 9999;
+    display: none;
+    min-width: 400px;
+    border-right: 1px solid @gray;
+    border-left: 1px solid @gray;
+    border-bottom: 1px solid @gray;
+
+    .title {
+        left: 0;
+        top: 0;
+        background: @panel-default-heading-bg;
+        color: @gray-lightest;
+        .font-size(1.6);
+        padding: 0 10px;
+    }
+
+    .notifications {
+        background: @panel-bg;
+        max-height: 500px;
+        overflow: auto;
+
+        .notification {
+            padding: 0 10px;
+            border-bottom: 1px solid @light-blue;
+            strong {
+                display: block;
+                color: @light-blue;
+                width: 250px;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+            span {
+                color: @gray-light;
+            }
+            &:hover {
+                // background: @gray-lightest;
+                .rgba(background, @gray-lightest, 0.75);
+                span { font-weight: 500; }
+            }
+
+            &.new {
+                border-left: 4px solid @light-blue;
+                padding-left: 6px;
+            }
+
+            &.seen {
+                strong { color: @gray; }
+            }
+        }
+    }
+
+    .bottom {
+        background: @light-blue;
+        padding-left: 5px;
+    }
+
+}
+.open > .dropdown-menu-notifications { display: block; }

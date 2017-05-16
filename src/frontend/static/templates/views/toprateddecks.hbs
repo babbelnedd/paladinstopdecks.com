@@ -1,0 +1,47 @@
+<div class="box">
+    <div class="box-body">
+
+        <h1>Top Rated Paladins Decks</h1>
+        <p class="bottom40">
+            A list of the most popular Paladins Decks rated by our community from the last 30 days.
+        </p>
+
+        <div class="row">
+            {{#each static.champions}}
+                <section id="toprated_{{this.normalizedName}}" class="col-xs-12 col-md-6 bottom20">
+                    <div class="toprated-outline">
+                        <header class="rectangle-avatar rectangle-avatar-wide">
+                            <img class="{{this.normalizedName}}"
+                                 src="/static/img/champions/{{this.normalizedName}}/240.png?v={{../static.patch}}">
+                            <span class="title">{{this.normalizedName}}</span>
+                            <div class="overlay"></div>
+                        </header>
+
+                        <ul class="toprated bordered-list">
+                            {{#eachByProp ../decks this.normalizedName}}
+                                <li>
+                                    <div class="col-md-8 no-text-overflow">
+                                        <a href="{{this.fullPath}}" class="pleft5">
+                                            {{this.name}}
+                                        </a>
+                                    </div>
+                                    <div class="col-md-4 hidden-xs text-right">
+                                        <a href="/account/{{this.author}}/decks" class="pright5">
+                                            {{this.author}}
+                                        </a>
+                                    </div>
+                                </li>
+                            {{/eachByProp}}
+                        </ul>
+                        <a href="/decks/{{this.normalizedName}}" class="btn btn-block btn-dark">
+                            View all {{this.name}} Decks
+                        </a>
+                    </div>
+                </section>
+                {{#isOdd @index}}
+                    <i class="clearfix"></i>
+                {{/isOdd}}
+            {{/each}}
+        </div>
+    </div>
+</div>

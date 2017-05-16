@@ -1,0 +1,48 @@
+<aside class="col-md-3 ptop10">
+    {{!--<div class="row">
+        <div class="col-xs-6">
+            <label>Damage Curve</label>
+            <ul class="curve-container curve-container-large dmg relative">
+                {{#each deck.curve.dmg}}
+                    <li class="curve c{{this}}" title="{{this}}%" data-tooltip="{{this}}% Damage"></li>
+                {{/each}}
+            </ul>
+        </div>
+        <div class="col-xs-6">
+            <label>Health Curve</label>
+            <ul class="curve-container curve-container-large hp relative">
+                {{#each deck.curve.hp}}
+                    <li class="curve hp c{{divide this 20}}" data-tooltip="{{this}} HP"></li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>--}}
+
+    {{#ifGreater decks.byChampion.length 0}}
+        <label class="text-uppercase top20">More {{deck.normalizedChampion}} Decks</label>
+        <ul id="by_champion" class="no-padding no-text-overflow">
+            {{#each decks.byChampion}}
+                <li class="no-text-overflow">
+                    <div class="champion-16 {{this.normalizedChampion}} inline-block right5"></div>
+                    <a href="{{this.fullPath}}" data-prerender="{{this.fullPath}}">
+                        {{this.name}}
+                    </a>
+                </li>
+            {{/each}}
+        </ul>
+    {{/ifGreater}}
+    {{#ifGreater decks.byAuthor.length 0}}
+        <label class="text-uppercase top20">More Decks by {{deck.author}}</label>
+        <ul id="by_author" class="no-padding no-text-overflow">
+            {{#each decks.byAuthor}}
+                <li class="no-text-overflow">
+                    <div class="champion-16 {{this.normalizedChampion}} inline-block right5"></div>
+                    <a href="{{this.fullPath}}" data-prerender="{{this.fullPath}}">
+                        {{this.name}}
+                    </a>
+                </li>
+            {{/each}}
+        </ul>
+    {{/ifGreater}}
+
+</aside>

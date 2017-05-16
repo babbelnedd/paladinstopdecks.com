@@ -1,0 +1,38 @@
+<table class="decks tablesorter">
+    <thead>
+    <tr>
+        <th class="full">Name</th>
+        <th>Tier</th>
+        <th>Rank</th>
+        <th>Health</th>
+        <th><abbr title="Damage">DMG</abbr></th>
+        <th><abbr title="Cooldown">CD</abbr></th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#each cards}}
+        <tr data-href="/card/{{this.normalizedChampion}}/{{this.normalizedName}}"
+            data-prerender="/card/{{this.normalizedChampion}}/{{this.normalizedName}}">
+            <td class="full">
+                {{>rectangleCard card=this class='small top10 right5 float-left' static=../static}}
+                {{!--<img src="/static/img/cards/{{this.normalizedChampion}}/{{this.normalizedName}}.jpg">--}}
+                <a href="/card/{{this.normalizedChampion}}/{{this.normalizedName}}"
+                   class="col-{{this.tier}}">{{this.name}}
+                    <i class="hidden">|</i>
+                </a>
+                <br>
+                <small>{{this.description}}</small>
+            </td>
+            <td>
+                <span class="col-{{this.tier}}">
+                    {{capitalize this.tier}}
+                </span>
+            </td>
+            <td>{{this.rankText}}</td>
+            <td>{{this.hp}}</td>
+            <td>{{this.damage}}</td>
+            <td>{{this.cooldown}}</td>
+        </tr>
+    {{/each}}
+    </tbody>
+</table>

@@ -1,0 +1,340 @@
+{
+  "version": "0.7",
+  "date": "24.11.2015",
+  "changes": [
+    {
+      "type": "ability",
+      "champion": "Barik",
+      "change": "Increased damage from 185 to 215",
+      "ability": "Turret"
+    },
+    {
+      "type": "ability",
+      "champion": "Barik",
+      "change": "Reduced refire rate from 1.75 to 1.5",
+      "ability": "Turret"
+    },
+    {
+      "type": "ability",
+      "champion": "Barik",
+      "change": "Reduced damage from 337 to 300",
+      "ability": "Rifle"
+    },
+    {
+      "type": "ability",
+      "champion": "Pip",
+      "change": "Reduced duration from 3 to 2.5s",
+      "ability": "Weightless"
+    },
+    {
+      "type": "ability",
+      "champion": "Pip",
+      "change": "Reduced forward acceleration by 20%",
+      "ability": "Weightless"
+    },
+    {
+      "type": "ability",
+      "champion": "Pip",
+      "change": "Reduced vertical acceleration by 20%",
+      "ability": "Weightless"
+    },
+    {
+      "type": "ability",
+      "champion": "Pip",
+      "change": "Reduced damage from 283 to 250",
+      "ability": "Potion Launcher"
+    },
+    {
+      "type": "ability",
+      "champion": "Pip",
+      "change": "Reduced projectile speed from 185 to 160",
+      "ability": "Potion Launcher"
+    },
+    {
+      "type": "champion",
+      "champion": "Skye",
+      "change": "Removed reload on Skye’s weapon"
+    },
+    {
+      "type": "champion",
+      "champion": "Buck",
+      "change": "Increased Movement Speed from 320 to 335"
+    },
+    {
+      "type": "champion",
+      "champion": "Buck",
+      "change": "Reduced accuracy from 85 to 70%",
+      "ability": "Shrapnel Cannon"
+    },
+    {
+      "type": "champion",
+      "champion": "Buck",
+      "change": "Reduced range from 100 to 50",
+      "ability": "Shrapnel Cannon"
+    },
+    {
+      "type": "champion",
+      "champion": "Buck",
+      "change": "Increased damage per projectile from 40 to 50",
+      "ability": "Shrapnel Cannon"
+    },
+    {
+      "type": "champion",
+      "champion": "Buck",
+      "change": "Now has instant fire, hitting targets instantly",
+      "ability": "Shrapnel Cannon"
+    },
+    {
+      "type": "card",
+      "champion": "Barik",
+      "change": "**NEW** [Turret] Standing nearby your Turret heals it for 125 Health every second",
+      "card": "Combat Repair"
+    },
+    {
+      "type": "card",
+      "champion": "Buck",
+      "change": "**NEW** Recovery heals 20% more for each enemy nearby when activated",
+      "card": "Galvanize"
+    },
+    {
+      "type": "card",
+      "champion": "Buck",
+      "change": "**NEW** When spawned, Cataclysm slows all targets in range by 40% for 3s",
+      "card": "Unsettled"
+    },
+    {
+      "type": "card",
+      "champion": "Buck",
+      "change": "**NEW** You may Leap again for 4s after Leaping, and Leap Bleeds nearby enemies on landing for 400 damage over 3s",
+      "card": "Stomping Ground"
+    },
+    {
+      "type": "card",
+      "champion": "Buck",
+      "change": "**NEW** Take 15% less damage for 3s for each enemy nearby when you land from Leap",
+      "card": "Exhilarate"
+    },
+    {
+      "type": "card",
+      "champion": "Buck",
+      "change": "Increased rarity from Common to Rare",
+      "card": "Armor Piercer"
+    },
+    {
+      "type": "card",
+      "champion": "Buck",
+      "change": "Increased rarity from Common to Rare",
+      "card": "Acid Rounds"
+    },
+    {
+      "type": "card",
+      "champion": "Cassie",
+      "change": "Increased rarity from Common to Epic",
+      "card": "Battle Focus"
+    },
+    {
+      "type": "card",
+      "champion": "Cassie",
+      "change": "Reduced Attack Speed from 50 to 30%",
+      "card": "Battle Focus"
+    },
+    {
+      "type": "card",
+      "champion": "Cassie",
+      "change": "Increased rarity from Common to Rare",
+      "card": "Battle Frenzy"
+    },
+    {
+      "type": "card",
+      "champion": "Cassie",
+      "change": "Increased rarity from Common to Epic",
+      "card": "Big Game"
+    },
+    {
+      "type": "card",
+      "champion": "Cassie",
+      "change": "Increased rarity from Common to Rare",
+      "card": "Exaction"
+    },
+    {
+      "type": "card",
+      "champion": "Cassie",
+      "change": "Increased rarity from Common to Rare",
+      "card": "Lift Off"
+    },
+    {
+      "type": "card",
+      "champion": "Cassie",
+      "change": "Increased rarity from Common to Rare",
+      "card": "Sniper"
+    },
+    {
+      "type": "card",
+      "champion": "Cassie",
+      "change": "Updated description to correct values",
+      "card": "Megaton"
+    },
+    {
+      "type": "card",
+      "champion": "Fernando",
+      "change": "Increased rarity from Common to Rare",
+      "card": "Incinerate"
+    },
+    {
+      "type": "card",
+      "champion": "Fernando",
+      "change": "Increased rarity from Common to Rare",
+      "card": "Lance Strike"
+    },
+    {
+      "type": "card",
+      "champion": "Fernando",
+      "change": "Increased amount of Health required per 2% damage from 250 to 350",
+      "card": "Titan’s Rage"
+    },
+    {
+      "type": "card",
+      "champion": "Grohk",
+      "change": "**NEW** [Weapon] 4% chance to spawn a Healing Totem at the target’s feet",
+      "card": "Sow the Seed"
+    },
+    {
+      "type": "card",
+      "champion": "Grohk",
+      "change": "Increased rarity from Common to Rare",
+      "card": "Discharge"
+    },
+    {
+      "type": "card",
+      "champion": "Grohk",
+      "change": "Increased rarity from Common to Rare",
+      "card": "Stimulate"
+    },
+    {
+      "type": "card",
+      "champion": "Grohk",
+      "change": "Fixed description reading Totem instead of Healing Totem",
+      "card": "Precinct"
+    },
+    {
+      "type": "card",
+      "champion": "Pip",
+      "change": "**NEW** [Weapon] Deal 60% increased damage to enemies on the Capture Point",
+      "card": "Ambush"
+    },
+    {
+      "type": "card",
+      "champion": "Pip",
+      "change": "**NEW** [Weapon] Deal 4% of your target’s current Health",
+      "card": "Caustic"
+    },
+    {
+      "type": "card",
+      "champion": "Ruckus",
+      "change": "Reduced Movement Speed from 50 to 30%",
+      "card": "Turbocharger"
+    },
+    {
+      "type": "card",
+      "champion": "Skye",
+      "change": "Increased rarity from Common to Rare",
+      "card": "Lethal Dose"
+    },
+    {
+      "type": "general",
+      "change": "Fixed an issue where spamming gamepad buttons could crash the game during map transitions"
+    },
+    {
+      "type": "general",
+      "change": "Fixed an issue where players would appear to slightly sink on a capture point"
+    },
+    {
+      "type": "general",
+      "change": "Fixed an issue where the camera on some Champions could clip into a wall"
+    },
+    {
+      "type": "general",
+      "change": "Resolved various application crash scenarios"
+    },
+    {
+      "type": "general",
+      "change": "Fixed an issue where the firing animation could get desynced from the actual firing mechanism"
+    },
+    {
+      "type": "general",
+      "change": "Fixed an issue causing texture maps on awnings and ropes in Enchanted Forest to disappear"
+    },
+    {
+      "type": "general",
+      "change": "Adjusted first-person gun positioning for Pip, Ruckus and Bolt, Buck, and Barik for non-widescreen resolutions"
+    },
+    {
+      "type": "general",
+      "change": "Fixed an issue where Flame Turret would deal 100 damage over 2s instead of 400 damage over 2s"
+    },
+    {
+      "type": "general",
+      "change": "Fixed an issue where Field Deploy would not affect Flame Turret"
+    },
+    {
+      "type": "general",
+      "change": "Weightless now has a grace period shortly after activation preventing accidental cancels"
+    },
+    {
+      "type": "general",
+      "change": "Added a small delay on Backlash preventing it from dealing damage too quickly"
+    },
+    {
+      "type": "general",
+      "change": "The Siege Engine no longer takes damage while traveling"
+    },
+    {
+      "type": "general",
+      "change": "Matchmaking has undergone several changes. You will now wait longer for matches, but should get better matchmaking"
+    },
+    {
+      "type": "general",
+      "change": "Temple Ruins: Added a new route for players to leave the base. This can be found to the left of the spawn area"
+    },
+    {
+      "type": "general",
+      "change": "Temple Ruins: Added various new environmental obstacles throughout the map"
+    },
+    {
+      "type": "general",
+      "change": "Temple Ruins: Now includes randomization that occurs on the points. Each point will change slightly each time it spawns, making each encounter unique. This can be new cover points appearing and entrances or exits being closed off temporarily"
+    },
+    {
+      "type": "general",
+      "change": "Enchanted Forest: The spawn room has had a visual improvement"
+    },
+    {
+      "type": "general",
+      "change": "Updated the presentation of Death Recap, and this now defaults to 'Y'"
+    },
+    {
+      "type": "general",
+      "change": "Updated minimaps to properly display map layout and objective locations"
+    },
+    {
+      "type": "general",
+      "change": "Bots draw cards when they level up"
+    },
+    {
+      "type": "general",
+      "change": "Removed jump height penalty for successive jump"
+    },
+    {
+      "type": "general",
+      "change": "Whenever a target takes no damage due to being 100% damage immune, the combat text will now read 'Immune'"
+    },
+    {
+      "type": "general",
+      "change": "HP Drops can no longer be collected if you are at full Health. Cards like Soul Collector and Rehabilitation that rely on HP Drops override this rule"
+    },
+    {
+      "type": "general",
+      "change": "Mount Cooldown has been reduced from 5 to 1s"
+    }
+  ]
+}

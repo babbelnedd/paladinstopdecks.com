@@ -1,0 +1,59 @@
+{
+  "name": "Grover",
+  "normalizedName": "grover",
+  "abilities": [
+    {
+      "name": "Axe Throw",
+      "description": "Grover throws his Axe dealing 500 damage and Crippling the first target hit for 1.5s.",
+      "type": "AltFire",
+      "properties": {
+        "cooldown": "10s",
+        "damage": "500",
+        "key": "alt"
+      }
+    },
+    {
+      "name": "Whirlwind",
+      "description": "Grover spins violently in circles, dealing 2800 damage over 4s.",
+      "type": "Ultimate",
+      "properties": {
+        "duration": "4s",
+        "key": "q"
+      }
+    },
+    {
+      "name": "Briars & Blossoms",
+      "description": "Alternate auras that deal damage to nearby enemies or heal nearby allies.",
+      "type": "Ability",
+      "properties": {
+        "cooldown": "3s",
+        "key": "e"
+      }
+    },
+    {
+      "name": "Vine",
+      "description": "Grover throws a vine, latching onto the first thing it touches then pulls himself towards it. Removes all debuffs on use.",
+      "type": "Ability",
+      "properties": {
+        "cooldown": "13s",
+        "key": "f"
+      }
+    },
+    {
+      "name": "Axe",
+      "type": "Basic Attack",
+      "description": "A large axe that deals damage in short melee range.",
+      "damage": "350",
+      "properties": {
+        "key": "basic",
+        "damage": "350"
+      }
+    }
+  ],
+  "movementSpeed": 385,
+  "clipSize": 0,
+  "title": "The Wild",
+  "class": " ",
+  "releaseDate": 1455092185000,
+  "health": 4012
+}

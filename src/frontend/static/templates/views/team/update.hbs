@@ -1,0 +1,24 @@
+<section class="box">
+    <article class="box-body">
+
+        <h1>Manage your Team</h1>
+        <p>
+            Update general information for your Team {{team.name}} and manage your roster.
+        </p>
+
+        <ul class="nav nav-tabs nav-justified top40">
+            <li><a href="#tab_about" data-toggle="tab">About</a></li>
+            <li><a href="#tab_roster" data-toggle="tab">Roster</a></li>
+            <li><a href="#tab_matches" data-toggle="tab">Matches</a></li>
+            <li><a href="#tab_competition" data-toggle="tab">Competition</a></li>
+        </ul>
+
+        <div class="tab-content top20">
+            <div id="tab_about" class="tab-pane active">{{>team/management/about}}</div>
+            <div id="tab_roster" class="tab-pane">{{>team/management/roster}}</div>
+            <div id="tab_matches" class="tab-pane">{{>team/management/matches}}</div>
+            <div id="tab_competition" class="tab-pane">{{>team/management/competition}}</div>
+        </div>
+
+    </article>
+</section>

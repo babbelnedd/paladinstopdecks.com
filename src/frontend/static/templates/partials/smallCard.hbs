@@ -1,0 +1,19 @@
+{{#ifEqual linked true}}
+    <a href="/card/{{card.normalizedName}}">
+{{/ifEqual}}
+    <div class="card-container" id="{{card.normalizedName}}" data-tooltip='[data-id="{{card._id}}"]'
+         data-small-card="true" data-normalized-name="{{card.normalizedName}}">
+        <div class="flat-tier {{card.tier}}"></div>
+        <div class="overlay"></div>
+        <span class="name">{{card.name}}</span>
+        <img src="{{static.cdn}}{{card.imagePath}}?v={{static.patch}}">
+    </div>
+{{#ifEqual linked true}}
+    </a>
+{{/ifEqual}}
+
+{{#ifEqual tooltip true}}
+    <div class="cardtip" id="cardtip-{{card.normalizedName}}">
+        {{>card size='small' id=false}}
+    </div>
+{{/ifEqual}}

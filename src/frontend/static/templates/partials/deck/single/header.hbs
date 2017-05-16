@@ -1,0 +1,50 @@
+<header>
+    <div class="title deck-title responsive">
+        <div itemprop="image" class="image"
+             style="background-image:url({{static.cdn}}/static/img/champions/{{deck.normalizedChampion}}/banner.jpg)">
+            <div class="dark-overlay"></div>
+        </div>
+        <h1 itemprop="name" class="background">{{deck.name}}</h1>
+        <meta itemprop="alternateName" content="Paladins {{deck.normalizedChampion}} Deck"/>
+        <meta itemprop="alternateName" content="Paladins {{deck.normalizedChampion}} Build"/>
+        <div class="toolbar">
+            <div class="inline-block">
+                <span class="col-light">
+                    <i class="fa fa-clock-o right2"></i>
+                    {{relativeMoment deck.updated 'x' 10080 'L'}}
+                </span>
+                <span class="left5 col-light">
+                    <i class="fa fa-user right2"></i>
+                    <a href="/account/{{deck.author}}" class="col-light" style="font-weight:700;">
+                        {{deck.author}}
+                    </a>
+                </span>
+                <span class="left5 col-light rating">
+                    <i class="fa fa-star right2"></i>
+                    <span rv-text="rating">+1</span>
+                </span>
+            </div>
+            <div class="pull-right hidden-xs ">
+                <span class="btn btn-dark btn-sm upvote">
+                    <i class="upvote fa fa-plus-square right5"></i>
+                    Upvote
+                </span>
+                <span class="btn btn-dark btn-sm downvote">
+                    <i class="downvote fa fa-minus-square right5"></i>
+                    Downvote
+                </span>
+                <span class="btn btn-dark btn-sm favorite">
+                    <i class="favorite fa fa-heart right5"></i>
+                    Favorite
+                </span>
+                {{#ifEqualObjId _auth.uid deck._author}}
+                    <span class="btn btn-dark btn-sm" data-href="{{deck.editPath}}">Edit Deck</span>
+                {{else}}
+                    {{#ifEqual _auth.admin true}}
+                        <span class="btn btn-dark btn-sm" data-href="{{deck.editPath}}">Edit Deck</span>
+                    {{/ifEqual}}
+                {{/ifEqualObjId}}
+            </div>
+        </div>
+    </div>
+</header>

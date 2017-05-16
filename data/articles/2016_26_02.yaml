@@ -1,0 +1,29 @@
+title: 'The issue with neutral cards'
+slug: 'the-issue-with-neutral-cards'
+meta:
+  title: 'The issue with neutral cards'
+  description: 'Neutral cards have become a pivotal part of gameplay in CB16. I think they are a bane on the Paladins meta.'
+  other: [{name: date, content: 1456505257}, {name: 'last-modified', content: '1456505257'}]
+author: Blockade
+preview: >
+  You might look at neutral cards such as <a href="/card/neutral/exit_strategy">Exit Strategy</a> or <a href="/card/neutral/big_game">Big Game</a> and think "Nice! This puts everyone on a level playing field!" Well, in my opinion neutral cards remove a large element of strategy from the game.
+comments: true
+date: 1456505257
+logo: /static/img/articles/neutral.jpg
+content: >
+
+  <p>
+    You might look at neutral cards such as <a href="/card/neutral/exit_strategy">Exit Strategy</a> or <a href="/card/neutral/big_game">Big Game</a> and think "Nice! This puts everyone on a level playing field!" Well, in my opinion neutral cards remove a large element of strategy from the game.
+  </p>
+
+  <p>
+    Firstly, it removes the element of variable strength scaling of the game. What this means is, rather than having champions with good early game and a weaker late game or vice versa, you just have "champions". The issue I see here is that it doesn't allow teams to strategize much with compositions, you just pick the 5 flavour-of-the-month champions, and go for their strongest build rather than going for perhaps an early-game composition which tries to dominate the opponent before they can react, or a late-game composition where you play it safe until you're a higher level and then win deciding team fights.
+  </p>
+
+  <p>
+    Secondly, it makes the champions not so special anymore. Back in CB13 and before, <a href="/champion/ruckus">Ruckus</a> main source of healing was emitter, and he would have to spec into it to gain survivability (as opposed to a DPS build). Now, he picks Exit Strategy and Veteran and all is good for him, without having to “waste” class cards on emitter. The issue that arises from situations like this is that it makes everyone good at everything, for example when enemies have shields, ANY champion can take <a href="/card/neutral/bulldozer">Bulldozer</a> and melt through them, even non-DPS champions, and that just doesn’t seem right. Being able to counter every member of the enemy team with one card each shouldn’t be a possibility in my opinion.
+  </p>
+
+  <p>
+    To conclude, I think neutral cards detract from the strategic elements of the game, such that everyone can counter everyone, and so you simply pick the 5 ‘strongest’ champions as opposed to a coordinated, carefully picked composition. I think most neutral cards such as Bulldozer and Exit Strategy should be made specific to one or two champions, so that everyone has a clear role, because <a href="/champion/pip">Pip</a> shouldn’t be able to mitigate nearly 50% of damage coming into him, that’s <a href="/champion/fernando">Fernando’s</a> job. And Fernando shouldn’t be able to melt through enemy shields, that’s Pip’s job. So that’s my views on neutral cards. You can leave your thoughts on this article in the comments if you want.
+  </p>

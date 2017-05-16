@@ -1,0 +1,59 @@
+.curve-container {
+    @barWidth: 8px;
+    @barGutter: 2px;
+    position: absolute;
+    padding: 0; margin: 0;
+    height: 50px; width: 50px;
+    &.dmg { left: 5px; bottom: 5px; }
+    &.hp { bottom: 5px; }
+    // &.hp { left: 55px; bottom: 5px; }
+
+    &.curve-container-large {
+        height: 150px;
+        width: @barWidth * 5 + @barGutter * 4;
+        .curve {
+            width: @barWidth * 2;
+        }
+        li {
+            display: none;
+            &:nth-child(1) { display: inline; left: 0; }
+            &:nth-child(2) { display: inline; left: (@barWidth * 2 + @barGutter) * 1px; }
+            &:nth-child(3) { display: inline; left: (2*@barWidth * 2 + 2*@barGutter) * 1px; }
+            &:nth-child(4) { display: inline; left: (3*@barWidth * 2 + 3*@barGutter) * 1px; }
+            &:nth-child(5) { display: inline; left: (4*@barWidth * 2 + 4*@barGutter) * 1px; }
+        }
+    }
+
+    li {
+        display: none;
+        &:nth-child(1) { display: inline; left: 0; }
+        &:nth-child(2) { display: inline; left: (@barWidth + @barGutter) * 1px; }
+        &:nth-child(3) { display: inline; left: (2*@barWidth + 2*@barGutter) * 1px; }
+        &:nth-child(4) { display: inline; left: (3*@barWidth + 3*@barGutter) * 1px; }
+        &:nth-child(5) { display: inline; left: (4*@barWidth + 4*@barGutter) * 1px; }
+    }
+
+    .curve {
+        .c-gen(@index) when (@index > 0) {
+            &.c@{index} {
+                height: @index * 1%;
+            }
+            .c-gen(@index - 1);
+        }
+
+        position: absolute;
+        background: linear-gradient(to top, darken(@col-highlight, 30), @col-highlight);
+        width: @barWidth;
+        bottom: 0;
+        border-left: 1px solid @gray-light;
+        border-right: 1px solid @black;
+        border-top: 1px solid @gray-lighter;
+        border-bottom: 1px solid @black;
+        min-height: 10%;
+        .c-gen(100);
+
+        //&.dmg { background: linear-gradient(to top, #730200, #ef1000); }
+        &.hp { background: linear-gradient(to top, #203410, #54a22e); }
+
+    }
+}

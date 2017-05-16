@@ -1,0 +1,94 @@
+@highlight-color: @light-blue;
+@input-color: @gray-lighter;
+@light-color: @gray-lightest;
+@err-color: @red;
+
+@border-width-selected: 2px;
+@border-width-unselected: 1px;
+
+
+input {
+    @height: 40px;
+    &:focus {
+        outline: none !important;
+        //border-color: @highlight-color !important;
+        //box-shadow: 0 0 5px @highlight-color !important;
+    }
+
+    &.onclick-input {
+        background: transparent;
+        border-color: transparent;
+        border-radius: 0;
+        border: none;
+        border-bottom: 1px solid @light-color;
+        width: 100%;
+        height: @height;
+        text-transform: uppercase;
+        padding-left: 4px;
+        .bottom20;
+        .font-size(1.9);
+
+        //.placeholder(color, @placeholder-color);
+        //.placeholder(font-weight, 300);
+
+        color: @input-color;
+        font-weight: 500;
+
+        &:focus {
+            background: transparent;
+            box-shadow: none !important;
+            border-bottom: solid @border-width-selected @highlight-color;
+            .font-size(1.9*1.1);
+            transition: border-color 0.2s linear;
+
+            + label {
+                color: @highlight-color !important;
+                top: -90px;
+            }
+
+        }
+
+        + label {
+            position: relative;
+            top: -50px;
+            //left: 5px;
+            font-weight: 300;
+            color: @light-color !important;
+
+            &.active {
+                top: -90px;
+            }
+        }
+
+        &.error {
+            border-bottom-color: @red;
+            + label {
+                color: @red !important;
+            }
+        }
+    }
+}
+
+.help-block {
+    position: relative;
+    left: 0;
+
+    color: blue;
+}
+
+.form-group.has-error {
+    input.onclick-input {
+        border-bottom: @border-width-unselected solid @err-color;
+
+        &:focus {
+            border-bottom: solid @border-width-selected @err-color;
+            + label {
+                color: @err-color !important;
+            }
+        }
+
+        + label {
+            color: @err-color !important;
+        }
+    }
+}

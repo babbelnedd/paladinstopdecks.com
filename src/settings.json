@@ -1,0 +1,24 @@
+{
+  "development": {
+    "patch": "0.19",
+    "cdn": "",
+    "page": {
+      "title": "Paladins Top Decks",
+      "meta": {
+        "description": "Create and discover new Paladins Champion Decks & Guides",
+        "keywords": "PaladinsTopDecks, Paladins, HiRez, HiRez Paladins, Paladins Decks, Paladins Builds, Paladins Guides"
+      }
+    }
+  },
+  "production": {
+    "patch": "0.19",
+    "cdn": "https://d1m720j85s9xxu.cloudfront.net",
+    "page": {
+      "title": "Paladins Top Decks",
+      "meta": {
+        "description": "Create and discover new Paladins Champion Decks & Guides",
+        "keywords": "PaladinsTopDecks, Paladins, HiRez, HiRez Paladins, Paladins Decks, Paladins Builds, Paladins Guides"
+      }
+    }
+  }
+}

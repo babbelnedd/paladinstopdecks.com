@@ -1,0 +1,60 @@
+{
+  "name": "Androxus",
+  "normalizedName": "androxus",
+  "abilities": [
+    {
+      "name": "Defiance",
+      "description": "Fire a burst of 3 rounds from your revolver, with reduced accuracy",
+      "type": "AltFire",
+      "properties": {
+        "key": "alt",
+        "damage": "350",
+        "accuracy": "70"
+      }
+    },
+    {
+      "name": "Accursed Arm",
+      "description": "Androxus freezes wherever he is (doesn't fall if airborne), mutates his arm into a massive gun and fires 4 explosive blasts. He has air control",
+      "type": "Ultimate",
+      "properties": {
+        "key": "q",
+        "speed": "320",
+        "damage": "750"
+      }
+    },
+    {
+      "name": "Reversal",
+      "description": "For 2s, Androxus absorbs the power of all shots fired at him from the front. After 2s, fire all power back in the direction you facing",
+      "type": "Ability",
+      "properties": {
+        "cooldown": "16s",
+        "key": "e"
+      }
+    },
+    {
+      "name": "Nether Step",
+      "description": "Androxus quickly surges forward, and may do so once more before the cooldown is incurred",
+      "type": "Ability",
+      "properties": {
+        "cooldown": "10s",
+        "key": "f"
+      }
+    },
+    {
+      "name": "Revolver",
+      "type": "Basic Attack",
+      "description": "",
+      "damage": "?",
+      "properties": {
+        "key": "basic",
+        "damage": "350"
+      }
+    }
+  ],
+  "movementSpeed": 400,
+  "clipSize": 6,
+  "title": "The Godslayer",
+  "class": "",
+  "releaseDate": 1457806324000,
+  "health": 2125
+}

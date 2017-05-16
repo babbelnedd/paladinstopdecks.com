@@ -1,0 +1,85 @@
+.netbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    height: @netbarHeight;
+    line-height: @netbarHeight;
+    width: 100%;
+    background-color: @gray-darker;
+    .font-size(1.4);
+
+    ul {
+        margin: 0;
+        padding: 0;
+
+        &.bordered {
+            &.pull-right {
+                li {
+                    border-left: 1px solid @gray-light;
+                }
+            }
+            &.pull-left {
+                li {
+                    border-right: 1px solid @gray-light;
+                }
+            }
+        }
+        li {
+            display: inline;
+            padding: 0 10px;
+            ::selection {
+                background: none;
+                color: @col-light;
+            }
+
+            a {
+                //color: @gray-lightest;
+                color: @col-light;
+                //font-weight: 300;
+                .font-size(1.4);
+                //&:hover {
+                //    color: @col-highlight;
+                //}
+            }
+
+            &.brand {
+                border: none;
+                text-transform: uppercase;
+                //position: absolute;
+                //left: 10px;
+                .main {
+                    color: @light-blue;
+                    font-weight: 500;
+                }
+                .second {
+                    color: @white;
+                    font-weight: 300;
+                }
+            }
+        }
+
+        .dropdown-menu {
+            z-index: 9999;
+            background-color: @gray-darker;
+            li {
+                height: 30px;
+                border: none !important;
+                a {
+                    display: inline-block;
+                    margin-left: 0;
+                    padding-left: 0;
+                    &:hover {
+                        color: @col-highlight;
+                        background: none;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: @screen-md-min) {
+    .netbar {
+        display: none;
+    }
+}
